@@ -1,0 +1,75 @@
+@import url('https://fonts.googleapis.com/css?family=Barlow:200,400,500,600,700,900&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --font-sans: 'Barlow', sans-serif;
+    --font-heading: 'Barlow', sans-serif;
+  }
+  
+  html {
+    scroll-behavior: smooth;
+    font-family: var(--font-sans);
+    font-size: 19px;
+  }
+  
+  @media (min-width: 768px) {
+    html {
+      font-size: 21px;
+    }
+  }
+
+  body {
+    background-color: #ffffff;
+    color: #0f172a;
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply bg-brand-blue hover:bg-brand-blue-dark text-white font-semibold py-2.5 px-6 rounded-xl transition-all duration-300 shadow-sm hover:shadow flex items-center justify-center gap-2;
+  }
+
+  .btn-outline {
+    @apply border border-brand-blue text-brand-blue hover:bg-brand-blue hover:text-white font-semibold py-2.5 px-6 rounded-xl transition-all duration-300 flex items-center justify-center gap-2;
+  }
+
+  .glass-card {
+    @apply bg-white border border-slate-100 shadow-sm rounded-2xl;
+  }
+
+  .section-title {
+    @apply text-2xl md:text-3xl font-black text-brand-blue-dark text-center mb-2;
+  }
+
+  .section-subtitle {
+    @apply text-brand-green text-xs md:text-sm uppercase tracking-widest font-extrabold text-center mb-10;
+  }
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #f8fafc;
+}
+::-webkit-scrollbar-thumb {
+  background: #004aad;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #002868;
+}
+
+/* Banner overlay styles */
+.banner-overlay {
+  background-color: rgba(15, 23, 42, 0.8);
+}
+
+.timeline-line {
+  background-color: #004aad;
+}
