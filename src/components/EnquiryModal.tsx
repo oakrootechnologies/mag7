@@ -2,6 +2,7 @@
 
 import React, { useState, useEffect } from "react";
 import { X, Send, CheckCircle } from "lucide-react";
+import { products } from "@/data/products";
 
 interface EnquiryModalProps {
   isOpen: boolean;
@@ -34,6 +35,49 @@ export default function EnquiryModal({ isOpen, onClose, selectedProduct = "" }: 
       return;
     }
     setError("");
+
+    // Find product category and normalized product ID
+    const prodObj = products.find(
+      (p) =>
+        p.name.toLowerCase() === product.toLowerCase() ||
+        p.slug === product.toLowerCase() ||
+        p.id === product
+    );
+    const categoryVal = prodObj ? prodObj.category : "fruits";
+    const prodIdVal = prodObj ? prodObj.id : product || "general";
+
+    const newLead = {
+      id: "RFQ-" + Math.random().toString(36).substr(2, 9).toUpperCase(),
+      date: new Date().toISOString(),
+      status: "Pending" as const,
+      fullName: `${firstName} ${lastName}`.trim(),
+      designation: "Product Enquiry",
+      companyName: "Web Enquiry",
+      businessType: "Importer / Wholesaler",
+      destinationCountry: "N/A",
+      destinationPort: "N/A",
+      whatsappCode: "",
+      whatsappNumber: phone,
+      email: email || "N/A",
+      category: categoryVal,
+      productId: prodIdVal,
+      qualitySpecs: requirement || "No specific requirements provided.",
+      packaging: "Standard Export Box",
+      quantity: 1,
+      quantityUnit: "Air Freight Trial Shipment",
+      incoterm: "CIF",
+      timeline: "Immediate / Spot Order"
+    };
+
+    try {
+      const existing = localStorage.getItem("rfq_leads");
+      const leads = existing ? JSON.parse(existing) : [];
+      leads.unshift(newLead);
+      localStorage.setItem("rfq_leads", JSON.stringify(leads));
+    } catch (err) {
+      console.error("Failed to save lead in EnquiryModal:", err);
+    }
+
     setIsSubmitted(true);
     setTimeout(() => {
       // Reset form
@@ -135,24 +179,21 @@ export default function EnquiryModal({ isOpen, onClose, selectedProduct = "" }: 
                   <option value="">Select Product</option>
                   <optgroup label="Export Fruits">
                     <option value="Alphonso Mango">Alphonso Mango</option>
-                    <option value="Kesar Mango">Kesar Mango</option>
+                    <option value="Papaya">Papaya</option>
                     <option value="Grapes">Grapes</option>
                     <option value="Pomegranate">Pomegranate</option>
                     <option value="Coconut">Coconut</option>
                     <option value="Cavendish Banana">Cavendish Banana</option>
                   </optgroup>
                   <optgroup label="Export Vegetables">
-                    <option value="Elephant Foot Yam / Suran">Elephant Foot Yam / Suran</option>
                     <option value="Drumstick">Drumstick</option>
                     <option value="Garlic">Garlic</option>
                     <option value="Ginger">Ginger</option>
                     <option value="Lemon">Lemon</option>
-                    <option value="Tomato">Tomato</option>
                     <option value="Chilli">Chilli</option>
                     <option value="Onion">Onion</option>
                   </optgroup>
                   <optgroup label="Export Commodities">
-                    <option value="Chana Dal">Chana Dal</option>
                     <option value="Chickpeas">Chickpeas</option>
                     <option value="Green Millet">Green Millet</option>
                     <option value="Maize">Maize</option>
@@ -165,6 +206,8 @@ export default function EnquiryModal({ isOpen, onClose, selectedProduct = "" }: 
                     <option value="Cumin Seeds">Cumin Seeds</option>
                     <option value="Turmeric">Turmeric</option>
                     <option value="Red Chilli">Red Chilli</option>
+                    <option value="Black Pepper">Black Pepper</option>
+                    <option value="Green Cardamom">Green Cardamom</option>
                   </optgroup>
                   <optgroup label="Import Products">
                     <option value="Apple">Apple</option>

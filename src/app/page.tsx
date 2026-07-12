@@ -22,29 +22,29 @@ const EnquiryModal = dynamic(() => import("@/components/EnquiryModal"), { ssr: f
 // Hero slides data
 const heroSlides = [
   {
-    image: "https://images.unsplash.com/photo-1571771894821-ce9b6c11b08e?auto=format&fit=crop&w=1200&q=80",
+    image: "/images/hero/banana.png",
     text: "Leading Exporters of High Quality Cavendish Banana",
     product: "banana"
   },
   {
-    image: "https://images.unsplash.com/photo-1618220179428-22790b461013?auto=format&fit=crop&w=1200&q=80",
+    image: "/images/hero/onion.png",
     text: "Leading Exporters of High Quality Indian Onion",
     product: "onion"
   },
   {
-    image: "https://images.unsplash.com/photo-1588252399650-db747a83d735?auto=format&fit=crop&w=1200&q=80",
+    image: "/images/hero/chilli.png",
     text: "Leading Exporters of High Quality Green Chilli",
     product: "chilli"
   },
   {
-    image: "https://images.unsplash.com/photo-1589820296156-2454bb8a6ad1?auto=format&fit=crop&w=1200&q=80",
+    image: "/images/hero/coconut.png",
     text: "Leading Exporters of High Quality Semi-Husked Coconut",
     product: "coconut"
   },
   {
-    image: "https://images.unsplash.com/photo-1597362925123-77861d3fbac7?auto=format&fit=crop&w=1200&q=80",
-    text: "Leading Exporters of High Quality Suran / Elephant Foot Yam",
-    product: "elephant-foot-yam-suran"
+    image: "https://images.unsplash.com/photo-1537640538966-79f369143f8f?auto=format&fit=crop&w=1200&q=80",
+    text: "Leading Exporters of High Quality Nashik Grapes",
+    product: "grapes"
   }
 ];
 
@@ -98,15 +98,15 @@ export default function HomePage() {
             />
             <div className="absolute inset-0 bg-slate-900/60" />
             <div className="absolute inset-0 flex items-end md:items-center px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto pb-16 md:pb-0">
-              <div className="max-w-3xl space-y-6 text-white text-left">
-                <h1 className="text-3xl sm:text-4xl md:text-6xl font-black tracking-tight leading-tight drop-shadow-md">
+              <div className="max-w-3xl space-y-6 text-white text-left animate-fadeIn">
+                <h1 className="text-3xl sm:text-4xl md:text-6xl font-extrabold tracking-tight leading-tight drop-shadow-md">
                   {slide.text}
                 </h1>
                 <div className="flex gap-4">
-                  <Link href={`/export-products/${slide.product}`} className="btn-primary">
+                  <Link href={`/export-products/${slide.product}`} className="btn-primary text-xs tracking-wider uppercase font-extrabold">
                     View Details
                   </Link>
-                  <button onClick={() => openEnquiry(slide.text)} className="btn-outline border-white text-white hover:bg-white hover:text-brand-blue-dark">
+                  <button onClick={() => openEnquiry(slide.text)} className="border border-white/60 bg-white/10 hover:bg-white text-white hover:text-brand-blue-dark py-3 px-6 rounded-2xl transition-all duration-300 font-extrabold text-xs tracking-wider uppercase backdrop-blur-sm cursor-pointer">
                     Get Quote
                   </button>
                 </div>
@@ -129,27 +129,26 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* 2. Introduction Section */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 md:grid-cols-12 gap-8 items-center bg-slate-50 p-6 md:p-12 rounded-3xl border border-slate-100">
+        <div className="grid grid-cols-1 md:grid-cols-12 gap-8 items-center bg-white border border-slate-100 shadow-xl shadow-slate-100/50 p-8 md:p-12 rounded-3xl transition-all duration-300 hover:shadow-2xl hover:shadow-slate-200/40">
           <div className="md:col-span-4 flex flex-col items-center md:items-start text-center md:text-left space-y-4">
             <Image
-              src="/logo/hori logo.png"
+              src="/logo/image.png"
               alt="Mag7 Global Logo"
-              width={200}
-              height={50}
-              className="object-contain"
+              width={100}
+              height={100}
+              className="object-contain bg-white p-2 rounded-2xl shadow-sm border border-slate-100 h-24 w-24"
             />
           </div>
           
-          <div className="md:col-span-8 space-y-6 text-slate-700 text-base leading-relaxed">
+          <div className="md:col-span-8 space-y-6 text-slate-600 text-sm leading-relaxed">
             <h2 className="text-2xl md:text-3xl font-extrabold text-brand-blue-dark tracking-tight">
-              Mag7 Global <span className="text-brand-green">“Reliable Agri Supply for Exporters and Importers Worldwide”</span>
+              Mag7 Global <span className="text-gradient-green font-black">“Reliable Agri Supply for Exporters and Importers Worldwide”</span>
             </h2>
-            <p>
+            <p className="font-medium">
               At <strong>Mag7 Global LLP</strong>, we are one of <strong>India’s most reliable suppliers of agricultural products</strong>, delivering <strong>fruits, vegetables, spices, grains, frozen and processed foods</strong> to markets worldwide. With a strong farmer network, modern grading and packaging, and efficient logistics, we ensure <strong>quality and timely delivery</strong> every time.
             </p>
-            <p>
+            <p className="font-medium">
               Trusted across the <strong>UAE, Gulf, Europe, UK, USA, Canada, and Australia</strong>, we are the preferred partner for <strong>Indian exporters</strong> and <strong>global importers</strong> seeking authentic, top-quality agricultural products.
             </p>
           </div>
@@ -186,12 +185,12 @@ export default function HomePage() {
               desc: "End-to-end documentation, custom clearance at JNPT Port, and compliance with APEDA, FSSAI, and importing customs."
             }
           ].map((item, idx) => (
-            <div key={idx} className="bg-white border border-slate-100 p-6 rounded-2xl shadow-sm hover:shadow-md transition-shadow duration-300">
-              <div className="w-14 h-14 rounded-xl bg-slate-50 flex items-center justify-center mb-5">
+            <div key={idx} className="bg-white border border-slate-100 p-8 rounded-3xl shadow-sm hover:shadow-xl hover:shadow-slate-100/80 hover:-translate-y-1 transition-all duration-300">
+              <div className="w-14 h-14 rounded-2xl bg-brand-blue/5 flex items-center justify-center mb-6">
                 {item.icon}
               </div>
-              <h3 className="text-lg font-bold text-brand-blue-dark mb-2">{item.title}</h3>
-              <p className="text-xs text-slate-500 leading-relaxed">{item.desc}</p>
+              <h3 className="text-lg font-extrabold text-brand-blue-dark mb-3">{item.title}</h3>
+              <p className="text-xs text-slate-500 leading-relaxed font-semibold">{item.desc}</p>
             </div>
           ))}
         </div>
@@ -206,22 +205,22 @@ export default function HomePage() {
           {[
             {
               title: "Fruits",
-              img: "https://images.unsplash.com/photo-1619546813926-a78fa6372cd2?auto=format&fit=crop&w=600&q=80",
+              img: "/images/products/alphonso-mango.png",
               link: "/export-products?cat=fruits"
             },
             {
               title: "Vegetables",
-              img: "https://images.unsplash.com/photo-1597362925123-77861d3fbac7?auto=format&fit=crop&w=600&q=80",
+              img: "/images/products/onion.png",
               link: "/export-products?cat=vegetables"
             },
             {
               title: "Commodities & Grains",
-              img: "https://images.unsplash.com/photo-1586201375761-83865001e31c?auto=format&fit=crop&w=600&q=80",
+              img: "/images/products/sona-masuri-rice.png",
               link: "/export-products?cat=commodities"
             },
             {
               title: "Spices",
-              img: "https://images.unsplash.com/photo-1596797038530-2c107229654b?auto=format&fit=crop&w=600&q=80",
+              img: "/images/products/red-chilli.png",
               link: "/export-products?cat=spices"
             }
           ].map((item, idx) => (
@@ -255,32 +254,32 @@ export default function HomePage() {
             <h2 className="text-3xl font-extrabold text-brand-blue-dark tracking-tight">
               Mag7 Global – Your One-Stop Import-Export Partner
             </h2>
-            <p className="text-slate-600 text-sm leading-relaxed">
+            <p className="text-slate-600 text-sm leading-relaxed font-semibold">
               Navigating global trade can be challenging with complex regulations, unreliable networks, and delayed shipments. Mag7 Global simplifies your journey with complete transparency, swift response times, and a strong global network.
             </p>
-            <p className="text-slate-600 text-sm leading-relaxed">
-              With offices in <strong>Pune, Mumbai (Vashi Market), and Dubai</strong>, we provide seamless trade solutions for <strong>exporters, importers, local traders, wholesalers, and distributors.</strong> As an <strong>Integrated Service Provider</strong>, we handle everything from sourcing and documentation to logistics and compliance—ensuring a <strong>hassle-free, cost-effective, and efficient trade experience.</strong>
+            <p className="text-slate-600 text-sm leading-relaxed font-semibold">
+              With our office in <strong>Indore, Madhya Pradesh</strong>, we provide seamless trade solutions for <strong>exporters, importers, local traders, wholesalers, and distributors.</strong> As an <strong>Integrated Service Provider</strong>, we handle everything from sourcing and documentation to logistics and compliance—ensuring a <strong>hassle-free, cost-effective, and efficient trade experience.</strong>
             </p>
           </div>
-
+ 
           <div className="lg:col-span-7 grid grid-cols-1 sm:grid-cols-2 gap-4">
             {[
               { title: "Complete EXIM EcoSystem", desc: "Covers all trade requirements from documentation, logistics, custom clearance, and quality audits." },
               { title: "Direct Buying from Farmers & FPCs", desc: "Bypasses intermediary commissions ensuring competitive rates and farmers' fair payouts." },
-              { title: "Global Network", desc: "Offices in India and Dubai with established distributors in USA, UK, UAE, Canada, and Australia." },
+              { title: "Global Network", desc: "Based out of Indore with established distributors and trade connections across UAE, UK, USA, Canada, and Australia." },
               { title: "Trade Barrier Knowledge", desc: "Expertise in specific import protocols, pesticide residuals, MRL limits, and cold temperature standards." },
               { title: "Fair Margin Policy", desc: "Transparent markup rates with standard costs verified for exporters and importers alike." },
               { title: "Win - Win Trade", desc: "Fostering long-term agricultural trade relationship built on trust, consistency, and product purity." }
             ].map((item, idx) => (
-              <div key={idx} className="bg-slate-50 border border-slate-100 p-5 rounded-xl space-y-2">
+              <div key={idx} className="bg-white border border-slate-100 p-5 rounded-2xl space-y-2 shadow-sm hover:shadow-md transition-shadow duration-300">
                 <h4 className="font-extrabold text-brand-blue-dark text-sm flex items-center gap-2">
                   <CheckCircle2 className="w-4 h-4 text-brand-green shrink-0" /> {item.title}
                 </h4>
-                <p className="text-xs text-slate-500 leading-relaxed">{item.desc}</p>
+                <p className="text-xs text-slate-550 leading-relaxed font-medium">{item.desc}</p>
               </div>
             ))}
           </div>
-
+ 
         </div>
       </section>
 
@@ -288,16 +287,16 @@ export default function HomePage() {
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <h2 className="section-title">Top Export Products</h2>
         <div className="section-subtitle">Our Highest Quality Agricultural Deliveries</div>
-
+ 
         {/* Tab Filters */}
-        <div className="flex justify-center mb-8">
-          <div className="flex flex-wrap gap-2 bg-slate-100 p-1.5 rounded-xl text-xs font-bold text-slate-600">
+        <div className="flex justify-center mb-10">
+          <div className="flex flex-wrap gap-2 bg-slate-100 p-2 rounded-2xl text-xs font-bold text-slate-600 shadow-inner">
             {(["all", "fruits", "vegetables", "commodities", "spices"] as const).map((tab) => (
               <button
                 key={tab}
                 onClick={() => setActiveTab(tab)}
-                className={`px-4 py-2 rounded-lg transition-colors uppercase ${
-                  activeTab === tab ? "bg-brand-blue text-white" : "text-slate-600 hover:bg-slate-200"
+                className={`px-5 py-2.5 rounded-xl transition-all duration-300 uppercase tracking-wider font-extrabold cursor-pointer ${
+                  activeTab === tab ? "bg-brand-blue text-white shadow-md shadow-brand-blue/15" : "text-slate-600 hover:bg-slate-200"
                 }`}
               >
                 {tab}
@@ -305,40 +304,40 @@ export default function HomePage() {
             ))}
           </div>
         </div>
-
+ 
         {/* Product Grid */}
         <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
           {filteredExports.map((product) => (
             <div
               key={product.id}
-              className="bg-white border border-slate-100 rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition-shadow group flex flex-col justify-between"
+              className="bg-white border border-slate-100 rounded-3xl overflow-hidden shadow-sm hover:shadow-xl hover:shadow-slate-100/50 hover:-translate-y-1 transition-all duration-300 group flex flex-col justify-between"
             >
               <div>
-                <div className="relative h-40 w-full overflow-hidden">
+                <div className="relative h-44 w-full overflow-hidden">
                   <Image
                     src={product.image}
                     alt={product.name}
                     fill
                     sizes="(max-width: 768px) 50vw, 25vw"
-                    className="object-cover group-hover:scale-105 transition-transform duration-300"
+                    className="object-cover group-hover:scale-105 transition-transform duration-500"
                   />
                 </div>
-                <div className="p-4 space-y-2">
+                <div className="p-5 space-y-2">
                   <h3 className="font-extrabold text-brand-blue-dark text-sm sm:text-base leading-tight truncate">
                     {product.name}
                   </h3>
                 </div>
               </div>
-              <div className="px-4 pb-4 pt-2.5 border-t border-slate-50 flex items-center justify-between text-xs">
+              <div className="px-5 pb-5 pt-3 border-t border-slate-50 flex items-center justify-between text-xs">
                 <Link
                   href={`/export-products/${product.slug}`}
-                  className="text-brand-blue font-bold hover:underline flex items-center gap-0.5"
+                  className="text-brand-blue font-extrabold hover:underline flex items-center gap-0.5"
                 >
                   Details <ArrowUpRight className="w-3.5 h-3.5" />
                 </Link>
                 <button
                   onClick={() => openEnquiry(product.name)}
-                  className="text-brand-green hover:text-brand-green-dark font-extrabold"
+                  className="text-brand-green hover:text-brand-green-dark font-black tracking-wide uppercase hover:underline cursor-pointer"
                 >
                   Quote
                 </button>
@@ -346,45 +345,45 @@ export default function HomePage() {
             </div>
           ))}
         </div>
-
-        <div className="text-center mt-10">
-          <Link href="/export-products" className="btn-outline inline-flex items-center gap-2">
+ 
+        <div className="text-center mt-12">
+          <Link href="/export-products" className="btn-outline inline-flex items-center gap-2 font-extrabold text-xs uppercase tracking-wider">
             Check All Products <ArrowRight className="w-4 h-4" />
           </Link>
         </div>
       </section>
 
       {/* 7. Top Import Products Section */}
-      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 bg-slate-50 py-16 rounded-3xl border border-slate-100">
+      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 bg-white border border-slate-100 shadow-xl shadow-slate-100/50 py-16 rounded-3xl transition-all duration-300 hover:shadow-2xl hover:shadow-slate-200/30">
         <h2 className="section-title">Top Import Products</h2>
         <div className="section-subtitle">Delivering International Produce</div>
-
-        <div className="grid grid-cols-2 md:grid-cols-6 gap-6 px-4">
+ 
+        <div className="grid grid-cols-2 md:grid-cols-6 gap-6 px-6">
           {importProducts.map((product) => (
             <div
               key={product.id}
-              className="bg-white border border-slate-100 rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-shadow group text-center flex flex-col justify-between"
+              className="bg-slate-50 border border-slate-100 rounded-2xl overflow-hidden shadow-sm hover:shadow-xl hover:shadow-slate-200/50 hover:-translate-y-1 transition-all duration-300 group text-center flex flex-col justify-between"
             >
               <div>
-                <div className="relative h-32 w-full overflow-hidden">
+                <div className="relative h-36 w-full overflow-hidden">
                   <Image
                     src={product.image}
                     alt={product.name}
                     fill
                     sizes="(max-width: 640px) 50vw, 16vw"
-                    className="object-cover group-hover:scale-105 transition-transform duration-300"
+                    className="object-cover group-hover:scale-105 transition-transform duration-500"
                   />
                 </div>
-                <div className="p-3">
+                <div className="p-4">
                   <h3 className="font-extrabold text-brand-blue-dark text-xs sm:text-sm truncate">
                     {product.name}
                   </h3>
                 </div>
               </div>
-              <div className="pb-3 pt-1">
+              <div className="pb-4 pt-1">
                 <button
                   onClick={() => openEnquiry(`Import: ${product.name}`)}
-                  className="text-brand-green hover:text-brand-green-dark text-xs font-bold hover:underline block mx-auto"
+                  className="text-brand-green hover:text-brand-green-dark text-xs font-black tracking-wide uppercase hover:underline cursor-pointer"
                 >
                   Make Enquiry
                 </button>
@@ -396,21 +395,21 @@ export default function HomePage() {
 
       {/* 8. CTA Ribbon */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="bg-brand-blue-dark text-white p-8 md:p-12 rounded-3xl flex flex-col md:flex-row items-center justify-between gap-6 shadow-md border border-brand-green/20 relative overflow-hidden">
+        <div className="bg-brand-blue-dark text-white p-8 md:p-14 rounded-3xl flex flex-col md:flex-row items-center justify-between gap-8 shadow-xl shadow-brand-blue/15 border border-brand-blue/30 relative overflow-hidden">
           {/* Subtle flat yellow accent badge in the background */}
-          <div className="absolute top-0 right-0 w-24 h-24 bg-brand-yellow/10 rounded-full translate-x-12 -translate-y-12"></div>
+          <div className="absolute top-0 right-0 w-32 h-32 bg-brand-yellow/10 rounded-full translate-x-12 -translate-y-12"></div>
           
-          <div className="space-y-2 text-center md:text-left z-10">
-            <h3 className="text-xl md:text-2xl font-black">
+          <div className="space-y-3 text-center md:text-left z-10">
+            <h3 className="text-xl md:text-3xl font-extrabold tracking-tight">
               Looking for a trusted agricultural supply & export partner?
             </h3>
-            <p className="text-slate-300 text-sm">
+            <p className="text-slate-355 text-xs sm:text-sm font-medium">
               Let's grow your import-export operations together with premium Nashik and Pollachi produce.
             </p>
           </div>
           <button
             onClick={() => openEnquiry("General Requirement")}
-            className="bg-brand-green text-white hover:bg-brand-green-dark font-extrabold px-8 py-3.5 rounded-xl shadow-sm transition-all shrink-0 text-sm z-10"
+            className="bg-brand-green hover:bg-brand-green-dark text-white font-extrabold px-8 py-4 rounded-2xl shadow-lg shadow-brand-green/20 hover:shadow-brand-green/35 hover:-translate-y-0.5 transition-all duration-300 shrink-0 text-xs uppercase tracking-wider cursor-pointer z-10"
           >
             Share Your Requirement Today
           </button>

@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&display=swap');
 @import url('https://fonts.googleapis.com/css?family=Barlow:200,400,500,600,700,900&display=swap');
 
 @tailwind base;
@@ -6,8 +7,8 @@
 
 @layer base {
   :root {
-    --font-sans: 'Barlow', sans-serif;
-    --font-heading: 'Barlow', sans-serif;
+    --font-sans: 'Outfit', 'Barlow', sans-serif;
+    --font-heading: 'Outfit', 'Barlow', sans-serif;
   }
   
   html {
@@ -18,35 +19,36 @@
   
   @media (min-width: 768px) {
     html {
-      font-size: 21px;
+      font-size: 20px;
     }
   }
 
   body {
-    background-color: #ffffff;
+    background-color: #fafbfc;
     color: #0f172a;
+    -webkit-font-smoothing: antialiased;
   }
 }
 
 @layer components {
   .btn-primary {
-    @apply bg-brand-blue hover:bg-brand-blue-dark text-white font-semibold py-2.5 px-6 rounded-xl transition-all duration-300 shadow-sm hover:shadow flex items-center justify-center gap-2;
+    @apply bg-brand-blue hover:bg-brand-blue-dark text-white font-bold py-3 px-6 rounded-2xl transition-all duration-300 shadow-md shadow-brand-blue/15 hover:shadow-lg hover:shadow-brand-blue/30 hover:-translate-y-0.5 flex items-center justify-center gap-2 active:translate-y-0 cursor-pointer;
   }
 
   .btn-outline {
-    @apply border border-brand-blue text-brand-blue hover:bg-brand-blue hover:text-white font-semibold py-2.5 px-6 rounded-xl transition-all duration-300 flex items-center justify-center gap-2;
+    @apply border border-slate-200 bg-white/80 backdrop-blur text-brand-blue-dark hover:bg-slate-50 font-bold py-3 px-6 rounded-2xl transition-all duration-300 hover:border-slate-300 hover:shadow-md hover:shadow-slate-100 flex items-center justify-center gap-2 cursor-pointer;
   }
 
   .glass-card {
-    @apply bg-white border border-slate-100 shadow-sm rounded-2xl;
+    @apply bg-white/70 backdrop-blur-lg border border-white/60 shadow-lg shadow-slate-100/50 rounded-3xl transition-all duration-300 hover:shadow-xl hover:shadow-slate-200/50 hover:border-white/90;
   }
 
   .section-title {
-    @apply text-2xl md:text-3xl font-black text-brand-blue-dark text-center mb-2;
+    @apply text-3xl md:text-4xl font-extrabold text-brand-blue-dark text-center mb-3 tracking-tight;
   }
 
   .section-subtitle {
-    @apply text-brand-green text-xs md:text-sm uppercase tracking-widest font-extrabold text-center mb-10;
+    @apply text-brand-green text-xs md:text-sm uppercase tracking-widest font-black text-center mb-10;
   }
 }
 
@@ -65,11 +67,34 @@
   background: #002868;
 }
 
-/* Banner overlay styles */
-.banner-overlay {
-  background-color: rgba(15, 23, 42, 0.8);
+/* Custom effects */
+.glow-spot {
+  background: none;
 }
 
-.timeline-line {
-  background-color: #004aad;
+.text-gradient {
+  @apply text-brand-blue-dark;
+}
+
+.text-gradient-green {
+  @apply text-brand-green-dark;
+}
+
+/* Animation utilities */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.animate-fadeIn {
+  animation: fadeIn 0.5s ease-out forwards;
+}
+
+@keyframes slideIn {
+  from { opacity: 0; transform: translateX(-15px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+.animate-slideIn {
+  animation: slideIn 0.4s ease-out forwards;
 }

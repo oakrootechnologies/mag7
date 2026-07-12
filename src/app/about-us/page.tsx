@@ -49,8 +49,8 @@ export default function AboutUsPage() {
           
           <div className="relative h-96 w-full rounded-3xl overflow-hidden shadow-sm border border-slate-100">
             <Image
-              src="https://images.unsplash.com/photo-1599940824399-b87987ceb72a?auto=format&fit=crop&w=800&q=80"
-              alt="Fresh ginger and agricultural sourcing"
+              src="https://images.unsplash.com/photo-1500937386664-56d1dfef3854?auto=format&fit=crop&w=800&q=80"
+              alt="Indian agricultural fields and sourcing"
               fill
               sizes="(max-width: 1024px) 100vw, 50vw"
               className="object-cover"
@@ -90,9 +90,9 @@ export default function AboutUsPage() {
             <div className="w-14 h-14 bg-brand-green/10 rounded-full flex items-center justify-center mx-auto text-brand-green">
               <ShieldCheck className="w-7 h-7" />
             </div>
-            <h3 className="text-lg font-bold text-brand-blue-dark">Core Values</h3>
+            <h3 className="text-lg font-bold text-brand-blue-dark">Our Values</h3>
             <p className="text-xs text-slate-500 leading-relaxed">
-              Integrity in specifications, absolute transparency in margins, rigorous food-safety compliance, and relationship-driven trade.
+              Uncompromising quality control, customer-first service speed, trade transparency, and eco-friendly farming practices.
             </p>
           </div>
 
@@ -128,41 +128,52 @@ export default function AboutUsPage() {
 
       {/* Sourcing Offices Presence */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <h2 className="section-title">Our Offices & Presence</h2>
-        <div className="section-subtitle">Managing logistics locally in three trade hubs</div>
+        <h2 className="section-title">Our Office & Presence</h2>
+        <div className="section-subtitle">Delivering global quality from the heart of India</div>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {[
             {
-              flag: "🇮🇳",
-              office: "Mag7 Global LLP (Pune Sourcing)",
-              address: "Prabhat Rd, Pune, India",
-              contact: "+91 963 777 0010"
-            },
-            {
-              flag: "🇮🇳",
-              office: "Mag7 Global LLP (Navi Mumbai APMC)",
-              address: "511 A, 5th Flr, Groma House, Sector 19 – APMC Market, Vashi Navi Mumbai 400703",
-              contact: "+91 9226 279 066"
-            },
-            {
-              flag: "🇦🇪",
-              office: "Mag7 LLC-FZ (Dubai Import Office)",
-              address: "Office no-2, Unique time business center, 1st floor union coop market, Al Aweer market Dubai UAE",
-              contact: "+971 582 648 383"
+              office: "Mag7 Global (India HQ)",
+              address: "Treasure Fantasy, Indore, Madhya Pradesh, India",
+              contact: "+91 79873 84443",
+              email: "info@mag7global.com",
+              gstin: "23AABCM8734P1ZX (Applied)",
+              iec: "0326094443 (Applied)"
             }
           ].map((item, idx) => (
             <div key={idx} className="bg-white border border-slate-100 p-6 rounded-2xl shadow-sm space-y-4">
               <div className="flex items-center gap-3">
-                <span className="text-4xl">{item.flag}</span>
+                <div className="w-12 h-8 rounded-lg overflow-hidden border border-slate-200 shadow-sm shrink-0 flex items-center justify-center bg-white">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 225 150" className="w-full h-full object-cover">
+                    <rect width="225" height="50" fill="#FF9933"/>
+                    <rect y="50" width="225" height="50" fill="#ffffff"/>
+                    <rect y="100" width="225" height="50" fill="#138808"/>
+                    <circle cx="112.5" cy="75" r="15" fill="none" stroke="#000080" stroke-width="2"/>
+                    <circle cx="112.5" cy="75" r="3" fill="#000080"/>
+                    <line x1="112.5" y1="60" x2="112.5" y2="90" stroke="#000080" stroke-width="1"/>
+                    <line x1="97.5" y1="75" x2="127.5" y2="75" stroke="#000080" stroke-width="1"/>
+                    <line x1="101.9" y1="64.4" x2="123.1" y2="85.6" stroke="#000080" stroke-width="1"/>
+                    <line x1="101.9" y1="85.6" x2="123.1" y2="64.4" stroke="#000080" stroke-width="1"/>
+                  </svg>
+                </div>
                 <div>
                   <h4 className="font-extrabold text-brand-blue-dark text-sm sm:text-base">{item.office}</h4>
-                  <p className="text-xs text-slate-400 font-bold uppercase tracking-wider">Trading Hub</p>
+                  <p className="text-xs text-slate-400 font-bold uppercase tracking-wider">Headquarters</p>
                 </div>
               </div>
               <p className="text-xs text-slate-500 leading-relaxed">{item.address}</p>
-              <div className="flex items-center gap-2 pt-2 text-xs text-brand-blue-dark font-bold border-t border-slate-50">
-                <Phone className="w-3.5 h-3.5 text-brand-green" /> {item.contact}
+              <div className="flex flex-col gap-1.5 pt-3 text-xs text-brand-blue-dark font-bold border-t border-slate-50">
+                <div className="flex items-center gap-2">
+                  <Phone className="w-3.5 h-3.5 text-brand-green" /> {item.contact}
+                </div>
+                <div className="flex items-center gap-2">
+                  <span className="text-brand-green font-bold text-xs">✉</span> {item.email}
+                </div>
+                <div className="text-[10px] text-slate-400 mt-1 space-y-0.5 pt-1.5 border-t border-slate-50">
+                  <div><span className="text-brand-blue font-bold">GSTIN:</span> {item.gstin}</div>
+                  <div><span className="text-brand-blue font-bold">IEC:</span> {item.iec}</div>
+                </div>
               </div>
             </div>
           ))}
