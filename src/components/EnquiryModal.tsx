@@ -28,7 +28,7 @@ export default function EnquiryModal({ isOpen, onClose, selectedProduct = "" }: 
 
   if (!isOpen) return null;
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!firstName || !lastName || !phone) {
       setError("Please fill in all required fields.");
@@ -70,10 +70,11 @@ export default function EnquiryModal({ isOpen, onClose, selectedProduct = "" }: 
     };
 
     try {
-      const existing = localStorage.getItem("rfq_leads");
-      const leads = existing ? JSON.parse(existing) : [];
-      leads.unshift(newLead);
-      localStorage.setItem("rfq_leads", JSON.stringify(leads));
+      await fetch('/api/leads', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(newLead)
+      });
     } catch (err) {
       console.error("Failed to save lead in EnquiryModal:", err);
     }

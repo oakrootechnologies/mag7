@@ -119,7 +119,7 @@ export default function RFQPage() {
     return prod ? prod.name : id;
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setError("");
 
@@ -157,10 +157,11 @@ export default function RFQPage() {
     };
 
     try {
-      const existing = localStorage.getItem("rfq_leads");
-      const leads = existing ? JSON.parse(existing) : [];
-      leads.unshift(newLead);
-      localStorage.setItem("rfq_leads", JSON.stringify(leads));
+      await fetch('/api/leads', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(newLead)
+      });
     } catch (err) {
       console.error("Failed to save lead:", err);
     }

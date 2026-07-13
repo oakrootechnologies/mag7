@@ -84,16 +84,23 @@ export default function AdminPage() {
     loadLeads();
   }, []);
 
-  const loadLeads = () => {
+  const loadLeads = async () => {
     try {
-      const stored = localStorage.getItem("rfq_leads");
-      if (stored) {
-        setLeads(JSON.parse(stored));
+      const res = await fetch('/api/leads');
+      if (res.ok) {
+        const data = await res.json();
+        // Map Sanity _id and _createdAt to expected id and date
+        const formattedLeads = data.map((item: any) => ({
+          ...item,
+          id: item._id,
+          date: item.date || item._createdAt
+        }));
+        setLeads(formattedLeads);
       } else {
         setLeads([]);
       }
     } catch (err) {
-      console.error("Failed to load leads from localStorage:", err);
+      console.error("Failed to load leads from API:", err);
     }
   };
 
@@ -120,27 +127,39 @@ export default function AdminPage() {
     setPassword("");
   };
 
-  const updateLeadStatus = (leadId: string, newStatus: "Pending" | "Quoted" | "Closed") => {
-    const updated = leads.map(l => {
-      if (l.id === leadId) {
-        return { ...l, status: newStatus };
+  const updateLeadStatus = async (leadId: string, newStatus: "Pending" | "Quoted" | "Closed") => {
+    try {
+      const res = await fetch(`/api/leads/${leadId}`, {
+        method: 'PATCH',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ status: newStatus })
+      });
+
+      if (res.ok) {
+        const updated = leads.map(l => l.id === leadId ? { ...l, status: newStatus } : l);
+        setLeads(updated);
+        if (selectedLead && selectedLead.id === leadId) {
+          setSelectedLead({ ...selectedLead, status: newStatus });
+        }
       }
-      return l;
-    });
-    setLeads(updated);
-    localStorage.setItem("rfq_leads", JSON.stringify(updated));
-    if (selectedLead && selectedLead.id === leadId) {
-      setSelectedLead({ ...selectedLead, status: newStatus });
+    } catch (error) {
+      console.error("Failed to update lead status:", error);
     }
   };
 
-  const handleDeleteLead = (leadId: string) => {
+  const handleDeleteLead = async (leadId: string) => {
     if (confirm("Are you sure you want to delete this RFQ lead permanently?")) {
-      const filtered = leads.filter(l => l.id !== leadId);
-      setLeads(filtered);
-      localStorage.setItem("rfq_leads", JSON.stringify(filtered));
-      if (selectedLead && selectedLead.id === leadId) {
-        setSelectedLead(null);
+      try {
+        const res = await fetch(`/api/leads/${leadId}`, { method: 'DELETE' });
+        if (res.ok) {
+          const filtered = leads.filter(l => l.id !== leadId);
+          setLeads(filtered);
+          if (selectedLead && selectedLead.id === leadId) {
+            setSelectedLead(null);
+          }
+        }
+      } catch (error) {
+        console.error("Failed to delete lead:", error);
       }
     }
   };
