@@ -102,7 +102,7 @@ export default function AdminPage() {
     setLoginError("");
     
     // Default credentials
-    if (username === "Admin@Mag7global" && password === "Mag7#Secured$Complex%Admin@2026!") {
+    if ((username === "gs06152@gmail.com" || username === "Ms.rajawat1986@gmail.com") && password === "Mag7#Secured$Complex%Admin@2026!") {
       setIsLoggedIn(true);
       sessionStorage.setItem("admin_authenticated", "true");
     } else {
