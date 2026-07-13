@@ -3,6 +3,7 @@
 import React, { useState, useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
+import { motion } from "framer-motion";
 import { 
   ArrowRight, 
   MapPin, 
@@ -156,13 +157,23 @@ export default function HomePage() {
       </section>
 
       {/* 3. We Are Experts Of Section */}
-      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <h2 className="section-title">We Are Experts Of...</h2>
-        <p className="text-center text-slate-500 text-sm max-w-xl mx-auto mb-12">
-          Leveraging standardized pipelines to ensure agricultural produce reaches foreign markets in peak quality.
-        </p>
+      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 md:py-16 relative overflow-hidden">
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[60rem] h-[60rem] bg-brand-blue/5 rounded-full blur-[120px] pointer-events-none -z-10"></div>
+        
+        <motion.div 
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          className="text-center mb-16"
+        >
+          <h2 className="inline-block bg-brand-blue/5 text-brand-blue-dark font-extrabold text-xs tracking-widest uppercase px-5 py-2 rounded-full mb-4">Our Core Strengths</h2>
+          <h3 className="text-3xl md:text-5xl font-black text-brand-blue-dark tracking-tight mb-4">We Are <span className="text-brand-blue">Experts</span> Of...</h3>
+          <p className="text-slate-500 text-sm max-w-xl mx-auto font-medium">
+            Leveraging standardized pipelines to ensure agricultural produce reaches foreign markets in peak quality.
+          </p>
+        </motion.div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8">
           {[
             {
               icon: <Users className="w-8 h-8 text-brand-blue" />,
@@ -175,23 +186,32 @@ export default function HomePage() {
               desc: "Hygienic sorting, sizing, and packaging in export-grade corrugated boxes or mesh bags tailored to product transit times."
             },
             {
-              icon: <Compass className="w-8 h-8 text-brand-blue" />,
+              icon: <Compass className="w-8 h-8 text-amber-500" />,
               title: "Logistics",
               desc: "Complete cold chain control with reefer container shipments (13C for bananas, 1C for apples) ensuring pristine delivery."
             },
             {
-              icon: <Globe2 className="w-8 h-8 text-brand-green" />,
+              icon: <Globe2 className="w-8 h-8 text-brand-blue-dark" />,
               title: "Export Compliance",
               desc: "End-to-end documentation, custom clearance at JNPT Port, and compliance with APEDA, FSSAI, and importing customs."
             }
           ].map((item, idx) => (
-            <div key={idx} className="bg-white border border-slate-100 p-8 rounded-3xl shadow-sm hover:shadow-xl hover:shadow-slate-100/80 hover:-translate-y-1 transition-all duration-300">
-              <div className="w-14 h-14 rounded-2xl bg-brand-blue/5 flex items-center justify-center mb-6">
+            <motion.div 
+              key={idx}
+              initial={{ opacity: 0, y: 40 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-50px" }}
+              transition={{ duration: 0.5, delay: idx * 0.1 }}
+              className={`group relative bg-white border border-slate-100 p-8 rounded-[2rem] shadow-sm hover:shadow-2xl hover:-translate-y-2 transition-all duration-500 overflow-hidden ${idx % 2 === 1 ? 'lg:mt-12' : ''}`}
+            >
+              <div className="absolute top-0 right-0 w-32 h-32 bg-slate-50 rounded-bl-full -mr-8 -mt-8 transition-transform duration-500 group-hover:scale-150 group-hover:bg-brand-blue/5"></div>
+              
+              <div className="relative z-10 w-16 h-16 rounded-2xl bg-white border border-slate-100 shadow-sm flex items-center justify-center mb-6 group-hover:scale-110 group-hover:-rotate-3 transition-transform duration-500">
                 {item.icon}
               </div>
-              <h3 className="text-lg font-extrabold text-brand-blue-dark mb-3">{item.title}</h3>
-              <p className="text-xs text-slate-500 leading-relaxed font-semibold">{item.desc}</p>
-            </div>
+              <h3 className="relative z-10 text-xl font-extrabold text-brand-blue-dark mb-3 group-hover:text-brand-blue transition-colors">{item.title}</h3>
+              <p className="relative z-10 text-sm text-slate-500 leading-relaxed font-medium">{item.desc}</p>
+            </motion.div>
           ))}
         </div>
       </section>

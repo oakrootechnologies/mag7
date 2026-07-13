@@ -444,13 +444,12 @@ export default function AdminPage() {
 
             </div>
           </div>
-
           {/* Datatable Card */}
           <div className="bg-white border border-slate-100 rounded-3xl shadow-sm overflow-hidden">
             
             <div className="overflow-x-auto">
               <table className="w-full border-collapse text-left text-xs">
-                <thead>
+                <thead className="hidden xl:table-header-group">
                   <tr className="bg-slate-50 border-b border-slate-100 text-slate-400 font-bold uppercase tracking-wider">
                     <th className="px-6 py-4">ID / Date</th>
                     <th className="px-6 py-4">Buyer & Company</th>
@@ -470,33 +469,49 @@ export default function AdminPage() {
                     </tr>
                   ) : (
                     filteredLeads.map(lead => (
-                      <tr key={lead.id} className="hover:bg-slate-50/50 transition-colors">
-                        <td className="px-6 py-4">
-                          <span className="font-bold text-slate-800">{lead.id}</span>
-                          <span className="block text-[10px] text-slate-400 mt-0.5">
-                            {new Date(lead.date).toLocaleDateString()}
-                          </span>
+                      <tr key={lead.id} className="hover:bg-slate-50/50 transition-colors flex flex-col xl:table-row p-4 xl:p-0 border-b-4 border-slate-100 xl:border-b-0">
+                        <td className="px-2 py-2 xl:px-6 xl:py-4 flex justify-between xl:table-cell border-b border-slate-100 xl:border-0">
+                          <div className="xl:hidden font-bold text-slate-400 uppercase text-[10px] self-center">ID / Date</div>
+                          <div className="text-right xl:text-left">
+                            <span className="font-bold text-slate-800">{lead.id}</span>
+                            <span className="block text-[10px] text-slate-400 mt-0.5">
+                              {new Date(lead.date).toLocaleDateString()}
+                            </span>
+                          </div>
                         </td>
-                        <td className="px-6 py-4">
-                          <span className="font-bold text-brand-blue-dark block">{lead.fullName}</span>
-                          <span className="text-[10px] text-slate-400 block">{lead.designation}</span>
-                          <span className="text-slate-600 block">{lead.companyName}</span>
+                        <td className="px-2 py-2 xl:px-6 xl:py-4 flex justify-between xl:table-cell border-b border-slate-100 xl:border-0">
+                          <div className="xl:hidden font-bold text-slate-400 uppercase text-[10px] self-center">Buyer & Company</div>
+                          <div className="text-right xl:text-left">
+                            <span className="font-bold text-brand-blue-dark block">{lead.fullName}</span>
+                            <span className="text-[10px] text-slate-400 block">{lead.designation}</span>
+                            <span className="text-slate-600 block text-xs">{lead.companyName}</span>
+                          </div>
                         </td>
-                        <td className="px-6 py-4">
-                          <span className="font-bold text-brand-green block">{getProductName(lead.productId)}</span>
-                          <span className="text-[10px] text-slate-400 block truncate max-w-[150px]">{lead.qualitySpecs}</span>
+                        <td className="px-2 py-2 xl:px-6 xl:py-4 flex flex-col sm:flex-row justify-between xl:table-cell border-b border-slate-100 xl:border-0 gap-1 sm:gap-0">
+                          <div className="xl:hidden font-bold text-slate-400 uppercase text-[10px]">Product & Specs</div>
+                          <div className="text-left sm:text-right xl:text-left">
+                            <span className="font-bold text-brand-green block">{getProductName(lead.productId)}</span>
+                            <span className="text-[10px] text-slate-400 block truncate max-w-full xl:max-w-[150px]">{lead.qualitySpecs}</span>
+                          </div>
                         </td>
-                        <td className="px-6 py-4">
-                          <span className="font-bold text-slate-800">{lead.quantity} {lead.quantityUnit}</span>
-                          <span className="text-[10px] bg-slate-100 text-slate-600 px-1.5 py-0.5 rounded font-bold mt-1 inline-block">
-                            {lead.incoterm}
-                          </span>
+                        <td className="px-2 py-2 xl:px-6 xl:py-4 flex justify-between xl:table-cell border-b border-slate-100 xl:border-0">
+                          <div className="xl:hidden font-bold text-slate-400 uppercase text-[10px] self-center">Quantity</div>
+                          <div className="text-right xl:text-left">
+                            <span className="font-bold text-slate-800 block">{lead.quantity} {lead.quantityUnit}</span>
+                            <span className="text-[10px] bg-slate-100 text-slate-600 px-1.5 py-0.5 rounded font-bold mt-1 inline-block">
+                              {lead.incoterm}
+                            </span>
+                          </div>
                         </td>
-                        <td className="px-6 py-4">
-                          <span className="font-bold text-slate-800 block">{lead.destinationPort}</span>
-                          <span className="text-[10px] text-slate-400 block">{lead.destinationCountry}</span>
+                        <td className="px-2 py-2 xl:px-6 xl:py-4 flex justify-between xl:table-cell border-b border-slate-100 xl:border-0">
+                          <div className="xl:hidden font-bold text-slate-400 uppercase text-[10px] self-center">Destination</div>
+                          <div className="text-right xl:text-left">
+                            <span className="font-bold text-slate-800 block">{lead.destinationPort}</span>
+                            <span className="text-[10px] text-slate-400 block">{lead.destinationCountry}</span>
+                          </div>
                         </td>
-                        <td className="px-6 py-4 text-center">
+                        <td className="px-2 py-3 xl:px-6 xl:py-4 flex justify-between xl:table-cell xl:text-center items-center border-b border-slate-100 xl:border-0">
+                          <div className="xl:hidden font-bold text-slate-400 uppercase text-[10px]">Status</div>
                           <span className={`px-2.5 py-1 rounded-full text-[10px] font-bold inline-block border ${
                             lead.status === "Pending" 
                               ? "bg-amber-50 text-amber-700 border-amber-100" 
@@ -507,21 +522,24 @@ export default function AdminPage() {
                             {lead.status}
                           </span>
                         </td>
-                        <td className="px-6 py-4 text-right space-x-2 whitespace-nowrap">
-                          <button
-                            onClick={() => setSelectedLead(lead)}
-                            className="bg-slate-100 text-slate-600 hover:bg-slate-200 p-2 rounded-lg transition-colors inline-flex items-center justify-center"
-                            title="View Details"
-                          >
-                            <Eye className="w-3.5 h-3.5" />
-                          </button>
-                          <button
-                            onClick={() => handleDeleteLead(lead.id)}
-                            className="bg-red-50 text-red-600 hover:bg-red-100 p-2 rounded-lg transition-colors inline-flex items-center justify-center"
-                            title="Delete Lead"
-                          >
-                            <Trash2 className="w-3.5 h-3.5" />
-                          </button>
+                        <td className="px-2 py-3 xl:px-6 xl:py-4 flex justify-between xl:justify-end xl:table-cell xl:text-right items-center bg-slate-50 xl:bg-transparent rounded-b-xl xl:rounded-none">
+                           <div className="xl:hidden font-bold text-slate-400 uppercase text-[10px]">Actions</div>
+                           <div className="space-x-3 xl:space-x-2 whitespace-nowrap flex">
+                            <button
+                              onClick={() => setSelectedLead(lead)}
+                              className="bg-white xl:bg-slate-100 border border-slate-200 xl:border-transparent text-slate-600 hover:bg-slate-200 p-2.5 xl:p-2 rounded-lg transition-colors flex items-center justify-center gap-1.5 shadow-sm xl:shadow-none font-bold text-[10px] xl:text-xs"
+                              title="View Details"
+                            >
+                              <Eye className="w-4 h-4 xl:w-3.5 xl:h-3.5" /> <span className="xl:hidden">View</span>
+                            </button>
+                            <button
+                              onClick={() => handleDeleteLead(lead.id)}
+                              className="bg-white xl:bg-red-50 border border-red-200 xl:border-transparent text-red-600 hover:bg-red-100 p-2.5 xl:p-2 rounded-lg transition-colors flex items-center justify-center gap-1.5 shadow-sm xl:shadow-none font-bold text-[10px] xl:text-xs"
+                              title="Delete Lead"
+                            >
+                              <Trash2 className="w-4 h-4 xl:w-3.5 xl:h-3.5" /> <span className="xl:hidden">Delete</span>
+                            </button>
+                          </div>
                         </td>
                       </tr>
                     ))
@@ -529,7 +547,6 @@ export default function AdminPage() {
                 </tbody>
               </table>
             </div>
-
           </div>
 
           {/* Details Modal */}
@@ -673,27 +690,27 @@ export default function AdminPage() {
                 </div>
 
                 {/* Footer buttons */}
-                <div className="flex items-center justify-between px-6 py-4 bg-slate-50 border-t border-slate-100">
+                <div className="flex flex-col sm:flex-row items-center justify-between px-6 py-4 bg-slate-50 border-t border-slate-100 gap-4 sm:gap-0">
                   <button
                     onClick={() => handleDeleteLead(selectedLead.id)}
-                    className="flex items-center gap-1 text-xs font-bold text-red-600 bg-red-50 hover:bg-red-100 px-4 py-2.5 rounded-xl transition-colors"
+                    className="flex items-center justify-center w-full sm:w-auto gap-1 text-xs font-bold text-red-600 bg-red-50 hover:bg-red-100 px-4 py-3.5 sm:py-2.5 rounded-xl transition-colors order-2 sm:order-1 border border-red-100 sm:border-transparent shadow-sm sm:shadow-none"
                   >
-                    <Trash2 className="w-3.5 h-3.5" /> Delete permanently
+                    <Trash2 className="w-4 h-4 sm:w-3.5 sm:h-3.5" /> Delete permanently
                   </button>
                   
-                  <div className="flex items-center gap-3">
-                    <a
-                      href={`mailto:${selectedLead.email}?subject=Mag7%20Global%20RFQ%20Inquiry%20%5B${selectedLead.id}%5D&body=Hello%20${encodeURIComponent(selectedLead.fullName)}%2C%0A%0AThank%20you%20for%20submitting%20your%20RFQ%20for%20${encodeURIComponent(getProductName(selectedLead.productId))}.%20Our%20trade%20department%20has%20reviewed%20your%20commercial%20terms.`}
-                      className="bg-brand-blue hover:bg-brand-blue-dark text-white font-bold py-2.5 px-4 rounded-xl text-xs flex items-center justify-center gap-1.5 transition-colors"
-                    >
-                      Reply by Email
-                    </a>
+                  <div className="flex flex-col sm:flex-row items-center gap-3 w-full sm:w-auto order-1 sm:order-2">
                     <button
                       onClick={() => setSelectedLead(null)}
-                      className="bg-slate-200 hover:bg-slate-300 text-slate-700 font-bold py-2.5 px-4 rounded-xl text-xs transition-colors"
+                      className="bg-slate-200 hover:bg-slate-300 text-slate-700 font-bold py-3.5 sm:py-2.5 px-4 rounded-xl text-xs transition-colors w-full sm:w-auto order-2 sm:order-1"
                     >
                       Close Details
                     </button>
+                    <a
+                      href={`mailto:${selectedLead.email}?subject=Mag7%20Global%20RFQ%20Inquiry%20%5B${selectedLead.id}%5D&body=Hello%20${encodeURIComponent(selectedLead.fullName)}%2C%0A%0AThank%20you%20for%20submitting%20your%20RFQ%20for%20${encodeURIComponent(getProductName(selectedLead.productId))}.%20Our%20trade%20department%20has%20reviewed%20your%20commercial%20terms.`}
+                      className="bg-brand-blue hover:bg-brand-blue-dark text-white font-bold py-3.5 sm:py-2.5 px-4 rounded-xl text-xs flex items-center justify-center gap-1.5 transition-colors w-full sm:w-auto order-1 sm:order-2 shadow-sm"
+                    >
+                      Reply by Email
+                    </a>
                   </div>
                 </div>
 
