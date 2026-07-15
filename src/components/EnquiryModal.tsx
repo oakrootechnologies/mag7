@@ -100,7 +100,7 @@ export default function EnquiryModal({ isOpen, onClose, selectedProduct = "" }: 
         {/* Header */}
         <div className="flex items-center justify-between px-6 py-4 border-b border-gray-100 bg-brand-blue-dark text-white">
           <h3 className="text-xl font-bold">Make An Enquiry</h3>
-          <button onClick={onClose} className="p-1 hover:bg-white/10 rounded-full transition-colors">
+          <button onClick={onClose} className="p-1 hover:bg-white/10 rounded-none transition-colors">
             <X className="w-6 h-6" />
           </button>
         </div>

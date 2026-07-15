@@ -268,13 +268,13 @@ Sent via mag7global.com RFQ portal`;
                     href={generateWhatsAppMessage()}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="w-full sm:w-auto bg-[#25D366] hover:bg-[#20ba5a] text-white font-semibold py-3 px-6 rounded-xl transition-all duration-300 shadow-md hover:shadow-lg flex items-center justify-center gap-2 text-sm"
+                    className="w-full sm:w-auto bg-[#25D366] hover:bg-[#20ba5a] text-white font-semibold py-3 px-6 rounded-none transition-all duration-300 shadow-md hover:shadow-lg flex items-center justify-center gap-2 text-sm"
                   >
                     <MessageCircle className="w-5 h-5 fill-white" /> Speed Up via WhatsApp
                   </a>
                   <button
                     onClick={handleReset}
-                    className="w-full sm:w-auto border border-slate-300 hover:bg-slate-50 text-slate-700 font-bold py-3 px-6 rounded-xl transition-all duration-300 text-sm"
+                    className="w-full sm:w-auto border border-slate-300 hover:bg-slate-50 text-slate-700 font-bold py-3 px-6 rounded-none transition-all duration-300 text-sm"
                   >
                     Submit Another Request
                   </button>
@@ -415,7 +415,7 @@ Sent via mag7global.com RFQ portal`;
                   <div className="pt-4 border-t border-slate-100 flex justify-end">
                     <button
                       type="submit"
-                      className="bg-brand-green hover:bg-brand-green-dark text-white font-bold py-2.5 px-6 rounded-xl transition-all duration-300 shadow-sm hover:shadow flex items-center justify-center gap-1.5 text-xs cursor-pointer"
+                      className="bg-brand-green hover:bg-brand-green-dark text-white font-bold py-2.5 px-6 rounded-none transition-all duration-300 shadow-sm hover:shadow flex items-center justify-center gap-1.5 text-xs cursor-pointer"
                     >
                       <Send className="w-4 h-4" /> Submit Sourcing RFQ
                     </button>

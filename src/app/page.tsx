@@ -107,7 +107,7 @@ export default function HomePage() {
                   <Link href={`/export-products/${slide.product}`} className="btn-primary text-xs tracking-wider uppercase font-extrabold">
                     View Details
                   </Link>
-                  <button onClick={() => openEnquiry(slide.text)} className="border border-white/60 bg-white/10 hover:bg-white text-white hover:text-brand-blue-dark py-3 px-6 rounded-xl transition-all duration-300 font-extrabold text-xs tracking-wider uppercase backdrop-blur-sm cursor-pointer">
+                  <button onClick={() => openEnquiry(slide.text)} className="border border-white/60 bg-white/10 hover:bg-white text-white hover:text-brand-blue-dark py-3 px-6 rounded-none transition-all duration-300 font-extrabold text-xs tracking-wider uppercase backdrop-blur-sm cursor-pointer">
                     Get Quote
                   </button>
                 </div>
@@ -138,7 +138,7 @@ export default function HomePage() {
               alt="Mag7 Global Logo"
               width={100}
               height={100}
-              className="object-contain bg-white p-2 rounded-xl shadow-sm border border-slate-100 h-24 w-24"
+              className="object-contain bg-white p-2 rounded-none shadow-sm border border-slate-100 h-24 w-24"
             />
           </div>
           
@@ -257,7 +257,7 @@ export default function HomePage() {
                 className="object-cover group-hover:scale-110 transition-transform duration-500"
               />
               <div className="absolute inset-0 bg-slate-900/35" />
-              <div className="relative z-10 flex items-center justify-between w-full bg-brand-blue-dark/85 backdrop-blur-sm p-3.5 rounded-lg border border-white/10 text-white">
+              <div className="relative z-10 flex items-center justify-between w-full bg-brand-blue-dark/85 backdrop-blur-sm p-3.5 rounded-none border border-white/10 text-white">
                 <span className="font-extrabold text-xs uppercase tracking-wider">{item.title}</span>
                 <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform text-brand-green-light" />
               </div>
@@ -310,12 +310,12 @@ export default function HomePage() {
  
         {/* Tab Filters */}
         <div className="flex justify-center mb-10">
-          <div className="flex flex-wrap gap-2 bg-slate-100 p-2 rounded-xl text-xs font-bold text-slate-600 shadow-inner">
+          <div className="flex flex-wrap gap-2 bg-slate-100 p-2 rounded-none text-xs font-bold text-slate-600 shadow-inner">
             {(["all", "fruits", "vegetables", "commodities", "spices"] as const).map((tab) => (
               <button
                 key={tab}
                 onClick={() => setActiveTab(tab)}
-                className={`px-5 py-2.5 rounded-lg transition-all duration-300 uppercase tracking-wider font-extrabold cursor-pointer ${
+                className={`px-5 py-2.5 rounded-none transition-all duration-300 uppercase tracking-wider font-extrabold cursor-pointer ${
                   activeTab === tab ? "bg-brand-blue text-white shadow-md shadow-brand-blue/15" : "text-slate-600 hover:bg-slate-200"
                 }`}
               >
@@ -429,7 +429,7 @@ export default function HomePage() {
           </div>
           <button
             onClick={() => openEnquiry("General Requirement")}
-            className="bg-brand-green hover:bg-brand-green-dark text-white font-extrabold px-8 py-4 rounded-xl shadow-md shadow-brand-green/20 hover:shadow-brand-green/35 hover:-translate-y-0.5 transition-all duration-300 shrink-0 text-xs uppercase tracking-wider cursor-pointer z-10"
+            className="bg-brand-green hover:bg-brand-green-dark text-white font-extrabold px-8 py-4 rounded-none shadow-md shadow-brand-green/20 hover:shadow-brand-green/35 hover:-translate-y-0.5 transition-all duration-300 shrink-0 text-xs uppercase tracking-wider cursor-pointer z-10"
           >
             Share Your Requirement Today
           </button>
