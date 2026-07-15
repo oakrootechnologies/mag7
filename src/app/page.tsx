@@ -107,7 +107,7 @@ export default function HomePage() {
                   <Link href={`/export-products/${slide.product}`} className="btn-primary text-xs tracking-wider uppercase font-extrabold">
                     View Details
                   </Link>
-                  <button onClick={() => openEnquiry(slide.text)} className="border border-white/60 bg-white/10 hover:bg-white text-white hover:text-brand-blue-dark py-3 px-6 rounded-2xl transition-all duration-300 font-extrabold text-xs tracking-wider uppercase backdrop-blur-sm cursor-pointer">
+                  <button onClick={() => openEnquiry(slide.text)} className="border border-white/60 bg-white/10 hover:bg-white text-white hover:text-brand-blue-dark py-3 px-6 rounded-xl transition-all duration-300 font-extrabold text-xs tracking-wider uppercase backdrop-blur-sm cursor-pointer">
                     Get Quote
                   </button>
                 </div>
@@ -131,14 +131,14 @@ export default function HomePage() {
       </section>
 
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 md:grid-cols-12 gap-8 items-center bg-white border border-slate-100 shadow-xl shadow-slate-100/50 p-8 md:p-12 rounded-3xl transition-all duration-300 hover:shadow-2xl hover:shadow-slate-200/40">
+        <div className="grid grid-cols-1 md:grid-cols-12 gap-8 items-center bg-white border border-slate-100 shadow-md shadow-slate-100/50 p-8 md:p-12 rounded-xl transition-all duration-300 hover:shadow-lg hover:shadow-slate-200/40">
           <div className="md:col-span-4 flex flex-col items-center md:items-start text-center md:text-left space-y-4">
             <Image
               src="/logo/image.png"
               alt="Mag7 Global Logo"
               width={100}
               height={100}
-              className="object-contain bg-white p-2 rounded-2xl shadow-sm border border-slate-100 h-24 w-24"
+              className="object-contain bg-white p-2 rounded-xl shadow-sm border border-slate-100 h-24 w-24"
             />
           </div>
           
@@ -167,7 +167,7 @@ export default function HomePage() {
           className="text-center mb-16"
         >
           <h2 className="inline-block bg-brand-blue/5 text-brand-blue-dark font-extrabold text-xs tracking-widest uppercase px-5 py-2 rounded-full mb-4">Our Core Strengths</h2>
-          <h3 className="text-3xl md:text-5xl font-black text-brand-blue-dark tracking-tight mb-4">We Are <span className="text-brand-blue">Experts</span> Of...</h3>
+          <h3 className="text-3xl md:text-5xl font-black text-brand-blue-dark tracking-tight mb-4">Our <span className="text-brand-blue">Expertise</span>...</h3>
           <p className="text-slate-500 text-sm max-w-xl mx-auto font-medium">
             Leveraging standardized pipelines to ensure agricultural produce reaches foreign markets in peak quality.
           </p>
@@ -202,11 +202,11 @@ export default function HomePage() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-50px" }}
               transition={{ duration: 0.5, delay: idx * 0.1 }}
-              className={`group relative bg-white border border-slate-100 p-8 rounded-[2rem] shadow-sm hover:shadow-2xl hover:-translate-y-2 transition-all duration-500 overflow-hidden ${idx % 2 === 1 ? 'lg:mt-12' : ''}`}
+              className={`group relative bg-white border border-slate-100 p-8 rounded-xl shadow-sm hover:shadow-lg hover:-translate-y-2 transition-all duration-500 overflow-hidden ${idx % 2 === 1 ? 'lg:mt-12' : ''}`}
             >
               <div className="absolute top-0 right-0 w-32 h-32 bg-slate-50 rounded-bl-full -mr-8 -mt-8 transition-transform duration-500 group-hover:scale-150 group-hover:bg-brand-blue/5"></div>
               
-              <div className="relative z-10 w-16 h-16 rounded-2xl bg-white border border-slate-100 shadow-sm flex items-center justify-center mb-6 group-hover:scale-110 group-hover:-rotate-3 transition-transform duration-500">
+              <div className="relative z-10 w-16 h-16 rounded-xl bg-white border border-slate-100 shadow-sm flex items-center justify-center mb-6 group-hover:scale-110 group-hover:-rotate-3 transition-transform duration-500">
                 {item.icon}
               </div>
               <h3 className="relative z-10 text-xl font-extrabold text-brand-blue-dark mb-3 group-hover:text-brand-blue transition-colors">{item.title}</h3>
@@ -247,7 +247,7 @@ export default function HomePage() {
             <Link
               key={idx}
               href={item.link}
-              className="group relative h-48 overflow-hidden rounded-2xl shadow-sm flex items-end p-4 cursor-pointer"
+              className="group relative h-48 overflow-hidden rounded-xl shadow-sm flex items-end p-4 cursor-pointer"
             >
               <Image
                 src={item.img}
@@ -257,7 +257,7 @@ export default function HomePage() {
                 className="object-cover group-hover:scale-110 transition-transform duration-500"
               />
               <div className="absolute inset-0 bg-slate-900/35" />
-              <div className="relative z-10 flex items-center justify-between w-full bg-brand-blue-dark/85 backdrop-blur-sm p-3.5 rounded-xl border border-white/10 text-white">
+              <div className="relative z-10 flex items-center justify-between w-full bg-brand-blue-dark/85 backdrop-blur-sm p-3.5 rounded-lg border border-white/10 text-white">
                 <span className="font-extrabold text-xs uppercase tracking-wider">{item.title}</span>
                 <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform text-brand-green-light" />
               </div>
@@ -291,7 +291,7 @@ export default function HomePage() {
               { title: "Fair Margin Policy", desc: "Transparent markup rates with standard costs verified for exporters and importers alike." },
               { title: "Win - Win Trade", desc: "Fostering long-term agricultural trade relationship built on trust, consistency, and product purity." }
             ].map((item, idx) => (
-              <div key={idx} className="bg-white border border-slate-100 p-5 rounded-2xl space-y-2 shadow-sm hover:shadow-md transition-shadow duration-300">
+              <div key={idx} className="bg-white border border-slate-100 p-5 rounded-xl space-y-2 shadow-sm hover:shadow-md transition-shadow duration-300">
                 <h4 className="font-extrabold text-brand-blue-dark text-sm flex items-center gap-2">
                   <CheckCircle2 className="w-4 h-4 text-brand-green shrink-0" /> {item.title}
                 </h4>
@@ -310,12 +310,12 @@ export default function HomePage() {
  
         {/* Tab Filters */}
         <div className="flex justify-center mb-10">
-          <div className="flex flex-wrap gap-2 bg-slate-100 p-2 rounded-2xl text-xs font-bold text-slate-600 shadow-inner">
+          <div className="flex flex-wrap gap-2 bg-slate-100 p-2 rounded-xl text-xs font-bold text-slate-600 shadow-inner">
             {(["all", "fruits", "vegetables", "commodities", "spices"] as const).map((tab) => (
               <button
                 key={tab}
                 onClick={() => setActiveTab(tab)}
-                className={`px-5 py-2.5 rounded-xl transition-all duration-300 uppercase tracking-wider font-extrabold cursor-pointer ${
+                className={`px-5 py-2.5 rounded-lg transition-all duration-300 uppercase tracking-wider font-extrabold cursor-pointer ${
                   activeTab === tab ? "bg-brand-blue text-white shadow-md shadow-brand-blue/15" : "text-slate-600 hover:bg-slate-200"
                 }`}
               >
@@ -330,7 +330,7 @@ export default function HomePage() {
           {filteredExports.map((product) => (
             <div
               key={product.id}
-              className="bg-white border border-slate-100 rounded-3xl overflow-hidden shadow-sm hover:shadow-xl hover:shadow-slate-100/50 hover:-translate-y-1 transition-all duration-300 group flex flex-col justify-between"
+              className="bg-white border border-slate-100 rounded-xl overflow-hidden shadow-sm hover:shadow-md hover:shadow-slate-100/50 hover:-translate-y-1 transition-all duration-300 group flex flex-col justify-between"
             >
               <div>
                 <div className="relative h-44 w-full overflow-hidden">
@@ -374,7 +374,7 @@ export default function HomePage() {
       </section>
 
       {/* 7. Top Import Products Section */}
-      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 bg-white border border-slate-100 shadow-xl shadow-slate-100/50 py-16 rounded-3xl transition-all duration-300 hover:shadow-2xl hover:shadow-slate-200/30">
+      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 bg-white border border-slate-100 shadow-md shadow-slate-100/50 py-16 rounded-xl transition-all duration-300 hover:shadow-lg hover:shadow-slate-200/30">
         <h2 className="section-title">Top Import Products</h2>
         <div className="section-subtitle">Delivering International Produce</div>
  
@@ -382,7 +382,7 @@ export default function HomePage() {
           {importProducts.map((product) => (
             <div
               key={product.id}
-              className="bg-slate-50 border border-slate-100 rounded-2xl overflow-hidden shadow-sm hover:shadow-xl hover:shadow-slate-200/50 hover:-translate-y-1 transition-all duration-300 group text-center flex flex-col justify-between"
+              className="bg-slate-50 border border-slate-100 rounded-xl overflow-hidden shadow-sm hover:shadow-md hover:shadow-slate-200/50 hover:-translate-y-1 transition-all duration-300 group text-center flex flex-col justify-between"
             >
               <div>
                 <div className="relative h-36 w-full overflow-hidden">
@@ -415,7 +415,7 @@ export default function HomePage() {
 
       {/* 8. CTA Ribbon */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="bg-brand-blue-dark text-white p-8 md:p-14 rounded-3xl flex flex-col md:flex-row items-center justify-between gap-8 shadow-xl shadow-brand-blue/15 border border-brand-blue/30 relative overflow-hidden">
+        <div className="bg-brand-blue-dark text-white p-8 md:p-14 rounded-xl flex flex-col md:flex-row items-center justify-between gap-8 shadow-md shadow-brand-blue/15 border border-brand-blue/30 relative overflow-hidden">
           {/* Subtle flat yellow accent badge in the background */}
           <div className="absolute top-0 right-0 w-32 h-32 bg-brand-yellow/10 rounded-full translate-x-12 -translate-y-12"></div>
           
@@ -429,7 +429,7 @@ export default function HomePage() {
           </div>
           <button
             onClick={() => openEnquiry("General Requirement")}
-            className="bg-brand-green hover:bg-brand-green-dark text-white font-extrabold px-8 py-4 rounded-2xl shadow-lg shadow-brand-green/20 hover:shadow-brand-green/35 hover:-translate-y-0.5 transition-all duration-300 shrink-0 text-xs uppercase tracking-wider cursor-pointer z-10"
+            className="bg-brand-green hover:bg-brand-green-dark text-white font-extrabold px-8 py-4 rounded-xl shadow-md shadow-brand-green/20 hover:shadow-brand-green/35 hover:-translate-y-0.5 transition-all duration-300 shrink-0 text-xs uppercase tracking-wider cursor-pointer z-10"
           >
             Share Your Requirement Today
           </button>
