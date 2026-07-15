@@ -67,7 +67,7 @@ export default function Navbar({ config }: NavbarProps) {
             <span className="text-gray-500 font-medium">{finalComplianceTitle}</span>
             <div className="flex items-center gap-3">
               {finalComplianceItems.map((item, idx) => (
-                <span key={idx} className="flex items-center gap-1 text-slate-700 bg-white border border-slate-200 px-2 py-0.5 rounded font-semibold">
+                <span key={idx} className="flex items-center gap-1 text-slate-700 bg-white border border-slate-200 px-2 py-0.5 rounded-none font-semibold">
                   {renderIcon(item.icon)} {item.name}
                 </span>
               ))}
@@ -120,7 +120,7 @@ export default function Navbar({ config }: NavbarProps) {
             <div className="hidden md:flex items-center gap-4">
               <button
                 onClick={() => setIsModalOpen(true)}
-                className="bg-brand-blue hover:bg-brand-blue-dark text-white font-bold px-5 py-2.5 text-xs rounded-2xl shadow-md shadow-brand-blue/15 hover:shadow-lg hover:shadow-brand-blue/30 hover:-translate-y-0.5 transition-all duration-300 flex items-center gap-1.5 cursor-pointer"
+                className="bg-brand-blue hover:bg-brand-blue-dark text-white font-bold px-5 py-2.5 text-xs rounded-none shadow-sm shadow-brand-blue/15 hover:shadow-md hover:shadow-brand-blue/30 hover:-translate-y-0.5 transition-all duration-300 flex items-center gap-1.5 cursor-pointer"
               >
                 {finalCtaText} <ArrowUpRight className="w-4.5 h-4.5" />
               </button>
@@ -130,13 +130,13 @@ export default function Navbar({ config }: NavbarProps) {
             <div className="md:hidden flex items-center gap-2">
               <button
                 onClick={() => setIsModalOpen(true)}
-                className="bg-brand-green hover:bg-brand-green-dark text-white px-3.5 py-2 rounded-xl text-xs font-black shadow-sm"
+                className="bg-brand-green hover:bg-brand-green-dark text-white px-3.5 py-2 rounded-none text-xs font-black shadow-sm"
               >
                 Enquire
               </button>
               <button
                 onClick={() => setIsOpen(!isOpen)}
-                className="text-brand-blue-dark p-2 hover:bg-slate-100 rounded-xl transition-all duration-300"
+                className="text-brand-blue-dark p-2 hover:bg-slate-100 rounded-none transition-all duration-300"
               >
                 {isOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
               </button>
@@ -156,7 +156,7 @@ export default function Navbar({ config }: NavbarProps) {
                     key={link.name}
                     href={link.href}
                     onClick={() => setIsOpen(false)}
-                    className={`block px-3 py-2 rounded-xl text-sm font-black transition-colors ${
+                    className={`block px-3 py-2 rounded-none text-sm font-black transition-colors ${
                       isActive ? "bg-brand-green/10 text-brand-green" : "text-brand-blue-dark hover:bg-slate-50"
                     }`}
                   >
@@ -167,7 +167,7 @@ export default function Navbar({ config }: NavbarProps) {
               <div className="pt-4 border-t border-slate-100 flex flex-col gap-3">
                 <div className="flex items-center justify-around text-[10px] text-gray-500 font-bold px-2">
                   {finalComplianceItems.map((item, idx) => (
-                    <span key={idx} className="border border-slate-200 px-1.5 py-0.5 rounded-lg bg-slate-50">{item.name}</span>
+                    <span key={idx} className="border border-slate-200 px-1.5 py-0.5 rounded-none bg-slate-50">{item.name}</span>
                   ))}
                 </div>
                 <button

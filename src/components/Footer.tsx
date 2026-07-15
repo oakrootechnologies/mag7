@@ -47,7 +47,7 @@ export default function Footer() {
                 alt="Mag7 Global Logo"
                 width={80}
                 height={80}
-                className="object-contain bg-white p-2 rounded-2xl shadow-md shadow-black/10 h-16 w-16"
+                className="object-contain bg-white p-2 rounded-none shadow-md shadow-black/10 h-16 w-16"
               />
             </Link>
             <p className="text-xs text-slate-400 leading-relaxed font-medium">
@@ -117,10 +117,10 @@ export default function Footer() {
           
           {/* Socials */}
           <div className="flex gap-5">
-            <a href="https://wa.me/917987384443" target="_blank" rel="noopener noreferrer" className="bg-slate-800 hover:bg-brand-green text-slate-300 hover:text-white p-2 rounded-xl transition-all duration-300 shadow-sm"><MessageCircle className="w-4 h-4" /></a>
-            <a href="https://www.instagram.com/mag7.global/" target="_blank" rel="noopener noreferrer" className="bg-slate-800 hover:bg-brand-blue text-slate-300 hover:text-white p-2 rounded-xl transition-all duration-300 shadow-sm"><Instagram className="w-4 h-4" /></a>
-            <a href="https://www.facebook.com/people/MAG-7-Global/61590522377321/#" target="_blank" rel="noopener noreferrer" className="bg-slate-800 hover:bg-brand-blue text-slate-300 hover:text-white p-2 rounded-xl transition-all duration-300 shadow-sm"><Facebook className="w-4 h-4" /></a>
-            <a href="#" className="bg-slate-800 hover:bg-brand-blue text-slate-300 hover:text-white p-2 rounded-xl transition-all duration-300 shadow-sm"><Youtube className="w-4 h-4" /></a>
+            <a href="https://wa.me/917987384443" target="_blank" rel="noopener noreferrer" className="bg-slate-800 hover:bg-brand-green text-slate-300 hover:text-white p-2 rounded-none transition-all duration-300 shadow-sm"><MessageCircle className="w-4 h-4" /></a>
+            <a href="https://www.instagram.com/mag7.global/" target="_blank" rel="noopener noreferrer" className="bg-slate-800 hover:bg-brand-blue text-slate-300 hover:text-white p-2 rounded-none transition-all duration-300 shadow-sm"><Instagram className="w-4 h-4" /></a>
+            <a href="https://www.facebook.com/people/MAG-7-Global/61590522377321/#" target="_blank" rel="noopener noreferrer" className="bg-slate-800 hover:bg-brand-blue text-slate-300 hover:text-white p-2 rounded-none transition-all duration-300 shadow-sm"><Facebook className="w-4 h-4" /></a>
+            <a href="#" className="bg-slate-800 hover:bg-brand-blue text-slate-300 hover:text-white p-2 rounded-none transition-all duration-300 shadow-sm"><Youtube className="w-4 h-4" /></a>
           </div>
 
           {/* Copyright */}

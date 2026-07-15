@@ -93,7 +93,7 @@ function ProductsList() {
                   <button
                     key={cat.id}
                     onClick={() => handleTabChange(cat.id)}
-                    className={`text-left px-3.5 py-2.5 rounded-lg text-xs font-bold transition-colors ${
+                    className={`text-left px-3.5 py-2.5 rounded-none text-xs font-bold transition-colors ${
                       activeCategory === cat.id
                         ? "bg-brand-blue text-white"
                         : "text-slate-600 hover:bg-slate-100 hover:text-brand-blue-dark"
@@ -181,7 +181,7 @@ function ProductsList() {
                       </Link>
                       <button
                         onClick={() => openEnquiry(product.name)}
-                        className="bg-slate-50 text-brand-blue-dark hover:bg-brand-green hover:text-white px-3 py-1 rounded-lg font-bold transition-colors"
+                        className="bg-slate-50 text-brand-blue-dark hover:bg-brand-green hover:text-white px-3 py-1 rounded-none font-bold transition-colors"
                       >
                         Enquire
                       </button>

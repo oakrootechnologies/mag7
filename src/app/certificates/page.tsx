@@ -117,7 +117,7 @@ export default function CertificatesPage() {
             <p className="text-slate-400 text-sm">Need actual physical verification documents for customs or wholesale clearances?</p>
           </div>
           <ProductEnquiry 
-            className="bg-brand-green hover:bg-brand-green-dark text-white font-extrabold px-8 py-3.5 rounded-xl shadow-sm transition-all shrink-0 text-sm flex items-center gap-1.5"
+            className="bg-brand-green hover:bg-brand-green-dark text-white font-extrabold px-8 py-3.5 rounded-none shadow-sm transition-all shrink-0 text-sm flex items-center gap-1.5"
             buttonText="Contact Sales Team"
           >
             Contact Sales Team <ArrowUpRight className="w-4 h-4" />
