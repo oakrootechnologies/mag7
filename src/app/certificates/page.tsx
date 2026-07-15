@@ -1,5 +1,5 @@
 import React from "react";
-import { ShieldCheck, Award, FileText, CheckCircle2, ArrowUpRight } from "lucide-react";
+import { ShieldCheck, Award, FileText, CheckCircle2, ArrowUpRight, Globe2, FileSignature, Leaf, TestTube } from "lucide-react";
 import dynamic from "next/dynamic";
 
 const ProductEnquiry = dynamic(() => import("@/components/ProductEnquiry"), {
@@ -42,6 +42,54 @@ export default function CertificatesPage() {
         "Central Board of Indirect Taxes and Customs verification",
         "Seamless international banking transaction settlements",
         "Integration with Dubai customs systems"
+      ]
+    },
+    {
+      icon: <Globe2 className="w-10 h-10 text-brand-green" />,
+      title: "FIEO Registration",
+      subtitle: "Federation of Indian Export Organisations",
+      purpose: "Recognized by the Ministry of Commerce as a reliable exporter. It validates our global trading operations and ensures compliance with international trade frameworks.",
+      benefits: [
+        "Government-recognized export house status",
+        "Global trade credibility and trust",
+        "Streamlined international banking",
+        "Direct access to global trade updates"
+      ]
+    },
+    {
+      icon: <FileSignature className="w-10 h-10 text-brand-blue" />,
+      title: "GST Registration",
+      subtitle: "Goods and Services Tax",
+      purpose: "Mandatory taxation compliance under the Government of India, ensuring all sourcing and trading operations are transparent, legal, and fully documented.",
+      benefits: [
+        "Transparent supply chain taxation",
+        "Input tax credit for competitive pricing",
+        "Inter-state agricultural sourcing compliance",
+        "Legally validated commercial invoices"
+      ]
+    },
+    {
+      icon: <Leaf className="w-10 h-10 text-brand-green" />,
+      title: "Spices Board of India",
+      subtitle: "Certificate of Registration as Exporter of Spices",
+      purpose: "Mandatory certification for exporting Indian spices. It guarantees that our spice exports meet strict quality, grading, and packaging standards.",
+      benefits: [
+        "Verified spice exporter status",
+        "Adherence to global spice quality standards",
+        "Access to advanced testing laboratories",
+        "Mandatory for high-quality spice shipments"
+      ]
+    },
+    {
+      icon: <TestTube className="w-10 h-10 text-brand-blue" />,
+      title: "Phytosanitary Certification",
+      subtitle: "Plant Quarantine (Regulation of Import into India) Order",
+      purpose: "Issued for each shipment after rigorous inspection by the Directorate of Plant Protection, Quarantine & Storage, confirming goods are free from pests and diseases.",
+      benefits: [
+        "Disease and pest-free agricultural produce",
+        "Mandatory for international customs clearance",
+        "Compliant with importing country's regulations",
+        "Guarantees freshness and sanitary safety"
       ]
     }
   ];
