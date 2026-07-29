@@ -71,7 +71,7 @@ export default function ProductDetailPage({ params }: PageProps) {
         <div className="absolute inset-0 flex items-center max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="space-y-4 md:space-y-6 text-white max-w-3xl text-left">
             <Link
-              href="/export-products"
+              href="/agro/products"
               className="inline-flex items-center gap-1 text-xs text-brand-green hover:underline font-bold"
             >
               <ArrowLeft className="w-4 h-4" /> Back to Products
@@ -276,7 +276,7 @@ export default function ProductDetailPage({ params }: PageProps) {
                 </div>
                 <div className="px-3 pb-3 pt-2 border-t border-slate-50 flex items-center justify-between text-xs">
                   <Link
-                    href={`/export-products/${p.slug}`}
+                    href={`/agro/products/${p.slug}`}
                     className="text-brand-blue font-bold hover:underline flex items-center gap-0.5"
                   >
                     Details <ArrowUpRight className="w-3 h-3" />

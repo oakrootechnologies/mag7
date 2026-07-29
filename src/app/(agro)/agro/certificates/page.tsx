@@ -1,4 +1,5 @@
 import React from "react";
+import Link from "next/link";
 import { ShieldCheck, Award, FileText, CheckCircle2, ArrowUpRight, Globe2, FileSignature, Leaf, TestTube } from "lucide-react";
 import dynamic from "next/dynamic";
 
@@ -101,7 +102,7 @@ export default function CertificatesPage() {
       <section className="bg-slate-50 py-12 border-b border-slate-100">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <ul className="flex items-center gap-2 text-xs text-slate-500 font-semibold mb-3">
-            <li><a href="/" className="hover:text-brand-green">Home</a></li>
+            <li><Link href="/agro" className="hover:text-brand-green">Agro Home</Link></li>
             <li className="text-slate-400">/</li>
             <li className="text-brand-blue-dark">Certificates</li>
           </ul>

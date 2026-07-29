@@ -29,7 +29,7 @@ function ProductsList() {
 
   const handleTabChange = (cat: string) => {
     setActiveCategory(cat);
-    router.replace(`/export-products?cat=${cat}`);
+    router.replace(`/agro/products?cat=${cat}`);
   };
 
   // Filter products by category and search query
@@ -70,7 +70,7 @@ function ProductsList() {
       <section className="bg-slate-50 py-12 border-b border-slate-100">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <ul className="flex items-center gap-2 text-xs text-slate-500 font-semibold mb-3">
-            <li><Link href="/" className="hover:text-brand-green">Home</Link></li>
+            <li><Link href="/agro" className="hover:text-brand-green">Agro Home</Link></li>
             <li className="text-slate-400">/</li>
             <li className="text-brand-blue-dark font-semibold">Products</li>
           </ul>
@@ -174,7 +174,7 @@ function ProductsList() {
 
                     <div className="px-4 pb-4 pt-3 border-t border-slate-50 flex items-center justify-between text-xs">
                       <Link
-                        href={`/export-products/${product.slug}`}
+                        href={`/agro/products/${product.slug}`}
                         className="text-brand-blue font-bold hover:underline flex items-center gap-0.5"
                       >
                         More Info <ArrowUpRight className="w-3.5 h-3.5" />
