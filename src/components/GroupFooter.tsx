@@ -163,7 +163,7 @@ export default function GroupFooter() {
                 <li><Link href="/" className="hover:text-white transition-colors">Corporate Home</Link></li>
                 <li><Link href="/about-us" className="hover:text-white transition-colors">About MAG7 Global</Link></li>
                 <li><Link href="/agro/certificates" className="hover:text-white transition-colors">Agro Certificates</Link></li>
-                <li><Link href="/agro/rfq" className="hover:text-white transition-colors">Enquire / Contact Us</Link></li>
+                <li><Link href="/rfq" className="hover:text-white transition-colors">Enquire / Contact Us</Link></li>
               </ul>
             </div>
 

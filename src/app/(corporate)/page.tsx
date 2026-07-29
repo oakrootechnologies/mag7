@@ -502,7 +502,7 @@ export default function GroupHomePage() {
             <p className="text-white/75 text-sm font-medium">Submit an RFQ and get a quote within 24 hours.</p>
           </div>
           <div className="flex flex-wrap gap-4 shrink-0">
-            <Link href="/agro/rfq" className="bg-white text-[#0891b2] font-black text-sm px-8 py-4 hover:-translate-y-0.5 transition-all shadow-xl hover:shadow-2xl">
+            <Link href="/rfq" className="bg-white text-[#0891b2] font-black text-sm px-8 py-4 hover:-translate-y-0.5 transition-all shadow-xl hover:shadow-2xl">
               Submit RFQ
             </Link>
             <Link href="/about-us" className="border-2 border-white text-white font-bold text-sm px-8 py-4 hover:bg-white/10 transition-all">
