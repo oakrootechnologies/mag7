@@ -111,8 +111,9 @@ export default function AdminPage() {
     // Default credentials
     const isGaurav = username === "gs06152@gmail.com" && password === "Mag7#Secured$Gaurav%Admin@2026!";
     const isManoj = username === "Ms.rajawat1986@gmail.com" && password === "Mag7#Secured$Manoj%Admin@2026!";
+    const isPriyansh = username === "priyanshugdscneo@gmail.com" && password === "Mag7#Secured$Priyansh%Admin@2026!";
 
-    if (isGaurav || isManoj) {
+    if (isGaurav || isManoj || isPriyansh) {
       setIsLoggedIn(true);
       sessionStorage.setItem("admin_authenticated", "true");
     } else {
