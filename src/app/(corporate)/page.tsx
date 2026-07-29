@@ -167,7 +167,7 @@ export default function GroupHomePage() {
 
           {/* LEFT — teal catalogue card */}
           <div className="relative bg-[#06b6d4] rounded-[24px] shadow-lg shadow-cyan-500/10 transition-all duration-300 hover:shadow-cyan-500/20 group overflow-visible flex flex-col justify-center min-h-[140px] pl-6 pt-24 pb-6 lg:pl-[140px] lg:pt-6 lg:pb-6">
-            
+
             {/* Mini catalogue booklet sticking out */}
             <div className="absolute top-[-36px] left-[24px] w-[90px] h-[120px] bg-white rounded-lg shadow-xl border border-slate-100 p-2 flex flex-col items-center justify-between rotate-[-8deg] transition-all group-hover:rotate-0 group-hover:-translate-y-1 duration-300 z-30">
               {/* Book cover content */}
@@ -256,7 +256,7 @@ export default function GroupHomePage() {
                 MAG7 Global LLP is a diversified holding conglomerate headquartered in Indore, India. Founded with a singular focus on transparent, compliant, and high-volume international trade, we have built integrated sourcing networks across three distinct sectors.
               </p>
               <p className="text-slate-500 text-sm leading-relaxed">
-                With offices coordinating supply chains across Maharashtra, Rajasthan, and Gujarat — and shipping partnerships at Mundra, JNPT, and Delhi Air Cargo — we deliver every shipment on schedule with full regulatory compliance. Over a decade of trade experience has earned us the trust of 500+ global buyers across 28 countries.
+                With coordinating supply chains across the globe — we deliver every shipment on schedule with full regulatory compliance. Over a decade of trade experience has earned us the trust of 500+ global buyers across 28 countries.
               </p>
               <p className="text-slate-500 text-sm leading-relaxed">
                 Whether you need reefer containers for fresh produce, bubble-padded crates for fragile pottery, or heavy rigging for industrial machinery — our in-house logistics team handles every detail.
@@ -384,7 +384,7 @@ export default function GroupHomePage() {
                   fill
                   className="object-cover object-center"
                 />
-                
+
                 {/* Floating Social Icons Bar at the Top */}
                 <div className="absolute top-4 left-1/2 -translate-x-1/2 flex items-center gap-2.5 bg-white/20 backdrop-blur-md rounded-full px-4 py-1.5 border border-white/25 z-20">
                   <span className="w-2 h-2 rounded-full bg-cyan-400 animate-pulse" />
@@ -591,7 +591,7 @@ export default function GroupHomePage() {
       ════════════════════════════════════════════════ */}
       <section className="bg-[#f8fafc] py-24 border-t border-slate-100 relative overflow-hidden">
         <div className="max-w-7xl mx-auto px-6 lg:px-10">
-          
+
           {/* Header */}
           <div className="text-center mb-16 space-y-3">
             <div className="text-[10px] font-black uppercase tracking-[0.22em] text-[#06b6d4]">
