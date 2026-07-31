@@ -36,13 +36,17 @@ export default function CertificatesPage() {
     {
       icon: <FileText className="w-10 h-10 text-brand-blue" />,
       title: "Import Export Code (IEC)",
-      subtitle: "Directorate General of Foreign Trade (DGFT) & CBD",
-      purpose: "Registered merchant exporter license issued by the Ministry of Foreign Trade. Required for standard custom clearance at JNPT Port, Mumbai, and air cargo custom gates.",
+      subtitle: "Directorate General of Foreign Trade (DGFT), Ministry of Commerce & Industry",
+      number: "AAVCM0809P",
+      issueDate: "14/07/2026",
+      pdfUrl: "/certificates/certificateOfIEC.pdf",
+      fileName: "certificateOfIEC.pdf",
+      purpose: "Official merchant exporter registration issued by DGFT (Indore Authority), certifying MAG7 GLOBAL PRIVATE LIMITED for cross-border trade and customs clearance.",
       benefits: [
-        "Legal export validation for customs clearance",
-        "Central Board of Indirect Taxes and Customs verification",
-        "Seamless international banking transaction settlements",
-        "Integration with Dubai customs systems"
+        "IEC Code: AAVCM0809P (Verified by DGFT)",
+        "Legal export clearance at JNPT Port & Air Cargo gates",
+        "Central Board of Indirect Taxes & Customs alignment",
+        "Seamless global banking & UAE customs integration"
       ]
     },
     {
@@ -60,13 +64,17 @@ export default function CertificatesPage() {
     {
       icon: <FileSignature className="w-10 h-10 text-brand-blue" />,
       title: "GST Registration",
-      subtitle: "Goods and Services Tax",
-      purpose: "Mandatory taxation compliance under the Government of India, ensuring all sourcing and trading operations are transparent, legal, and fully documented.",
+      subtitle: "Goods and Services Tax (Form GST REG-06)",
+      number: "23AAVCM0809P1ZX",
+      issueDate: "02/07/2026",
+      pdfUrl: "/certificates/AA230626050525C_RC02072026.pdf",
+      fileName: "AA230626050525C_RC02072026.pdf",
+      purpose: "Official tax registration issued by the Government of India & MP State Tax Department to MAG7 GLOBAL PRIVATE LIMITED for transparent commercial trade.",
       benefits: [
-        "Transparent supply chain taxation",
-        "Input tax credit for competitive pricing",
-        "Inter-state agricultural sourcing compliance",
-        "Legally validated commercial invoices"
+        "GSTIN: 23AAVCM0809P1ZX (Verified Registration)",
+        "Transparent supply chain tax compliance",
+        "Input tax credit optimization for competitive export pricing",
+        "Legally validated commercial export invoices"
       ]
     },
     {
@@ -138,7 +146,14 @@ export default function CertificatesPage() {
               {/* Text block */}
               <div className="md:col-span-10 space-y-4">
                 <div className="space-y-1">
-                  <h3 className="text-xl font-bold text-brand-blue-dark">{cert.title}</h3>
+                  <div className="flex flex-wrap items-center gap-2">
+                    <h3 className="text-xl font-bold text-brand-blue-dark">{cert.title}</h3>
+                    {cert.number && (
+                      <span className="bg-brand-blue/10 text-brand-blue text-[10px] font-black tracking-wider uppercase px-2.5 py-0.5 rounded-full border border-brand-blue/20">
+                        {cert.number}
+                      </span>
+                    )}
+                  </div>
                   <p className="text-xs text-brand-green font-semibold">{cert.subtitle}</p>
                 </div>
                 <p className="text-xs text-slate-500 leading-relaxed">{cert.purpose}</p>
@@ -146,12 +161,42 @@ export default function CertificatesPage() {
                 {/* Benefits */}
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-2">
                   {cert.benefits.map((benefit, bidx) => (
-                    <div key={bidx} className="flex items-center gap-2 text-xs text-slate-700">
+                    <div key={bidx} className="flex items-center gap-2 text-xs text-slate-700 font-medium">
                       <CheckCircle2 className="w-4.5 h-4.5 text-brand-green shrink-0" />
                       <span>{benefit}</span>
                     </div>
                   ))}
                 </div>
+
+                {/* PDF Certificate Action Bar */}
+                {cert.pdfUrl && (
+                  <div className="pt-3 border-t border-slate-100 flex flex-wrap items-center justify-between gap-3">
+                    <div className="text-[11px] text-slate-400 font-semibold">
+                      <span>Issued: <strong className="text-slate-700">{cert.issueDate}</strong></span>
+                      <span className="mx-2">•</span>
+                      <span>File: <code className="text-brand-blue font-bold">{cert.fileName}</code></span>
+                    </div>
+                    <div className="flex items-center gap-2">
+                      <a
+                        href={cert.pdfUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center gap-1.5 bg-brand-blue hover:bg-brand-blue-dark text-white text-xs font-extrabold px-4 py-2 rounded-xl transition-all shadow-sm cursor-pointer"
+                      >
+                        <FileText className="w-3.5 h-3.5" />
+                        <span>View Official PDF</span>
+                        <ArrowUpRight className="w-3.5 h-3.5" />
+                      </a>
+                      <a
+                        href={cert.pdfUrl}
+                        download
+                        className="inline-flex items-center gap-1.5 bg-slate-100 hover:bg-slate-200 text-slate-700 text-xs font-bold px-3.5 py-2 rounded-xl transition-all cursor-pointer"
+                      >
+                        <span>Download</span>
+                      </a>
+                    </div>
+                  </div>
+                )}
               </div>
             </div>
           ))}

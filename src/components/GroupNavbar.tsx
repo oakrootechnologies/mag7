@@ -55,7 +55,7 @@ export default function GroupNavbar() {
               </div>
               <div className="flex flex-col leading-tight">
                 <span className="font-black text-[#0d1f3c] text-sm tracking-tight">MAG7 GLOBAL</span>
-                <span className="text-[8px] text-slate-400 font-extrabold uppercase tracking-[0.18em]">Group Conglomerate</span>
+                <span className="text-[8px] text-[#06b6d4] font-extrabold uppercase tracking-[0.18em]">CONNECT | GROW | SUCCEED</span>
               </div>
             </Link>
           </div>

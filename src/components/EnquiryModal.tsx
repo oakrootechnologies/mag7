@@ -15,6 +15,7 @@ export default function EnquiryModal({ isOpen, onClose, selectedProduct = "" }: 
   const [lastName, setLastName] = useState("");
   const [email, setEmail] = useState("");
   const [phone, setPhone] = useState("");
+  const [destinationCountry, setDestinationCountry] = useState("United Arab Emirates");
   const [product, setProduct] = useState("");
   const [requirement, setRequirement] = useState("");
   const [isSubmitted, setIsSubmitted] = useState(false);
@@ -54,7 +55,7 @@ export default function EnquiryModal({ isOpen, onClose, selectedProduct = "" }: 
       designation: "Product Enquiry",
       companyName: "Web Enquiry",
       businessType: "Importer / Wholesaler",
-      destinationCountry: "N/A",
+      destinationCountry: destinationCountry || "United Arab Emirates",
       destinationPort: "N/A",
       whatsappCode: "",
       whatsappNumber: phone,
@@ -167,6 +168,21 @@ export default function EnquiryModal({ isOpen, onClose, selectedProduct = "" }: 
                     required
                   />
                 </div>
+              </div>
+
+              {/* Destination Country */}
+              <div>
+                <label className="block text-sm font-medium text-gray-700 mb-1">
+                  Destination Country <span className="text-red-500">*</span>
+                </label>
+                <input
+                  type="text"
+                  placeholder="e.g. United Arab Emirates, UK, USA, Germany"
+                  value={destinationCountry}
+                  onChange={(e) => setDestinationCountry(e.target.value)}
+                  className="w-full border border-gray-300 rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-brand-blue font-semibold text-slate-700"
+                  required
+                />
               </div>
 
               {/* Product */}

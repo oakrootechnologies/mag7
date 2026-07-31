@@ -21,6 +21,7 @@ export default function CorporateRFQPage() {
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [fullName, setFullName] = useState("");
   const [companyName, setCompanyName] = useState("");
+  const [destinationCountry, setDestinationCountry] = useState("");
   const [desiredProduct, setDesiredProduct] = useState("");
   const [phone, setPhone] = useState("");
   const [email, setEmail] = useState("");
@@ -45,6 +46,7 @@ export default function CorporateRFQPage() {
       status: "Pending",
       fullName,
       companyName,
+      destinationCountry: destinationCountry || "United Arab Emirates",
       product: desiredProduct,
       whatsappNumber: phone,
       email,
@@ -159,6 +161,21 @@ export default function CorporateRFQPage() {
                     value={companyName}
                     onChange={(e) => setCompanyName(e.target.value)}
                     placeholder="e.g. Apex Global Trading Co."
+                    className="w-full bg-slate-50/70 border border-slate-200 focus:border-[#06b6d4] focus:bg-white text-slate-800 text-sm font-semibold rounded-xl px-4 py-3.5 outline-none transition-all"
+                  />
+                </div>
+
+                {/* Destination Country */}
+                <div className="space-y-2">
+                  <label className="block text-xs font-black uppercase tracking-wider text-[#0d1f3c] flex items-center gap-1.5">
+                    <Globe2 className="w-3.5 h-3.5 text-[#06b6d4]" />
+                    <span>Destination Country</span>
+                  </label>
+                  <input
+                    type="text"
+                    value={destinationCountry}
+                    onChange={(e) => setDestinationCountry(e.target.value)}
+                    placeholder="e.g. United Arab Emirates, UK, USA, Netherlands"
                     className="w-full bg-slate-50/70 border border-slate-200 focus:border-[#06b6d4] focus:bg-white text-slate-800 text-sm font-semibold rounded-xl px-4 py-3.5 outline-none transition-all"
                   />
                 </div>

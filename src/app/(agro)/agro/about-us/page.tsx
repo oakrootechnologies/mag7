@@ -196,6 +196,110 @@ export default function AboutUsPage() {
         </div>
       </section>
 
+      {/* Executive Leadership Team */}
+      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 border-t border-slate-100">
+        <div className="text-center mb-14 space-y-3">
+          <div className="inline-flex items-center gap-2 bg-[#06b6d4]/8 text-[#0891b2] border border-[#06b6d4]/25 text-[10px] font-black uppercase tracking-[0.2em] px-4 py-2 rounded-full">
+            Executive Leadership
+          </div>
+          <h2 className="text-3xl md:text-4.5xl font-black text-[#0d1f3c] tracking-tight">
+            Driven by <span className="text-[#06b6d4]">Visionary Leadership</span>
+          </h2>
+          <p className="text-slate-500 text-sm max-w-xl mx-auto font-medium">
+            Meet the executives directing global trade compliance, market intelligence, and export operations at Mag7 Global.
+          </p>
+        </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+          {[
+            {
+              name: "Mr. Gaurav Singhania",
+              role: "International Trade Consultant (IIC)",
+              bio: "Gaurav leads international trade consultancy and EXIM compliance strategies at Mag7 Global. Expert in cross-border trade policies, customs tariffs, and global alignments.",
+              image: "/images/founders/gaurav.jpeg",
+              phone: "+91 80024 16161",
+              whatsapp: "https://wa.me/918002416161",
+              email: "gaurav@mag7global.com"
+            },
+            {
+              name: "Mr. Manoj Rajawat",
+              role: "Market Research Manager",
+              bio: "Manoj manages global market intelligence, commodity demand forecasting, and buyer profiling. He tracks real-time international trade tickers and buyer personas.",
+              image: "/images/founders/Manoj.jpeg",
+              phone: "+91 79873 84443",
+              whatsapp: "https://wa.me/917987384443",
+              email: "manoj@mag7global.com"
+            }
+          ].map((leader, idx) => (
+            <div
+              key={idx}
+              className="bg-white border border-slate-150 rounded-3xl overflow-hidden flex flex-col justify-between hover:shadow-2xl hover:border-slate-200 transition-all duration-300"
+            >
+              <div>
+                {/* Executive Headshot / Portrait Photo Header (4x+ size, torso & head focused) */}
+                <div className="relative w-full h-80 sm:h-96 bg-slate-900 overflow-hidden group">
+                  <Image
+                    src={leader.image}
+                    alt={leader.name}
+                    fill
+                    sizes="(max-width: 768px) 100vw, 50vw"
+                    className="object-cover object-top transition-transform duration-500 group-hover:scale-105"
+                    priority
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-[#0d1f3c] via-[#0d1f3c]/25 to-transparent flex items-end p-6 md:p-8">
+                    <div className="space-y-1.5">
+                      <span className="inline-block bg-[#06b6d4] text-white text-[10px] font-black uppercase tracking-widest px-3.5 py-1 rounded-full shadow-sm">
+                        {leader.role}
+                      </span>
+                      <h3 className="font-black text-white text-2xl tracking-tight drop-shadow-md">{leader.name}</h3>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Content Below Photo */}
+                <div className="p-6 md:p-8 space-y-6">
+                  <p className="text-slate-600 text-xs sm:text-sm leading-relaxed font-medium">
+                    {leader.bio}
+                  </p>
+
+                  <div className="bg-slate-50 p-4 rounded-2xl border border-slate-100 space-y-2.5 text-xs font-semibold">
+                    <div className="flex items-center justify-between text-slate-700">
+                      <span className="text-slate-400 font-bold">Connect Mobile:</span>
+                      <a href={`tel:${leader.phone.replace(/\s+/g, '')}`} className="font-black text-[#0d1f3c] hover:text-[#06b6d4] transition-colors">
+                        {leader.phone}
+                      </a>
+                    </div>
+                    <div className="flex items-center justify-between text-slate-700">
+                      <span className="text-slate-400 font-bold">Email Direct:</span>
+                      <a href={`mailto:${leader.email}`} className="font-black text-[#06b6d4] hover:underline">
+                        {leader.email}
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div className="p-6 md:p-8 pt-0 flex items-center justify-between gap-3 text-xs">
+                <a
+                  href={`mailto:${leader.email}`}
+                  className="flex-1 inline-flex items-center justify-center gap-1.5 bg-[#0d1f3c] hover:bg-[#06b6d4] text-white font-extrabold py-3.5 px-4 rounded-xl transition-all shadow-sm cursor-pointer"
+                >
+                  <span>Contact Details</span>
+                </a>
+                <a
+                  href={leader.whatsapp}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center justify-center gap-1.5 bg-emerald-500 hover:bg-emerald-600 text-white font-extrabold py-3.5 px-4 rounded-xl transition-all shadow-sm cursor-pointer"
+                >
+                  <span>WhatsApp</span>
+                </a>
+              </div>
+            </div>
+          ))}
+        </div>
+      </section>
+
       {/* Sourcing Offices Presence */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-12 space-y-3">
@@ -245,9 +349,29 @@ export default function AboutUsPage() {
                 <div className="flex items-center gap-2">
                   <span className="text-[#06b6d4] font-bold text-xs">✉</span> {item.email}
                 </div>
-                <div className="text-[10px] text-slate-400 mt-1 space-y-0.5 pt-1.5 border-t border-slate-100">
-                  <div><span className="text-[#06b6d4] font-bold">GSTIN:</span> {item.gstin}</div>
-                  <div><span className="text-[#06b6d4] font-bold">IEC:</span> {item.iec}</div>
+                <div className="text-[11px] text-slate-500 mt-1 space-y-1 pt-2 border-t border-slate-100 font-semibold">
+                  <div className="flex items-center gap-1.5">
+                    <span className="text-[#06b6d4] font-black">GSTIN:</span>
+                    <a 
+                      href="/certificates/AA230626050525C_RC02072026.pdf" 
+                      target="_blank" 
+                      rel="noopener noreferrer" 
+                      className="text-[#0d1f3c] hover:text-[#06b6d4] font-extrabold underline flex items-center gap-1"
+                    >
+                      23AAVCM0809P1ZX
+                    </a>
+                  </div>
+                  <div className="flex items-center gap-1.5">
+                    <span className="text-[#06b6d4] font-black">IEC Code:</span>
+                    <a 
+                      href="/certificates/certificateOfIEC.pdf" 
+                      target="_blank" 
+                      rel="noopener noreferrer" 
+                      className="text-[#0d1f3c] hover:text-[#06b6d4] font-extrabold underline flex items-center gap-1"
+                    >
+                      AAVCM0809P
+                    </a>
+                  </div>
                 </div>
               </div>
             </div>

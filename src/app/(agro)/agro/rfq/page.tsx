@@ -97,6 +97,7 @@ export default function RFQPage() {
   const [whatsappCode, setWhatsappCode] = useState("+971");
   const [whatsappNumber, setWhatsappNumber] = useState("");
   const [email, setEmail] = useState("");
+  const [destinationCountry, setDestinationCountry] = useState("United Arab Emirates");
   const [category, setCategory] = useState("fruits");
   const [selectedProductId, setSelectedProductId] = useState("");
   const [qualitySpecs, setQualitySpecs] = useState("");
@@ -142,7 +143,7 @@ export default function RFQPage() {
       designation: "Product Sourcing Inquiry",
       companyName: "N/A",
       businessType: "Importer / Wholesaler",
-      destinationCountry: "N/A",
+      destinationCountry: destinationCountry || "United Arab Emirates",
       destinationPort: "N/A",
       whatsappCode,
       whatsappNumber,
@@ -353,6 +354,24 @@ Sent via mag7global.com RFQ portal`;
                             value={email}
                             onChange={(e) => setEmail(e.target.value)}
                             className="w-full pl-9 border border-gray-300 rounded-lg px-3 py-2 text-xs focus:outline-none focus:ring-2 focus:ring-brand-blue font-semibold text-slate-700"
+                          />
+                        </div>
+                      </div>
+
+                      {/* Destination Country */}
+                      <div className="md:col-span-2">
+                        <label className="block text-xs font-bold text-slate-700 mb-1">
+                          Destination Country <span className="text-red-500">*</span>
+                        </label>
+                        <div className="relative">
+                          <Globe2 className="absolute left-3 top-2.5 w-4 h-4 text-slate-400" />
+                          <input
+                            type="text"
+                            placeholder="e.g. United Arab Emirates, United Kingdom, USA, Germany"
+                            value={destinationCountry}
+                            onChange={(e) => setDestinationCountry(e.target.value)}
+                            className="w-full pl-9 border border-gray-300 rounded-lg px-3 py-2 text-xs focus:outline-none focus:ring-2 focus:ring-brand-blue font-semibold text-slate-700"
+                            required
                           />
                         </div>
                       </div>

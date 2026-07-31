@@ -70,9 +70,31 @@ export default function AgroFooter() {
                   <span>Treasure Fantasy, Indore, Madhya Pradesh, India</span>
                 </li>
               </ul>
-              <div className="text-[10px] text-slate-500 space-y-1 pt-1 font-bold tracking-wide">
-                <div className="flex items-center gap-1"><span className="text-slate-400">GSTIN:</span> 23AABCM8734P1ZX (Applied)</div>
-                <div className="flex items-center gap-1"><span className="text-slate-400">IEC:</span> 0326094443 (Applied)</div>
+              <div className="text-[11px] text-slate-400 space-y-1 pt-1 font-bold tracking-wide">
+                <div className="flex items-center gap-1.5 flex-wrap">
+                  <span className="text-slate-400">GSTIN:</span>
+                  <a 
+                    href="/certificates/AA230626050525C_RC02072026.pdf" 
+                    target="_blank" 
+                    rel="noopener noreferrer" 
+                    className="text-[#06b6d4] hover:underline flex items-center gap-1 font-extrabold"
+                  >
+                    23AAVCM0809P1ZX
+                    <span className="text-[8px] bg-emerald-500/20 text-emerald-400 px-1.5 py-0.5 rounded font-black tracking-widest uppercase border border-emerald-500/30">Verified</span>
+                  </a>
+                </div>
+                <div className="flex items-center gap-1.5 flex-wrap">
+                  <span className="text-slate-400">IEC Code:</span>
+                  <a 
+                    href="/certificates/certificateOfIEC.pdf" 
+                    target="_blank" 
+                    rel="noopener noreferrer" 
+                    className="text-[#06b6d4] hover:underline flex items-center gap-1 font-extrabold"
+                  >
+                    AAVCM0809P
+                    <span className="text-[8px] bg-emerald-500/20 text-emerald-400 px-1.5 py-0.5 rounded font-black tracking-widest uppercase border border-emerald-500/30">Verified</span>
+                  </a>
+                </div>
               </div>
             </div>
           </div>

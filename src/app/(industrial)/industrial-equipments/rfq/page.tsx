@@ -44,6 +44,7 @@ function IndustrialRFQContent() {
   const [whatsappCode, setWhatsappCode] = useState("+971");
   const [whatsappNumber, setWhatsappNumber] = useState("");
   const [email, setEmail] = useState("");
+  const [destinationCountry, setDestinationCountry] = useState("United Arab Emirates");
   const [category, setCategory] = useState("pumps");
   const [selectedProductId, setSelectedProductId] = useState("");
   const [qualitySpecs, setQualitySpecs] = useState("");
@@ -90,7 +91,7 @@ function IndustrialRFQContent() {
       designation: "Industrial Sourcing Inquiry",
       companyName: "N/A",
       businessType: "Contractor / Industrialist",
-      destinationCountry: "N/A",
+      destinationCountry: destinationCountry || "United Arab Emirates",
       whatsappCode,
       whatsappNumber,
       email: email || "N/A",
@@ -219,6 +220,22 @@ Sent via mag7global.com Industrial Portal`;
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
                     placeholder="e.g. procurement@plant.com"
+                    className="w-full pl-10 pr-4 py-3 border border-slate-200 rounded-none text-xs font-medium focus:outline-none focus:border-[#ea580c]"
+                  />
+                </div>
+              </div>
+
+              {/* Destination Country */}
+              <div className="space-y-2 md:col-span-2">
+                <label className="text-xs font-black uppercase text-slate-450 tracking-wider">Destination Country <span className="text-red-500">*</span></label>
+                <div className="relative">
+                  <Globe2 className="absolute left-3.5 top-1/2 -translate-y-1/2 w-4 h-4 text-slate-400" />
+                  <input
+                    type="text"
+                    required
+                    value={destinationCountry}
+                    onChange={(e) => setDestinationCountry(e.target.value)}
+                    placeholder="e.g. United Arab Emirates, UK, USA, Germany"
                     className="w-full pl-10 pr-4 py-3 border border-slate-200 rounded-none text-xs font-medium focus:outline-none focus:border-[#ea580c]"
                   />
                 </div>

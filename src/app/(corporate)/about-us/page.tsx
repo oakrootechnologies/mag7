@@ -1,130 +1,99 @@
 "use client";
 
-import React from "react";
+import React, { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { motion } from "framer-motion";
 import {
   Target, Eye, ShieldCheck, Award, Briefcase, Mail, CheckCircle2,
-  Facebook, Instagram, MessageCircle, Globe2, Link2, ArrowRight
+  MessageCircle, ArrowRight
 } from "lucide-react";
 
 export default function GroupAboutUsPage() {
+  const [selectedContact, setSelectedContact] = useState<any>(null);
+
   const leaders = [
     {
-      name: "Mr. Priyansh Vyas",
-      role: "Founder & Managing Director",
-      bio: "Priyansh is the visionary behind Mag7 Global Group. With over a decade of expertise in international commodity trade, trade compliance, and cross-border logistics, he directs corporate strategy, global partnerships, and oversees the holding company's diversified divisions. His dedication to transparency and quality auditing forms the bedrock of the group.",
-      image: "https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&w=300&q=80",
-      email: "priyansh@mag7global.com"
+      name: "Mr. Gaurav Singhania",
+      role: "International Trade Consultant (IIC)",
+      bio: "Gaurav leads international trade consultancy and EXIM compliance strategies at Mag7 Global. With deep expertise in cross-border trade frameworks, customs tariffs, and global partner alignments, he directs our export-import operations across UAE, European, and Asian markets.",
+      image: "/images/founders/gaurav.jpeg",
+      phone: "+91 80024 16161",
+      whatsapp: "https://wa.me/918002416161",
+      email: "gaurav@mag7global.com"
     },
     {
-      name: "Mr. Rajesh K. Sharma",
-      role: "Co-Director & Head of Global Sourcing",
-      bio: "Rajesh coordinates supply networks across all divisions. He spends extensive time on the ground building relations with farmer producer groups (FPCs) in Maharashtra for agro sourcing, artisanal cooperatives in Rajasthan for handicrafts, and leading heavy machinery manufacturers in Gujarat to inspect quality standards at origin.",
-      image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&w=300&q=80",
-      email: "rajesh.sharma@mag7global.com"
-    },
-    {
-      name: "Ms. Sunita Patil",
-      role: "Director of Quality Compliance & Logistics",
-      bio: "Sunita manages international trade operations and compliance structures. She ensures all shipments adhere to rigorous phytosanitary matrices, API certifications, customs standards, and export-import regulations for the UAE, European Union, USA, and Australian ports.",
-      image: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=300&q=80",
-      email: "compliance@mag7global.com"
+      name: "Mr. Manoj Rajawat",
+      role: "Market Research Manager",
+      bio: "Manoj manages global market intelligence, commodity demand forecasting, and buyer profiling. He tracks real-time international trade tickers, price trends, and buyer personas to ensure Mag7 Global delivers targeted, high-margin export-import solutions.",
+      image: "/images/founders/Manoj.jpeg",
+      phone: "+91 79873 84443",
+      whatsapp: "https://wa.me/917987384443",
+      email: "manoj@mag7global.com"
     }
   ];
 
   return (
-    <div className="space-y-24 pb-20 bg-white" style={{ fontFamily: "'Plus Jakarta Sans', 'Outfit', sans-serif" }}>
-      
-      {/* ── HERO SECTION (MATCHES PHG STYLE) ── */}
-      <section className="relative pt-16 lg:pt-24 max-w-7xl mx-auto px-6 lg:px-10">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
-          
-          {/* Left Column (Text content) */}
-          <div className="lg:col-span-7 space-y-6 text-left">
-            <div className="inline-flex items-center justify-center bg-slate-50 border border-slate-200/80 rounded-full px-5 py-1.5 text-[10px] font-extrabold tracking-wider text-slate-500 uppercase select-none">
-              Trusted Partner
-            </div>
-            
-            <h1 className="text-[clamp(2.2rem,5vw,3.8rem)] font-black text-[#0d1f3c] leading-[1.08] tracking-tight">
-              At <span className="text-[#06b6d4]">MAG7</span> We Are <br />
-              Committed <span className="inline-block text-[#06b6d4] translate-y-1">↩</span>
-            </h1>
+    <div className="overflow-x-hidden" style={{ fontFamily: "'Plus Jakarta Sans', 'Outfit', sans-serif" }}>
+      {/* ── ABOUT US HERO ── */}
+      <section className="relative bg-gradient-to-br from-[#060e1e] to-[#0d1f3c] min-h-[52vh] flex items-end overflow-hidden">
+        {/* Dot grid overlay */}
+        <div className="absolute inset-0 opacity-10"
+          style={{ backgroundImage: "radial-gradient(circle at 2px 2px, #06b6d4 1px, transparent 0)", backgroundSize: "32px 32px" }}
+        />
+        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-[#060e1e]/80" />
 
-            <p className="text-slate-500 text-sm leading-relaxed font-semibold max-w-xl">
-              to redefining the concepts of global trade, compliance, and custom clearances by leveraging our experienced team and esteemed partners.
-            </p>
+        <div className="relative z-10 w-full max-w-7xl mx-auto px-6 lg:px-10 py-20">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-end">
 
-            {/* Link feature card */}
-            <div className="flex items-start gap-4 p-5 rounded-2xl bg-slate-50/80 border border-slate-100/80 max-w-xl shadow-sm">
-              <div className="w-10 h-10 rounded-full bg-slate-200/60 flex items-center justify-center text-slate-500 shrink-0">
-                <Link2 className="w-4 h-4" />
+            {/* Left — headline */}
+            <div className="lg:col-span-7 space-y-6">
+              <div className="inline-flex items-center gap-2 bg-white/10 border border-white/15 rounded-full px-4 py-1.5 text-[10px] font-extrabold tracking-widest text-white/70 uppercase">
+                MAG7 Global Private Limited
               </div>
-              <p className="text-slate-500 text-xs leading-relaxed font-bold">
-                We are dedicated to connecting the strongest companies, markets, solutions, and services worldwide to achieve greater success.
+              <h1 className="text-[clamp(2.2rem,5vw,3.8rem)] font-black text-white leading-[1.08] tracking-tight">
+                At <span className="text-[#06b6d4]">MAG7</span> We Are<br />
+                <span className="text-white/90">Committed to Excellence</span>
+              </h1>
+              <p className="text-white/60 text-sm leading-relaxed font-semibold max-w-xl">
+                Redefining global trade, compliance, and custom clearances — connecting the strongest markets, companies, and services worldwide.
               </p>
-            </div>
-
-            <p className="text-xs text-slate-400 font-semibold italic">
-              <span className="text-[#06b6d4] font-black not-italic">Imagine</span> the profound impact that this commitment can bring.
-            </p>
-
-            {/* CTAs Row */}
-            <div className="flex flex-wrap items-center gap-4 pt-2">
-              <Link
-                href="#leaders"
-                className="inline-flex items-center gap-2 bg-[#0d1f3c] hover:bg-[#06b6d4] text-white font-extrabold text-xs uppercase tracking-wider px-7 py-4 rounded-xl shadow-lg shadow-slate-200 transition-all duration-300 hover:-translate-y-0.5 cursor-pointer"
-              >
-                <span>Read More</span>
-                <ArrowRight className="w-3.5 h-3.5" />
-              </Link>
-
-              <a
-                href="https://wa.me/917987384443"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 border border-slate-200 hover:bg-slate-50 text-slate-700 font-extrabold text-xs uppercase tracking-wider px-6 py-4 rounded-xl transition-all duration-300 hover:-translate-y-0.5 cursor-pointer"
-              >
-                <MessageCircle className="w-4 h-4 text-emerald-500" />
-                <span>+91 - 7987384443</span>
-              </a>
-            </div>
-          </div>
-
-          {/* Right Column (Handshake Image Container) */}
-          <div className="lg:col-span-5 flex justify-center">
-            <div className="relative w-full max-w-[360px] aspect-[3/4] z-10">
-              <div className="relative w-full h-full rounded-[44px] overflow-hidden shadow-2xl border-4 border-slate-100/50">
-                <Image
-                  src="/images/business_partners_handshake.png"
-                  alt="Mag7 Global Commitment"
-                  fill
-                  priority
-                  className="object-cover object-center"
-                />
-                
-                {/* Floating Social Icons Bar */}
-                <div className="absolute top-4 left-1/2 -translate-x-1/2 flex items-center gap-2.5 bg-white/20 backdrop-blur-md rounded-full px-4 py-1.5 border border-white/25 z-20">
-                  <span className="w-2 h-2 rounded-full bg-cyan-400 animate-pulse" />
-                  <Facebook className="w-3.5 h-3.5 text-white opacity-85 hover:opacity-100 transition-opacity" />
-                  <Instagram className="w-3.5 h-3.5 text-white opacity-85 hover:opacity-100 transition-opacity" />
-                  <MessageCircle className="w-3.5 h-3.5 text-white opacity-85 hover:opacity-100 transition-opacity" />
-                  <Mail className="w-3.5 h-3.5 text-white opacity-85 hover:opacity-100 transition-opacity" />
-                  <Globe2 className="w-3.5 h-3.5 text-white opacity-85 hover:opacity-100 transition-opacity" />
-                </div>
-
-                {/* Floating Circular Trusted Partner Emblem */}
-                <div className="absolute bottom-6 right-6 w-20 h-20 bg-white rounded-full shadow-xl flex items-center justify-center border border-slate-100 z-20 hover:scale-105 transition-transform duration-300">
-                  <div className="text-center flex flex-col items-center justify-center leading-none">
-                    <span className="text-[8px] font-black text-[#0d1f3c] tracking-widest uppercase">TRUSTED</span>
-                    <span className="text-[9px] font-bold text-[#06b6d4] uppercase mt-0.5">PARTNER</span>
-                  </div>
-                </div>
+              <div className="flex flex-wrap items-center gap-3 pt-2">
+                <Link
+                  href="#leaders"
+                  className="inline-flex items-center gap-2 bg-[#06b6d4] hover:bg-[#0891b2] text-white font-extrabold text-xs uppercase tracking-wider px-7 py-3.5 rounded-full shadow-lg transition-all duration-300 hover:-translate-y-0.5 cursor-pointer"
+                >
+                  <span>Meet the Team</span>
+                  <ArrowRight className="w-3.5 h-3.5" />
+                </Link>
+                <a
+                  href="https://wa.me/917987384443"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 border border-white/30 hover:border-white/60 text-white/80 hover:text-white font-bold text-xs uppercase tracking-wider px-6 py-3.5 rounded-full transition-all duration-300 hover:-translate-y-0.5 cursor-pointer"
+                >
+                  <MessageCircle className="w-4 h-4 text-emerald-400" />
+                  <span>+91 79873 84443</span>
+                </a>
               </div>
             </div>
-          </div>
 
+            {/* Right — key credentials strip */}
+            <div className="lg:col-span-5 grid grid-cols-2 gap-3 pb-2">
+              {[
+                { label: "IEC Code", value: "AAVCM0809P", accent: "#06b6d4", sub: "DGFT Certified Exporter" },
+                { label: "GSTIN", value: "23AAVCM0809P1ZX", accent: "#10b981", sub: "Govt. of India Registered" },
+                { label: "Countries Served", value: "28+", accent: "#f59e0b", sub: "Active Global Markets" },
+                { label: "RFQ Response", value: "< 24h", accent: "#a78bfa", sub: "Guaranteed Turnaround" },
+              ].map((c, i) => (
+                <div key={i} className="bg-white/8 border border-white/10 rounded-2xl p-4 backdrop-blur-sm space-y-1">
+                  <div className="text-[10px] font-black uppercase tracking-wider" style={{ color: c.accent }}>{c.label}</div>
+                  <div className="text-white font-extrabold text-sm leading-snug">{c.value}</div>
+                  <div className="text-white/40 text-[10px] font-semibold">{c.sub}</div>
+                </div>
+              ))}
+            </div>
+          </div>
         </div>
       </section>
 
@@ -132,13 +101,13 @@ export default function GroupAboutUsPage() {
       <section id="leaders" className="max-w-7xl mx-auto px-6 lg:px-10 py-8 border-t border-b border-slate-100 scroll-mt-20">
         <div className="text-center mb-16 space-y-4">
           <h2 className="inline-block bg-[#06b6d4]/5 text-[#06b6d4] font-extrabold text-xs tracking-widest uppercase px-5 py-2 rounded-full">Executive Board</h2>
-          <h3 className="text-3xl md:text-4.5xl font-black text-[#0d1f3c] tracking-tight">Our <span className="text-[#06b6d4]">Leadership</span></h3>
+          <h3 className="text-3xl md:text-4.5xl font-black text-[#0d1f3c] tracking-tight">Driven by <span className="text-[#06b6d4]">Visionary Leadership</span></h3>
           <p className="text-slate-500 text-sm max-w-xl mx-auto font-medium">
             Meet the Directors and Executives shaping the international trade footprint of the Mag7 Group.
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
           {leaders.map((leader, idx) => (
             <motion.div
               key={idx}
@@ -146,42 +115,140 @@ export default function GroupAboutUsPage() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: idx * 0.15 }}
-              className="bg-white border border-slate-150 rounded-2xl p-6 md:p-8 flex flex-col justify-between hover:shadow-xl hover:border-slate-200 transition-all duration-300"
+              className="bg-white border border-slate-150 rounded-3xl overflow-hidden flex flex-col justify-between hover:shadow-2xl hover:border-slate-200 transition-all duration-300"
             >
-              <div className="space-y-6">
-                {/* Photo & Role */}
-                <div className="flex items-center gap-4">
-                  <div className="relative h-20 w-20 rounded-full overflow-hidden border-2 border-[#06b6d4] shrink-0 shadow-sm">
-                    <Image
-                      src={leader.image}
-                      alt={leader.name}
-                      fill
-                      sizes="80px"
-                      className="object-cover"
-                    />
-                  </div>
-                  <div>
-                    <h3 className="font-extrabold text-[#0d1f3c] text-base">{leader.name}</h3>
-                    <p className="text-xs text-slate-400 font-bold tracking-wide">{leader.role}</p>
+              <div>
+                {/* Executive Headshot / Portrait Photo Header (4x+ size, torso & head focused) */}
+                <div className="relative w-full h-80 sm:h-96 bg-slate-900 overflow-hidden group">
+                  <Image
+                    src={leader.image}
+                    alt={leader.name}
+                    fill
+                    sizes="(max-width: 768px) 100vw, 50vw"
+                    className="object-cover object-top transition-transform duration-500 group-hover:scale-105"
+                    priority
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-[#0d1f3c] via-[#0d1f3c]/25 to-transparent flex items-end p-6 md:p-8">
+                    <div className="space-y-1.5">
+                      <span className="inline-block bg-[#06b6d4] text-white text-[10px] font-black uppercase tracking-widest px-3.5 py-1 rounded-full shadow-sm">
+                        {leader.role}
+                      </span>
+                      <h3 className="font-black text-white text-2xl tracking-tight drop-shadow-md">{leader.name}</h3>
+                    </div>
                   </div>
                 </div>
-                {/* Biography */}
-                <p className="text-slate-500 text-xs leading-relaxed font-semibold">
-                  {leader.bio}
-                </p>
+
+                {/* Content Below Photo */}
+                <div className="p-6 md:p-8 space-y-6">
+                  {/* Biography */}
+                  <p className="text-slate-600 text-xs sm:text-sm leading-relaxed font-medium">
+                    {leader.bio}
+                  </p>
+
+                  {/* Direct Contact Details on Card */}
+                  <div className="bg-slate-50 p-4 rounded-2xl border border-slate-100 space-y-2.5 text-xs font-semibold">
+                    <div className="flex items-center justify-between text-slate-700">
+                      <span className="text-slate-400 font-bold">Connect Mobile:</span>
+                      <a href={`tel:${leader.phone.replace(/\s+/g, '')}`} className="font-black text-[#0d1f3c] hover:text-[#06b6d4] transition-colors">
+                        {leader.phone}
+                      </a>
+                    </div>
+                    <div className="flex items-center justify-between text-slate-700">
+                      <span className="text-slate-400 font-bold">Email Direct:</span>
+                      <a href={`mailto:${leader.email}`} className="font-black text-[#06b6d4] hover:underline">
+                        {leader.email}
+                      </a>
+                    </div>
+                  </div>
+                </div>
               </div>
 
-              {/* Action */}
-              <div className="pt-6 border-t border-slate-100 mt-6 flex items-center justify-between text-xs font-semibold text-slate-400">
-                <span className="flex items-center gap-1.5"><Briefcase className="w-4 h-4 text-[#06b6d4]" /> Executive Officer</span>
-                <a href={`mailto:${leader.email}`} className="text-[#06b6d4] hover:text-[#0d1f3c] flex items-center gap-1 font-bold">
-                  <Mail className="w-4 h-4" /> Contact
+              {/* Action Buttons */}
+              <div className="p-6 md:p-8 pt-0 flex items-center justify-between gap-3">
+                <button
+                  onClick={() => setSelectedContact(leader)}
+                  className="flex-1 inline-flex items-center justify-center gap-1.5 bg-[#0d1f3c] hover:bg-[#06b6d4] text-white text-xs font-extrabold py-3.5 px-4 rounded-xl transition-all shadow-sm cursor-pointer"
+                >
+                  <Mail className="w-3.5 h-3.5" />
+                  <span>Contact Details</span>
+                </button>
+
+                <a
+                  href={leader.whatsapp}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center justify-center gap-1.5 bg-emerald-500 hover:bg-emerald-600 text-white text-xs font-extrabold py-3.5 px-4 rounded-xl transition-all shadow-sm cursor-pointer"
+                >
+                  <MessageCircle className="w-3.5 h-3.5" />
+                  <span>WhatsApp</span>
                 </a>
               </div>
             </motion.div>
           ))}
         </div>
       </section>
+
+      {/* ── CONTACT DETAILS MODAL POPUP ── */}
+      {selectedContact && (
+        <div className="fixed inset-0 bg-black/60 backdrop-blur-sm z-50 flex items-center justify-center p-4 animate-in fade-in duration-200">
+          <div className="bg-white max-w-md w-full rounded-3xl p-8 space-y-6 shadow-2xl border border-slate-100 relative">
+            <button
+              onClick={() => setSelectedContact(null)}
+              className="absolute top-5 right-5 w-8 h-8 rounded-full bg-slate-100 hover:bg-slate-200 flex items-center justify-center text-slate-500 transition-colors cursor-pointer font-bold"
+            >
+              ✕
+            </button>
+
+            <div className="flex items-center gap-4 border-b border-slate-100 pb-5">
+              <div className="relative h-24 w-24 rounded-2xl overflow-hidden border-2 border-[#06b6d4] shrink-0 shadow-md">
+                <Image
+                  src={selectedContact.image}
+                  alt={selectedContact.name}
+                  fill
+                  className="object-cover object-top"
+                />
+              </div>
+              <div>
+                <h3 className="font-extrabold text-[#0d1f3c] text-base">{selectedContact.name}</h3>
+                <p className="text-xs text-[#06b6d4] font-extrabold uppercase mt-0.5">{selectedContact.role}</p>
+              </div>
+            </div>
+
+            <div className="space-y-4 text-xs font-semibold">
+              <div className="p-4 bg-slate-50 rounded-2xl space-y-3 border border-slate-100">
+                <div className="space-y-1">
+                  <span className="text-slate-400 font-bold uppercase text-[10px] tracking-wider">Mobile Number</span>
+                  <div className="text-slate-900 font-extrabold text-sm flex items-center justify-between">
+                    <span>{selectedContact.phone}</span>
+                    <a href={`tel:${selectedContact.phone.replace(/\s+/g, '')}`} className="text-[#06b6d4] hover:underline font-bold text-xs">
+                      Call Now
+                    </a>
+                  </div>
+                </div>
+
+                <div className="space-y-1 pt-2 border-t border-slate-200/60">
+                  <span className="text-slate-400 font-bold uppercase text-[10px] tracking-wider">Email Address</span>
+                  <div className="text-[#06b6d4] font-extrabold text-xs">
+                    <a href={`mailto:${selectedContact.email}`} className="hover:underline">
+                      {selectedContact.email}
+                    </a>
+                  </div>
+                </div>
+              </div>
+
+              <a
+                href={selectedContact.whatsapp}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-full bg-emerald-500 hover:bg-emerald-600 text-white font-extrabold py-3.5 rounded-xl flex items-center justify-center gap-2 shadow-lg shadow-emerald-500/20 transition-all cursor-pointer text-xs"
+              >
+                <MessageCircle className="w-4 h-4" />
+                <span>Chat on WhatsApp ({selectedContact.phone})</span>
+              </a>
+            </div>
+          </div>
+        </div>
+      )}
 
       {/* Vision, Mission, and Values */}
       <section className="max-w-7xl mx-auto px-6 lg:px-10 relative py-8">
@@ -247,6 +314,85 @@ export default function GroupAboutUsPage() {
         </div>
       </section>
 
+      {/* Corporate Compliance & Registration Credentials */}
+      <section className="max-w-7xl mx-auto px-6 lg:px-10 py-8 border-t border-slate-100">
+        <div className="bg-slate-50 border border-slate-200/80 rounded-[2.5rem] p-8 md:p-12 space-y-8">
+          <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
+            <div className="space-y-2">
+              <div className="inline-flex items-center gap-2 bg-[#06b6d4]/10 text-[#06b6d4] text-[10px] font-black uppercase tracking-widest px-4 py-1.5 rounded-full border border-[#06b6d4]/20">
+                Government Verified Status
+              </div>
+              <h3 className="text-2xl md:text-3xl font-black text-[#0d1f3c]">Official Legal &amp; Licensing Credentials</h3>
+              <p className="text-xs text-slate-500 font-semibold max-w-xl">
+                MAG7 GLOBAL PRIVATE LIMITED operates under full compliance with the Ministry of Commerce &amp; Industry, DGFT, and the Government of India.
+              </p>
+            </div>
+            <Link
+              href="/agro/certificates"
+              className="inline-flex items-center gap-2 bg-[#0d1f3c] hover:bg-[#06b6d4] text-white text-xs font-extrabold px-6 py-3.5 rounded-xl transition-all shadow-md shrink-0 cursor-pointer"
+            >
+              <span>View All Licensing Details</span>
+              <ArrowRight className="w-4 h-4" />
+            </Link>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            {/* IEC Credential */}
+            <div className="bg-white border border-slate-100 p-6 rounded-2xl space-y-4 shadow-sm">
+              <div className="flex items-center justify-between">
+                <div>
+                  <span className="text-[10px] font-black text-[#06b6d4] uppercase tracking-wider">DGFT EXPORTER CODE</span>
+                  <h4 className="font-black text-[#0d1f3c] text-base">Importer-Exporter Code (IEC)</h4>
+                </div>
+                <span className="text-xs font-extrabold text-slate-800 bg-cyan-50 border border-cyan-100 px-3 py-1 rounded-full">
+                  AAVCM0809P
+                </span>
+              </div>
+              <p className="text-xs text-slate-500 leading-relaxed font-medium">
+                Issued by Directorate General of Foreign Trade (DGFT Indore), validating cross-border export-import authority for MAG7 GLOBAL PRIVATE LIMITED.
+              </p>
+              <div className="pt-2 flex items-center justify-between text-xs border-t border-slate-100">
+                <span className="text-slate-400 font-semibold">Date of Issue: <strong className="text-slate-700">14/07/2026</strong></span>
+                <a
+                  href="/certificates/certificateOfIEC.pdf"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-[#06b6d4] hover:text-[#0d1f3c] font-black underline flex items-center gap-1"
+                >
+                  View Official PDF ↗
+                </a>
+              </div>
+            </div>
+
+            {/* GST Credential */}
+            <div className="bg-white border border-slate-100 p-6 rounded-2xl space-y-4 shadow-sm">
+              <div className="flex items-center justify-between">
+                <div>
+                  <span className="text-[10px] font-black text-emerald-600 uppercase tracking-wider">TAX REGISTRATION</span>
+                  <h4 className="font-black text-[#0d1f3c] text-base">GST Registration (Form GST REG-06)</h4>
+                </div>
+                <span className="text-xs font-extrabold text-slate-800 bg-emerald-50 border border-emerald-100 px-3 py-1 rounded-full">
+                  23AAVCM0809P1ZX
+                </span>
+              </div>
+              <p className="text-xs text-slate-500 leading-relaxed font-medium">
+                Issued by the Government of India and Madhya Pradesh State Tax Department for commercial taxation, inter-state sourcing, and invoicing.
+              </p>
+              <div className="pt-2 flex items-center justify-between text-xs border-t border-slate-100">
+                <span className="text-slate-400 font-semibold">Date of Issue: <strong className="text-slate-700">02/07/2026</strong></span>
+                <a
+                  href="/certificates/AA230626050525C_RC02072026.pdf"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-[#06b6d4] hover:text-[#0d1f3c] font-black underline flex items-center gap-1"
+                >
+                  View Official PDF ↗
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
     </div>
   );
 }

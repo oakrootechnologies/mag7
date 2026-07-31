@@ -5,8 +5,8 @@ import Image from "next/image";
 import Link from "next/link";
 import { motion, useInView } from "framer-motion";
 import {
-  ArrowRight, Globe2, Leaf, HeartHandshake, ShieldCheck, Factory, Award,
-  TrendingUp, Package, Truck, CheckCircle2, Users, MapPin, PhoneCall, ChevronRight, Star,
+  ArrowRight, Globe2, HeartHandshake, ShieldCheck, Award,
+  TrendingUp, Package, Truck, CheckCircle2, Users,
   Facebook, Instagram, MessageCircle, Mail
 } from "lucide-react";
 
@@ -106,9 +106,6 @@ export default function GroupHomePage() {
     >
       {/* ════════════════════════════════════════════════
           HERO
-      ════════════════════════════════════════════════ */}
-      {/* ════════════════════════════════════════════════
-          HERO — reference style
       ════════════════════════════════════════════════ */}
       <section className="relative min-h-[86vh] flex flex-col justify-end overflow-hidden bg-[#060e1e]">
         {/* Full-bleed background port image */}
@@ -229,7 +226,7 @@ export default function GroupHomePage() {
 
 
       {/* ════════════════════════════════════════════════
-          WHY CHOOSE MAG7 — airplane split section
+          ABOUT MAG7 — split with value props
       ════════════════════════════════════════════════ */}
       <section className="bg-[#f8fafc] pt-32 pb-0">
         <div className="max-w-7xl mx-auto px-6 lg:px-10">
@@ -237,7 +234,7 @@ export default function GroupHomePage() {
           {/* Top split: text left, airplane right */}
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center pb-20">
 
-            {/* LEFT — text content */}
+            {/* LEFT — unified text content */}
             <motion.div
               variants={fadeUp}
               initial="hidden"
@@ -246,31 +243,36 @@ export default function GroupHomePage() {
               className="space-y-6"
             >
               <div className="text-[10px] font-black uppercase tracking-[0.22em] text-[#06b6d4]">
-                About MAG7 Global
+                Who We Are
               </div>
               <h2 className="text-[clamp(1.8rem,4vw,2.8rem)] font-black text-[#0d1f3c] leading-tight tracking-tight">
-                Why Choose{" "}
-                <span className="text-[#06b6d4]">MAG7 Global?</span>
+                Your One-Stop{" "}
+                <span className="text-[#06b6d4]">Import-Export Partner</span>
               </h2>
               <p className="text-slate-600 text-sm leading-relaxed font-medium">
-                MAG7 Global LLP is a diversified holding conglomerate headquartered in Indore, India. Founded with a singular focus on transparent, compliant, and high-volume international trade, we have built integrated sourcing networks across three distinct sectors.
+                MAG7 Global is a diversified trade conglomerate headquartered in Indore, India. We simplify global trade by connecting verified Indian producers with international buyers — covering agro produce, artisanal handicrafts, and industrial machinery under one roof.
               </p>
               <p className="text-slate-500 text-sm leading-relaxed">
-                With coordinating supply chains across the globe — we deliver every shipment on schedule with full regulatory compliance. Over a decade of trade experience has earned us the trust of 500+ global buyers across 28 countries.
+                From reefer containers for fresh produce to bubble-padded crates for fragile pottery and heavy rigging for machinery — our in-house logistics and compliance team handles every detail. 500+ buyers across 28 countries trust us for on-time delivery and full regulatory clearance.
               </p>
-              <p className="text-slate-500 text-sm leading-relaxed">
-                Whether you need reefer containers for fresh produce, bubble-padded crates for fragile pottery, or heavy rigging for industrial machinery — our in-house logistics team handles every detail.
-              </p>
-              <a
-                href="#divisions"
-                className="inline-flex items-center gap-2.5 bg-[#06b6d4] hover:bg-[#0891b2] text-white font-black text-sm px-8 py-3.5 rounded-full shadow-lg shadow-cyan-500/20 transition-all duration-300 hover:-translate-y-0.5 group"
-              >
-                Free Consultation
-                <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-              </a>
+              <div className="flex flex-wrap gap-3 pt-2">
+                <Link
+                  href="/rfq"
+                  className="inline-flex items-center gap-2.5 bg-[#06b6d4] hover:bg-[#0891b2] text-white font-black text-sm px-8 py-3.5 rounded-full shadow-lg shadow-cyan-500/20 transition-all duration-300 hover:-translate-y-0.5 group"
+                >
+                  Get a Free Quote
+                  <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                </Link>
+                <Link
+                  href="#divisions"
+                  className="inline-flex items-center gap-2 border border-slate-300 text-slate-700 font-bold text-sm px-6 py-3.5 rounded-full hover:border-[#06b6d4] hover:text-[#06b6d4] transition-all duration-300"
+                >
+                  View Divisions
+                </Link>
+              </div>
             </motion.div>
 
-            {/* RIGHT — airplane + floating card */}
+            {/* RIGHT — airplane visual */}
             <motion.div
               variants={fadeUp}
               initial="hidden"
@@ -279,10 +281,7 @@ export default function GroupHomePage() {
               viewport={{ once: true }}
               className="relative flex items-center justify-center"
             >
-              {/* Soft background circle */}
               <div className="absolute inset-0 rounded-3xl bg-gradient-to-br from-[#06b6d4]/5 via-white to-[#e0f7fa]/40" />
-
-              {/* Airplane image */}
               <div className="relative w-full aspect-[4/3] flex items-center justify-center py-6">
                 <Image
                   src="/new ui/plane.png"
@@ -295,6 +294,7 @@ export default function GroupHomePage() {
             </motion.div>
           </div>
 
+          {/* Value Props Grid */}
           <motion.div
             variants={fadeUp}
             initial="hidden"
@@ -340,73 +340,7 @@ export default function GroupHomePage() {
         </div>
       </section>
 
-      {/* ════════════════════════════════════════════════
-          WHO WE ARE — collage
-      ════════════════════════════════════════════════ */}
-      <section className="bg-white pt-24 pb-24">
-        <div className="max-w-7xl mx-auto px-6 lg:px-10">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-            {/* Text */}
-            <motion.div
-              variants={fadeUp}
-              initial="hidden"
-              whileInView="show"
-              viewport={{ once: true }}
-              className="space-y-6"
-            >
-              <div className="inline-flex items-center gap-2 bg-[#06b6d4]/8 text-[#0891b2] border border-[#06b6d4]/20 text-[10px] font-black uppercase tracking-[0.2em] px-4 py-2 rounded-full">
-                Who We Are
-              </div>
-              <h2 className="text-[clamp(1.8rem,4vw,2.6rem)] font-black text-[#0d1f3c] leading-tight tracking-tight">
-                Mag7 Global – Your One-Stop Import-Export Partner
-              </h2>
-              <p className="text-slate-600 text-sm leading-relaxed font-medium">
-                Navigating global trade can be challenging with complex regulations, unreliable networks, and delayed shipments. Mag7 Global simplifies your journey with complete transparency, swift response times, and a strong global network.
-              </p>
-              <p className="text-slate-500 text-sm leading-relaxed font-medium">
-                With our office in Indore, Madhya Pradesh, we provide seamless trade solutions for exporters, importers, local traders, wholesalers, and distributors. As an Integrated Service Provider, we handle everything from sourcing and documentation to logistics and compliance—ensuring a hassle-free, cost-effective, and efficient trade experience.
-              </p>
-            </motion.div>
 
-            {/* Single handshake image with floating badges */}
-            <motion.div
-              variants={fadeUp}
-              initial="hidden"
-              whileInView="show"
-              custom={1}
-              viewport={{ once: true }}
-              className="relative w-full max-w-[380px] aspect-[3/4] mx-auto z-10"
-            >
-              <div className="relative w-full h-full rounded-[40px] overflow-hidden shadow-2xl border-4 border-white/95">
-                <Image
-                  src="/images/business_partners_handshake.png"
-                  alt="Mag7 Global Partners"
-                  fill
-                  className="object-cover object-center"
-                />
-
-                {/* Floating Social Icons Bar at the Top */}
-                <div className="absolute top-4 left-1/2 -translate-x-1/2 flex items-center gap-2.5 bg-white/20 backdrop-blur-md rounded-full px-4 py-1.5 border border-white/25 z-20">
-                  <span className="w-2 h-2 rounded-full bg-cyan-400 animate-pulse" />
-                  <Facebook className="w-3.5 h-3.5 text-white opacity-85 hover:opacity-100 transition-opacity" />
-                  <Instagram className="w-3.5 h-3.5 text-white opacity-85 hover:opacity-100 transition-opacity" />
-                  <MessageCircle className="w-3.5 h-3.5 text-white opacity-85 hover:opacity-100 transition-opacity" />
-                  <Mail className="w-3.5 h-3.5 text-white opacity-85 hover:opacity-100 transition-opacity" />
-                  <Globe2 className="w-3.5 h-3.5 text-white opacity-85 hover:opacity-100 transition-opacity" />
-                </div>
-
-                {/* Floating Circular Trusted Partner Emblem */}
-                <div className="absolute bottom-6 right-6 w-20 h-20 bg-white rounded-full shadow-xl flex items-center justify-center border border-slate-100 z-20 hover:scale-105 transition-transform duration-300">
-                  <div className="text-center flex flex-col items-center justify-center leading-none">
-                    <span className="text-[8px] font-black text-[#0d1f3c] tracking-widest uppercase">TRUSTED</span>
-                    <span className="text-[9px] font-bold text-[#06b6d4] uppercase mt-0.5">PARTNER</span>
-                  </div>
-                </div>
-              </div>
-            </motion.div>
-          </div>
-        </div>
-      </section>
 
 
       {/* ════════════════════════════════════════════════
@@ -502,86 +436,125 @@ export default function GroupHomePage() {
             <p className="text-white/75 text-sm font-medium">Submit an RFQ and get a quote within 24 hours.</p>
           </div>
           <div className="flex flex-wrap gap-4 shrink-0">
-            <Link href="/rfq" className="bg-white text-[#0891b2] font-black text-sm px-8 py-4 hover:-translate-y-0.5 transition-all shadow-xl hover:shadow-2xl">
+            <Link href="/rfq" className="bg-white text-[#0891b2] font-black text-sm px-8 py-4 rounded-full hover:-translate-y-0.5 transition-all shadow-xl hover:shadow-2xl">
               Submit RFQ
             </Link>
-            <Link href="/about-us" className="border-2 border-white text-white font-bold text-sm px-8 py-4 hover:bg-white/10 transition-all">
-              Contact Us
-            </Link>
+            <a href="https://wa.me/917987384443" target="_blank" rel="noopener noreferrer" className="border-2 border-white text-white font-bold text-sm px-8 py-4 rounded-full hover:bg-white/10 transition-all flex items-center gap-2">
+              <MessageCircle className="w-4 h-4" /> WhatsApp Us
+            </a>
           </div>
         </div>
       </section>
 
 
 
+
+
       {/* ════════════════════════════════════════════════
-          LEADERSHIP PREVIEW
+          EXECUTIVE LEADERSHIP & CORE MANAGEMENT
       ════════════════════════════════════════════════ */}
-      <section className="bg-white py-24 border-t border-slate-100">
+      <section className="bg-white py-20 border-t border-slate-100">
         <div className="max-w-7xl mx-auto px-6 lg:px-10">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-            <motion.div variants={fadeUp} initial="hidden" whileInView="show" viewport={{ once: true }} className="space-y-6">
-              <div className="inline-flex items-center gap-2 bg-[#06b6d4]/8 text-[#0891b2] border border-[#06b6d4]/20 text-[10px] font-black uppercase tracking-[0.2em] px-4 py-2 rounded-full">
-                Our Leadership
-              </div>
-              <h2 className="text-[clamp(1.8rem,4vw,3rem)] font-black text-[#0d1f3c] leading-tight tracking-tight">
-                Driven by Visionary{" "}
-                <span className="text-[#06b6d4]">Leadership.</span>
-              </h2>
-              <p className="text-slate-600 text-sm leading-relaxed font-medium">
-                Our executive team brings combined decades of experience in international commodity trade, logistics, and quality compliance — steering MAG7 Global's multi-division growth strategy.
-              </p>
-              <div className="grid grid-cols-2 gap-4 pt-2">
-                {[
-                  { label: "Founder & MD", name: "Priyansh Vyas" },
-                  { label: "Co-Director", name: "Rajesh K. Sharma" },
-                  { label: "Compliance Director", name: "Sunita Patil" },
-                  { label: "Operations Head", name: "Global Sourcing" },
-                ].map((m, i) => (
-                  <div key={i} className="flex items-center gap-3 p-4 rounded-xl border border-slate-100 bg-slate-50 hover:border-[#06b6d4]/30 transition-colors">
-                    <div className="w-9 h-9 rounded-full bg-[#06b6d4]/10 flex items-center justify-center shrink-0">
-                      <Users className="w-4 h-4 text-[#06b6d4]" />
-                    </div>
-                    <div>
-                      <div className="font-black text-[#0d1f3c] text-xs">{m.name}</div>
-                      <div className="text-[9px] text-slate-500 uppercase tracking-wider font-bold">{m.label}</div>
+          <div className="text-center mb-16 space-y-3">
+            <div className="inline-flex items-center gap-2 bg-[#06b6d4]/10 text-[#06b6d4] text-[10px] font-black uppercase tracking-widest px-4 py-1.5 rounded-full border border-[#06b6d4]/20">
+              Executive Leadership
+            </div>
+            <h2 className="text-[clamp(1.8rem,4vw,2.8rem)] font-black text-[#0d1f3c] tracking-tight">
+              Driven by <span className="text-[#06b6d4]">Visionary Leadership.</span>
+            </h2>
+            <p className="text-slate-500 text-sm max-w-xl mx-auto font-medium">
+              Our executive board directs cross-border trade operations, market research, and international compliance structures.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+            {[
+              {
+                name: "Mr. Gaurav Singhania",
+                role: "International Trade Consultant (IIC)",
+                bio: "Directs international trade policies, tariff optimizations, and EXIM compliance strategies across UAE, European, and Asian trade corridors.",
+                image: "/images/founders/gaurav.jpeg",
+                phone: "+91 80024 16161",
+                whatsapp: "https://wa.me/918002416161",
+                email: "gaurav@mag7global.com"
+              },
+              {
+                name: "Mr. Manoj Rajawat",
+                role: "Market Research Manager",
+                bio: "Oversees global market intelligence, commodity demand forecasting, buyer profiling, and trade pricing tickers for high-margin exports.",
+                image: "/images/founders/Manoj.jpeg",
+                phone: "+91 79873 84443",
+                whatsapp: "https://wa.me/917987384443",
+                email: "manoj@mag7global.com"
+              }
+            ].map((leader, i) => (
+              <div
+                key={i}
+                className="bg-white border border-slate-150 rounded-3xl overflow-hidden flex flex-col justify-between hover:shadow-2xl hover:border-slate-200 transition-all duration-300"
+              >
+                <div>
+                  {/* Executive Headshot / Portrait Photo Header (4x+ size, torso & head focused) */}
+                  <div className="relative w-full h-80 sm:h-96 bg-slate-900 overflow-hidden group">
+                    <Image
+                      src={leader.image}
+                      alt={leader.name}
+                      fill
+                      sizes="(max-width: 768px) 100vw, 50vw"
+                      className="object-cover object-top transition-transform duration-500 group-hover:scale-105"
+                      priority
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-[#0d1f3c] via-[#0d1f3c]/25 to-transparent flex items-end p-6 md:p-8">
+                      <div className="space-y-1.5">
+                        <span className="inline-block bg-[#06b6d4] text-white text-[10px] font-black uppercase tracking-widest px-3.5 py-1 rounded-full shadow-sm">
+                          {leader.role}
+                        </span>
+                        <h3 className="font-black text-white text-2xl tracking-tight drop-shadow-md">{leader.name}</h3>
+                      </div>
                     </div>
                   </div>
-                ))}
-              </div>
-              <Link
-                href="/about-us"
-                className="inline-flex items-center gap-2 bg-[#0d1f3c] text-white font-bold text-sm px-7 py-4 hover:bg-[#06b6d4] transition-all duration-300 group"
-              >
-                Meet Our Team <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-              </Link>
-            </motion.div>
 
-            {/* Decorative stats / trust block */}
-            <motion.div
-              variants={fadeUp}
-              initial="hidden"
-              whileInView="show"
-              custom={1}
-              viewport={{ once: true }}
-              className="grid grid-cols-2 gap-6"
-            >
-              {[
-                { icon: <Globe2 className="w-7 h-7 text-[#06b6d4]" />, value: "28+", label: "Countries Served", bg: "bg-[#06b6d4]/6" },
-                { icon: <MapPin className="w-7 h-7 text-amber-500" />, value: "3", label: "Active Divisions", bg: "bg-amber-500/6" },
-                { icon: <TrendingUp className="w-7 h-7 text-emerald-500" />, value: "₹50Cr+", label: "Annual Trade Volume", bg: "bg-emerald-500/6" },
-                { icon: <PhoneCall className="w-7 h-7 text-violet-500" />, value: "24h", label: "RFQ Response Time", bg: "bg-violet-500/6" },
-              ].map((item, i) => (
-                <div
-                  key={i}
-                  className={`${item.bg} rounded-2xl p-7 border border-slate-100 hover:shadow-lg hover:-translate-y-1 transition-all duration-300`}
-                >
-                  <div className="mb-4">{item.icon}</div>
-                  <div className="text-3xl font-black text-[#0d1f3c] leading-none mb-1">{item.value}</div>
-                  <div className="text-xs text-slate-500 font-bold uppercase tracking-wider">{item.label}</div>
+                  {/* Content Below Photo */}
+                  <div className="p-6 md:p-8 space-y-6">
+                    <p className="text-slate-600 text-xs sm:text-sm leading-relaxed font-medium">
+                      {leader.bio}
+                    </p>
+
+                    <div className="bg-slate-50 p-4 rounded-2xl border border-slate-100 space-y-2.5 text-xs font-semibold">
+                      <div className="flex items-center justify-between text-slate-700">
+                        <span className="text-slate-400 font-bold">Mobile Connect:</span>
+                        <a href={`tel:${leader.phone.replace(/\s+/g, '')}`} className="font-black text-[#0d1f3c] hover:text-[#06b6d4] transition-colors">
+                          {leader.phone}
+                        </a>
+                      </div>
+                      <div className="flex items-center justify-between text-slate-700">
+                        <span className="text-slate-400 font-bold">Email Direct:</span>
+                        <a href={`mailto:${leader.email}`} className="font-black text-[#06b6d4] hover:underline">
+                          {leader.email}
+                        </a>
+                      </div>
+                    </div>
+                  </div>
                 </div>
-              ))}
-            </motion.div>
+
+                <div className="p-6 md:p-8 pt-0 flex items-center justify-between gap-3 text-xs">
+                  <a
+                    href={`mailto:${leader.email}`}
+                    className="flex-1 inline-flex items-center justify-center gap-1.5 bg-[#0d1f3c] hover:bg-[#06b6d4] text-white font-extrabold py-3.5 px-4 rounded-xl transition-all shadow-sm cursor-pointer"
+                  >
+                    <span>Contact Details</span>
+                  </a>
+                  <a
+                    href={leader.whatsapp}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center justify-center gap-1.5 bg-emerald-500 hover:bg-emerald-600 text-white font-extrabold py-3.5 px-4 rounded-xl transition-all shadow-sm cursor-pointer"
+                  >
+                    <MessageCircle className="w-3.5 h-3.5" />
+                    <span>WhatsApp</span>
+                  </a>
+                </div>
+              </div>
+            ))}
           </div>
         </div>
       </section>
