@@ -10,7 +10,7 @@ import { industrialProducts } from "@/data/industrial";
 function IndustrialListContent() {
   const searchParams = useSearchParams();
   const router = useRouter();
-  const categoryParam = searchParams.get("cat") || "all";
+  const categoryParam = searchParams?.get("cat") || "all";
 
   const [searchQuery, setSearchQuery] = useState("");
   const [activeCategory, setActiveCategory] = useState<string>("all");

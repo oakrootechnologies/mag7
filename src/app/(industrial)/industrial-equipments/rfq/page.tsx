@@ -37,7 +37,7 @@ const CATEGORY_LABELS: Record<string, string> = {
 
 function IndustrialRFQContent() {
   const searchParams = useSearchParams();
-  const prodSlug = searchParams.get("prod") || "";
+  const prodSlug = searchParams?.get("prod") || "";
 
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [fullName, setFullName] = useState("");
