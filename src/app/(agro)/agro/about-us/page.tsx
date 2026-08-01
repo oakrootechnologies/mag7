@@ -213,22 +213,38 @@ export default function AboutUsPage() {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
           {[
             {
-              name: "Mr. Gaurav Singhania",
+              name: "Mrs. Amrita Kumari",
+              role: "Director",
+              bio: "Director on the Executive Board of MAG7 Global. Directs corporate governance, strategic board operations, and financial compliance oversight across MAG7 Global divisions.",
+              image: "/images/founders/amrita.jpeg",
+              isDirector: true
+            },
+            {
+              name: "Mrs. Somvati Rajawat",
+              role: "Director",
+              bio: "Director on the Executive Board of MAG7 Global. Oversees strategic board initiatives, regulatory compliance frameworks, and community alignment.",
+              image: "/images/founders/amrita.jpeg",
+              isDirector: true
+            },
+            {
+              name: "Mr. Kumar Gauraw",
               role: "International Trade Consultant (IIC)",
-              bio: "Gaurav leads international trade consultancy and EXIM compliance strategies at Mag7 Global. Expert in cross-border trade policies, customs tariffs, and global alignments.",
+              bio: "Leads international trade consultancy and EXIM compliance strategies at MAG7 Global. Expert in cross-border trade policies, customs tariffs, and global alignments.",
               image: "/images/founders/gaurav.jpeg",
               phone: "+91 80024 16161",
               whatsapp: "https://wa.me/918002416161",
-              email: "gaurav@mag7global.com"
+              email: "gaurav@mag7global.com",
+              isDirector: false
             },
             {
               name: "Mr. Manoj Rajawat",
               role: "Market Research Manager",
-              bio: "Manoj manages global market intelligence, commodity demand forecasting, and buyer profiling. He tracks real-time international trade tickers and buyer personas.",
+              bio: "Manages global market intelligence, commodity demand forecasting, and buyer profiling. He tracks real-time international trade tickers and buyer personas.",
               image: "/images/founders/Manoj.jpeg",
-              phone: "+91 79873 84443",
-              whatsapp: "https://wa.me/917987384443",
-              email: "manoj@mag7global.com"
+              phone: "+91 91117 77045",
+              whatsapp: "https://wa.me/919111777045",
+              email: "manoj@mag7global.com",
+              isDirector: false
             }
           ].map((leader, idx) => (
             <div
@@ -262,39 +278,43 @@ export default function AboutUsPage() {
                     {leader.bio}
                   </p>
 
-                  <div className="bg-slate-50 p-4 rounded-2xl border border-slate-100 space-y-2.5 text-xs font-semibold">
-                    <div className="flex items-center justify-between text-slate-700">
-                      <span className="text-slate-400 font-bold">Connect Mobile:</span>
-                      <a href={`tel:${leader.phone.replace(/\s+/g, '')}`} className="font-black text-[#0d1f3c] hover:text-[#06b6d4] transition-colors">
-                        {leader.phone}
-                      </a>
+                  {!leader.isDirector && leader.phone && (
+                    <div className="bg-slate-50 p-4 rounded-2xl border border-slate-100 space-y-2.5 text-xs font-semibold">
+                      <div className="flex items-center justify-between text-slate-700">
+                        <span className="text-slate-400 font-bold">Connect Mobile:</span>
+                        <a href={`tel:${leader.phone.replace(/\s+/g, '')}`} className="font-black text-[#0d1f3c] hover:text-[#06b6d4] transition-colors">
+                          {leader.phone}
+                        </a>
+                      </div>
+                      <div className="flex items-center justify-between text-slate-700">
+                        <span className="text-slate-400 font-bold">Email Direct:</span>
+                        <a href={`mailto:${leader.email}`} className="font-black text-[#06b6d4] hover:underline">
+                          {leader.email}
+                        </a>
+                      </div>
                     </div>
-                    <div className="flex items-center justify-between text-slate-700">
-                      <span className="text-slate-400 font-bold">Email Direct:</span>
-                      <a href={`mailto:${leader.email}`} className="font-black text-[#06b6d4] hover:underline">
-                        {leader.email}
-                      </a>
-                    </div>
-                  </div>
+                  )}
                 </div>
               </div>
 
-              <div className="p-6 md:p-8 pt-0 flex items-center justify-between gap-3 text-xs">
-                <a
-                  href={`mailto:${leader.email}`}
-                  className="flex-1 inline-flex items-center justify-center gap-1.5 bg-[#0d1f3c] hover:bg-[#06b6d4] text-white font-extrabold py-3.5 px-4 rounded-xl transition-all shadow-sm cursor-pointer"
-                >
-                  <span>Contact Details</span>
-                </a>
-                <a
-                  href={leader.whatsapp}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center justify-center gap-1.5 bg-emerald-500 hover:bg-emerald-600 text-white font-extrabold py-3.5 px-4 rounded-xl transition-all shadow-sm cursor-pointer"
-                >
-                  <span>WhatsApp</span>
-                </a>
-              </div>
+              {!leader.isDirector && leader.phone && (
+                <div className="p-6 md:p-8 pt-0 flex items-center justify-between gap-3 text-xs">
+                  <a
+                    href={`mailto:${leader.email}`}
+                    className="flex-1 inline-flex items-center justify-center gap-1.5 bg-[#0d1f3c] hover:bg-[#06b6d4] text-white font-extrabold py-3.5 px-4 rounded-xl transition-all shadow-sm cursor-pointer"
+                  >
+                    <span>Contact Details</span>
+                  </a>
+                  <a
+                    href={leader.whatsapp}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center justify-center gap-1.5 bg-emerald-500 hover:bg-emerald-600 text-white font-extrabold py-3.5 px-4 rounded-xl transition-all shadow-sm cursor-pointer"
+                  >
+                    <span>WhatsApp</span>
+                  </a>
+                </div>
+              )}
             </div>
           ))}
         </div>
@@ -315,7 +335,7 @@ export default function AboutUsPage() {
             {
               office: "Mag7 Global (India HQ)",
               address: "Treasure Fantasy, Indore, Madhya Pradesh, India",
-              contact: "+91 79873 84443",
+              contact: "+91 91117 77045",
               email: "info@mag7global.com",
               gstin: "23AABCM8734P1ZX (Applied)",
               iec: "0326094443 (Applied)"

@@ -196,7 +196,7 @@ export default function RFQPage() {
 ---------------------------------------
 Sent via mag7global.com RFQ portal`;
 
-    return `https://wa.me/917987384443?text=${encodeURIComponent(message)}`;
+    return `https://wa.me/919111777045?text=${encodeURIComponent(message)}`;
   };
 
   return (

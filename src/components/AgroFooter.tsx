@@ -149,7 +149,7 @@ export default function AgroFooter() {
           {/* Socials */}
           <div className="flex gap-3">
             {[
-              { icon: <MessageCircle className="w-4 h-4" />, href: "https://wa.me/917987384443" },
+              { icon: <MessageCircle className="w-4 h-4" />, href: "https://wa.me/919111777045" },
               { icon: <Instagram className="w-4 h-4" />, href: "https://www.instagram.com/mag7.global/" },
               { icon: <Facebook className="w-4 h-4" />, href: "https://www.facebook.com/people/MAG-7-Global/61590522377321/#" }
             ].map((item, i) => (

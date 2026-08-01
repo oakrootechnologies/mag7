@@ -17,6 +17,7 @@ export default function HandicraftsNavbar() {
   const navLinks = [
     { name: "Handicrafts Home", href: "/handicrafts" },
     { name: "Products", href: "/handicrafts/products" },
+    { name: "Gallery", href: "/gallery" },
     { name: "Request Quote", href: "/handicrafts/rfq" },
     { name: "Mag7 Group", href: "/" }
   ];
@@ -31,7 +32,7 @@ export default function HandicraftsNavbar() {
             <span className="flex items-center gap-1 font-bold"><Compass className="w-3.5 h-3.5" /> Traditional Indian Handicrafts & Decor Sourcing</span>
           </div>
           <div>
-            Support Desk: <span className="font-bold text-[#b45309]">+91 79873 84443</span>
+            Support Desk: <span className="font-bold text-[#b45309]">+91 91117 77045</span>
           </div>
         </div>
 

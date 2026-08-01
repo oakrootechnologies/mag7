@@ -132,7 +132,7 @@ function HandicraftsRFQContent() {
 ---------------------------------------
 Sent via mag7global.com Handicrafts Portal`;
 
-    return `https://wa.me/917987384443?text=${encodeURIComponent(message)}`;
+    return `https://wa.me/919111777045?text=${encodeURIComponent(message)}`;
   };
 
   return (

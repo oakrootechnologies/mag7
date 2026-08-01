@@ -86,7 +86,7 @@ export default function GroupFooter() {
             <div className="flex flex-wrap items-center justify-center gap-4 md:gap-6">
               <div className="flex items-center gap-2">
                 <Phone className="w-4 h-4 text-[#06b6d4]" />
-                <span>+91 79873 84443</span>
+                <span>+91 91117 77045</span>
               </div>
               <div className="hidden sm:block text-slate-600">|</div>
               <div className="flex items-center gap-2">
@@ -115,7 +115,7 @@ export default function GroupFooter() {
               {/* Social icons */}
               <div className="flex gap-3 pt-2">
                 {[
-                  { icon: <MessageCircle className="w-4 h-4" />, href: "https://wa.me/917987384443" },
+                  { icon: <MessageCircle className="w-4 h-4" />, href: "https://wa.me/919111777045" },
                   { icon: <Instagram className="w-4 h-4" />, href: "https://www.instagram.com/mag7.global/" },
                   { icon: <Facebook className="w-4 h-4" />, href: "https://www.facebook.com/people/MAG-7-Global/61590522377321/#" }
                 ].map((item, i) => (
@@ -162,6 +162,7 @@ export default function GroupFooter() {
               <ul className="space-y-2.5 text-xs text-slate-400 font-semibold">
                 <li><Link href="/" className="hover:text-white transition-colors">Corporate Home</Link></li>
                 <li><Link href="/about-us" className="hover:text-white transition-colors">About MAG7 Global</Link></li>
+                <li><Link href="/gallery" className="hover:text-[#06b6d4] transition-colors font-bold">Media & Event Gallery ↗</Link></li>
                 <li><Link href="/agro/certificates" className="hover:text-[#06b6d4] transition-colors font-bold">Licensing &amp; Certificates ↗</Link></li>
                 <li><Link href="/rfq" className="hover:text-white transition-colors">Enquire / Contact Us</Link></li>
               </ul>

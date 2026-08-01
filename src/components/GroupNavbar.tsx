@@ -103,6 +103,11 @@ export default function GroupNavbar() {
                 Certifications
               </Link>
 
+              {/* Gallery */}
+              <Link href="/gallery" className="text-slate-600 hover:text-[#06b6d4] transition-colors">
+                Gallery
+              </Link>
+
               <Link href="/about-us" className="text-slate-600 hover:text-[#06b6d4] transition-colors">
                 About Us
               </Link>

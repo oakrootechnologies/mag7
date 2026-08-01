@@ -32,6 +32,7 @@ export default function AgroNavbar({ config }: NavbarProps) {
         { name: "About Us", href: "/agro/about-us" },
         { name: "Products", href: "/agro/products" },
         { name: "Certificates", href: "/agro/certificates" },
+        { name: "Gallery", href: "/gallery" },
         { name: "Request Quote", href: "/agro/rfq" },
         { name: "Mag7 Group", href: "/" },
       ];
@@ -48,7 +49,7 @@ export default function AgroNavbar({ config }: NavbarProps) {
     : defaultComplianceItems;
 
   const finalSupportTitle = config?.supportTitle || "24/7 Desk:";
-  const finalSupportPhone = config?.supportPhone || "+91 79873 84443";
+  const finalSupportPhone = config?.supportPhone || "+91 91117 77045";
   const finalCtaText = config?.ctaText || "Request Quote";
 
   const renderIcon = (iconName: string) => {

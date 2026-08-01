@@ -89,7 +89,7 @@ export default function IndustrialFooter() {
           
           {/* Socials */}
           <div className="flex gap-5">
-            <a href="https://wa.me/917987384443" target="_blank" rel="noopener noreferrer" className="bg-slate-800 hover:bg-brand-green text-slate-300 hover:text-white p-2 rounded-none transition-all duration-300 shadow-sm"><MessageCircle className="w-4 h-4" /></a>
+            <a href="https://wa.me/919111777045" target="_blank" rel="noopener noreferrer" className="bg-slate-800 hover:bg-brand-green text-slate-300 hover:text-white p-2 rounded-none transition-all duration-300 shadow-sm"><MessageCircle className="w-4 h-4" /></a>
             <a href="https://www.instagram.com/mag7.global/" target="_blank" rel="noopener noreferrer" className="bg-slate-800 hover:bg-brand-blue text-slate-300 hover:text-white p-2 rounded-none transition-all duration-300 shadow-sm"><Instagram className="w-4 h-4" /></a>
           </div>
 

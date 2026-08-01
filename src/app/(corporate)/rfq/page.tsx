@@ -207,7 +207,7 @@ export default function CorporateRFQPage() {
                     required
                     value={phone}
                     onChange={(e) => setPhone(e.target.value)}
-                    placeholder="+91 79873 84443"
+                    placeholder="+91 91117 77045"
                     className="w-full bg-slate-50/70 border border-slate-200 focus:border-[#06b6d4] focus:bg-white text-slate-800 text-sm font-semibold rounded-xl px-4 py-3.5 outline-none transition-all"
                   />
                 </div>

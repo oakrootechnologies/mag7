@@ -14,22 +14,38 @@ export default function GroupAboutUsPage() {
 
   const leaders = [
     {
-      name: "Mr. Gaurav Singhania",
+      name: "Mrs. Amrita Kumari",
+      role: "Director",
+      bio: "Director on the Executive Board of MAG7 Global. Directs corporate governance, strategic board operations, and financial compliance oversight across MAG7 Global divisions.",
+      image: "/images/founders/amrita.jpeg",
+      isDirector: true
+    },
+    {
+      name: "Mrs. Somvati Rajawat",
+      role: "Director",
+      bio: "Director on the Executive Board of MAG7 Global. Oversees strategic board initiatives, regulatory compliance frameworks, and community alignment for MAG7 Global.",
+      image: "/images/founders/amrita.jpeg",
+      isDirector: true
+    },
+    {
+      name: "Mr. Kumar Gauraw",
       role: "International Trade Consultant (IIC)",
-      bio: "Gaurav leads international trade consultancy and EXIM compliance strategies at Mag7 Global. With deep expertise in cross-border trade frameworks, customs tariffs, and global partner alignments, he directs our export-import operations across UAE, European, and Asian markets.",
+      bio: "Leads international trade consultancy and EXIM compliance strategies at MAG7 Global. With deep expertise in cross-border trade frameworks, customs tariffs, and global partner alignments, he directs our export-import operations across UAE, European, and Asian markets.",
       image: "/images/founders/gaurav.jpeg",
       phone: "+91 80024 16161",
       whatsapp: "https://wa.me/918002416161",
-      email: "gaurav@mag7global.com"
+      email: "gaurav@mag7global.com",
+      isDirector: false
     },
     {
       name: "Mr. Manoj Rajawat",
       role: "Market Research Manager",
-      bio: "Manoj manages global market intelligence, commodity demand forecasting, and buyer profiling. He tracks real-time international trade tickers, price trends, and buyer personas to ensure Mag7 Global delivers targeted, high-margin export-import solutions.",
+      bio: "Manages global market intelligence, commodity demand forecasting, and buyer profiling. He tracks real-time international trade tickers, price trends, and buyer personas to ensure MAG7 Global delivers targeted, high-margin export-import solutions.",
       image: "/images/founders/Manoj.jpeg",
-      phone: "+91 79873 84443",
-      whatsapp: "https://wa.me/917987384443",
-      email: "manoj@mag7global.com"
+      phone: "+91 91117 77045",
+      whatsapp: "https://wa.me/919111777045",
+      email: "manoj@mag7global.com",
+      isDirector: false
     }
   ];
 
@@ -43,57 +59,16 @@ export default function GroupAboutUsPage() {
         />
         <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-[#060e1e]/80" />
 
-        <div className="relative z-10 w-full max-w-7xl mx-auto px-6 lg:px-10 py-20">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-end">
-
-            {/* Left — headline */}
-            <div className="lg:col-span-7 space-y-6">
-              <div className="inline-flex items-center gap-2 bg-white/10 border border-white/15 rounded-full px-4 py-1.5 text-[10px] font-extrabold tracking-widest text-white/70 uppercase">
-                MAG7 Global Private Limited
-              </div>
-              <h1 className="text-[clamp(2.2rem,5vw,3.8rem)] font-black text-white leading-[1.08] tracking-tight">
-                At <span className="text-[#06b6d4]">MAG7</span> We Are<br />
-                <span className="text-white/90">Committed to Excellence</span>
-              </h1>
-              <p className="text-white/60 text-sm leading-relaxed font-semibold max-w-xl">
-                Redefining global trade, compliance, and custom clearances — connecting the strongest markets, companies, and services worldwide.
-              </p>
-              <div className="flex flex-wrap items-center gap-3 pt-2">
-                <Link
-                  href="#leaders"
-                  className="inline-flex items-center gap-2 bg-[#06b6d4] hover:bg-[#0891b2] text-white font-extrabold text-xs uppercase tracking-wider px-7 py-3.5 rounded-full shadow-lg transition-all duration-300 hover:-translate-y-0.5 cursor-pointer"
-                >
-                  <span>Meet the Team</span>
-                  <ArrowRight className="w-3.5 h-3.5" />
-                </Link>
-                <a
-                  href="https://wa.me/917987384443"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 border border-white/30 hover:border-white/60 text-white/80 hover:text-white font-bold text-xs uppercase tracking-wider px-6 py-3.5 rounded-full transition-all duration-300 hover:-translate-y-0.5 cursor-pointer"
-                >
-                  <MessageCircle className="w-4 h-4 text-emerald-400" />
-                  <span>+91 79873 84443</span>
-                </a>
-              </div>
-            </div>
-
-            {/* Right — key credentials strip */}
-            <div className="lg:col-span-5 grid grid-cols-2 gap-3 pb-2">
-              {[
-                { label: "IEC Code", value: "AAVCM0809P", accent: "#06b6d4", sub: "DGFT Certified Exporter" },
-                { label: "GSTIN", value: "23AAVCM0809P1ZX", accent: "#10b981", sub: "Govt. of India Registered" },
-                { label: "Countries Served", value: "28+", accent: "#f59e0b", sub: "Active Global Markets" },
-                { label: "RFQ Response", value: "< 24h", accent: "#a78bfa", sub: "Guaranteed Turnaround" },
-              ].map((c, i) => (
-                <div key={i} className="bg-white/8 border border-white/10 rounded-2xl p-4 backdrop-blur-sm space-y-1">
-                  <div className="text-[10px] font-black uppercase tracking-wider" style={{ color: c.accent }}>{c.label}</div>
-                  <div className="text-white font-extrabold text-sm leading-snug">{c.value}</div>
-                  <div className="text-white/40 text-[10px] font-semibold">{c.sub}</div>
-                </div>
-              ))}
-            </div>
+        <div className="max-w-7xl mx-auto px-6 lg:px-10 py-16 md:py-24 relative z-10 w-full space-y-6">
+          <div className="inline-flex items-center gap-2 bg-[#06b6d4]/10 border border-[#06b6d4]/30 text-[#06b6d4] text-[10px] font-black uppercase tracking-[0.2em] px-4 py-2 rounded-full backdrop-blur-md">
+            Corporate Profile & Executive Leadership
           </div>
+          <h1 className="text-3xl md:text-5xl lg:text-6xl font-black text-white tracking-tight max-w-3xl leading-[1.1]">
+            Pioneering <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#06b6d4] to-cyan-300">Global Trade Excellence</span>
+          </h1>
+          <p className="text-slate-300 text-sm md:text-base max-w-2xl font-medium leading-relaxed">
+            Mag7 Global is a multi-sector conglomerate directing high-volume agricultural exports, artisanal handicrafts, and heavy industrial machinery across global trade corridors.
+          </p>
         </div>
       </section>
 
@@ -145,44 +120,48 @@ export default function GroupAboutUsPage() {
                     {leader.bio}
                   </p>
 
-                  {/* Direct Contact Details on Card */}
-                  <div className="bg-slate-50 p-4 rounded-2xl border border-slate-100 space-y-2.5 text-xs font-semibold">
-                    <div className="flex items-center justify-between text-slate-700">
-                      <span className="text-slate-400 font-bold">Connect Mobile:</span>
-                      <a href={`tel:${leader.phone.replace(/\s+/g, '')}`} className="font-black text-[#0d1f3c] hover:text-[#06b6d4] transition-colors">
-                        {leader.phone}
-                      </a>
+                  {/* Direct Contact Details on Card (non-directors only) */}
+                  {!leader.isDirector && leader.phone && (
+                    <div className="bg-slate-50 p-4 rounded-2xl border border-slate-100 space-y-2.5 text-xs font-semibold">
+                      <div className="flex items-center justify-between text-slate-700">
+                        <span className="text-slate-400 font-bold">Connect Mobile:</span>
+                        <a href={`tel:${leader.phone.replace(/\s+/g, '')}`} className="font-black text-[#0d1f3c] hover:text-[#06b6d4] transition-colors">
+                          {leader.phone}
+                        </a>
+                      </div>
+                      <div className="flex items-center justify-between text-slate-700">
+                        <span className="text-slate-400 font-bold">Email Direct:</span>
+                        <a href={`mailto:${leader.email}`} className="font-black text-[#06b6d4] hover:underline">
+                          {leader.email}
+                        </a>
+                      </div>
                     </div>
-                    <div className="flex items-center justify-between text-slate-700">
-                      <span className="text-slate-400 font-bold">Email Direct:</span>
-                      <a href={`mailto:${leader.email}`} className="font-black text-[#06b6d4] hover:underline">
-                        {leader.email}
-                      </a>
-                    </div>
-                  </div>
+                  )}
                 </div>
               </div>
 
-              {/* Action Buttons */}
-              <div className="p-6 md:p-8 pt-0 flex items-center justify-between gap-3">
-                <button
-                  onClick={() => setSelectedContact(leader)}
-                  className="flex-1 inline-flex items-center justify-center gap-1.5 bg-[#0d1f3c] hover:bg-[#06b6d4] text-white text-xs font-extrabold py-3.5 px-4 rounded-xl transition-all shadow-sm cursor-pointer"
-                >
-                  <Mail className="w-3.5 h-3.5" />
-                  <span>Contact Details</span>
-                </button>
+              {/* Action Buttons (non-directors only) */}
+              {!leader.isDirector && leader.phone && (
+                <div className="p-6 md:p-8 pt-0 flex items-center justify-between gap-3">
+                  <button
+                    onClick={() => setSelectedContact(leader)}
+                    className="flex-1 inline-flex items-center justify-center gap-1.5 bg-[#0d1f3c] hover:bg-[#06b6d4] text-white text-xs font-extrabold py-3.5 px-4 rounded-xl transition-all shadow-sm cursor-pointer"
+                  >
+                    <Mail className="w-3.5 h-3.5" />
+                    <span>Contact Details</span>
+                  </button>
 
-                <a
-                  href={leader.whatsapp}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center justify-center gap-1.5 bg-emerald-500 hover:bg-emerald-600 text-white text-xs font-extrabold py-3.5 px-4 rounded-xl transition-all shadow-sm cursor-pointer"
-                >
-                  <MessageCircle className="w-3.5 h-3.5" />
-                  <span>WhatsApp</span>
-                </a>
-              </div>
+                  <a
+                    href={leader.whatsapp}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center justify-center gap-1.5 bg-emerald-500 hover:bg-emerald-600 text-white text-xs font-extrabold py-3.5 px-4 rounded-xl transition-all shadow-sm cursor-pointer"
+                  >
+                    <MessageCircle className="w-3.5 h-3.5" />
+                    <span>WhatsApp</span>
+                  </a>
+                </div>
+              )}
             </motion.div>
           ))}
         </div>

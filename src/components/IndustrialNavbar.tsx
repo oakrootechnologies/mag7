@@ -17,6 +17,7 @@ export default function IndustrialNavbar() {
   const navLinks = [
     { name: "Industrial Home", href: "/industrial-equipments" },
     { name: "Products", href: "/industrial-equipments/products" },
+    { name: "Gallery", href: "/gallery" },
     { name: "Request Quote", href: "/industrial-equipments/rfq" },
     { name: "Mag7 Group", href: "/" }
   ];
@@ -31,7 +32,7 @@ export default function IndustrialNavbar() {
             <span className="flex items-center gap-1"><Settings className="w-3.5 h-3.5 text-[#ea580c]" /> High-Performance Industrial Machinery & Spares Sourcing</span>
           </div>
           <div>
-            Support Desk: <span className="font-bold text-white">+91 79873 84443</span>
+            Support Desk: <span className="font-bold text-white">+91 91117 77045</span>
           </div>
         </div>
 

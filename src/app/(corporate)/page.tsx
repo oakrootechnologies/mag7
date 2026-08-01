@@ -439,7 +439,7 @@ export default function GroupHomePage() {
             <Link href="/rfq" className="bg-white text-[#0891b2] font-black text-sm px-8 py-4 rounded-full hover:-translate-y-0.5 transition-all shadow-xl hover:shadow-2xl">
               Submit RFQ
             </Link>
-            <a href="https://wa.me/917987384443" target="_blank" rel="noopener noreferrer" className="border-2 border-white text-white font-bold text-sm px-8 py-4 rounded-full hover:bg-white/10 transition-all flex items-center gap-2">
+            <a href="https://wa.me/919111777045" target="_blank" rel="noopener noreferrer" className="border-2 border-white text-white font-bold text-sm px-8 py-4 rounded-full hover:bg-white/10 transition-all flex items-center gap-2">
               <MessageCircle className="w-4 h-4" /> WhatsApp Us
             </a>
           </div>
@@ -470,22 +470,38 @@ export default function GroupHomePage() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
             {[
               {
-                name: "Mr. Gaurav Singhania",
+                name: "Mrs. Amrita Kumari",
+                role: "Director",
+                bio: "Director on the Executive Board of MAG7 Global. Directs corporate governance, strategic board operations, and financial compliance oversight across MAG7 Global divisions.",
+                image: "/images/founders/amrita.jpeg",
+                isDirector: true
+              },
+              {
+                name: "Mrs. Somvati Rajawat",
+                role: "Director",
+                bio: "Director on the Executive Board of MAG7 Global. Oversees strategic board initiatives, regulatory compliance frameworks, and community alignment for MAG7 Global.",
+                image: "/images/founders/amrita.jpeg",
+                isDirector: true
+              },
+              {
+                name: "Mr. Kumar Gauraw",
                 role: "International Trade Consultant (IIC)",
                 bio: "Directs international trade policies, tariff optimizations, and EXIM compliance strategies across UAE, European, and Asian trade corridors.",
                 image: "/images/founders/gaurav.jpeg",
                 phone: "+91 80024 16161",
                 whatsapp: "https://wa.me/918002416161",
-                email: "gaurav@mag7global.com"
+                email: "gaurav@mag7global.com",
+                isDirector: false
               },
               {
                 name: "Mr. Manoj Rajawat",
                 role: "Market Research Manager",
                 bio: "Oversees global market intelligence, commodity demand forecasting, buyer profiling, and trade pricing tickers for high-margin exports.",
                 image: "/images/founders/Manoj.jpeg",
-                phone: "+91 79873 84443",
-                whatsapp: "https://wa.me/917987384443",
-                email: "manoj@mag7global.com"
+                phone: "+91 91117 77045",
+                whatsapp: "https://wa.me/919111777045",
+                email: "manoj@mag7global.com",
+                isDirector: false
               }
             ].map((leader, i) => (
               <div
@@ -519,40 +535,44 @@ export default function GroupHomePage() {
                       {leader.bio}
                     </p>
 
-                    <div className="bg-slate-50 p-4 rounded-2xl border border-slate-100 space-y-2.5 text-xs font-semibold">
-                      <div className="flex items-center justify-between text-slate-700">
-                        <span className="text-slate-400 font-bold">Mobile Connect:</span>
-                        <a href={`tel:${leader.phone.replace(/\s+/g, '')}`} className="font-black text-[#0d1f3c] hover:text-[#06b6d4] transition-colors">
-                          {leader.phone}
-                        </a>
+                    {!leader.isDirector && leader.phone && (
+                      <div className="bg-slate-50 p-4 rounded-2xl border border-slate-100 space-y-2.5 text-xs font-semibold">
+                        <div className="flex items-center justify-between text-slate-700">
+                          <span className="text-slate-400 font-bold">Mobile Connect:</span>
+                          <a href={`tel:${leader.phone.replace(/\s+/g, '')}`} className="font-black text-[#0d1f3c] hover:text-[#06b6d4] transition-colors">
+                            {leader.phone}
+                          </a>
+                        </div>
+                        <div className="flex items-center justify-between text-slate-700">
+                          <span className="text-slate-400 font-bold">Email Direct:</span>
+                          <a href={`mailto:${leader.email}`} className="font-black text-[#06b6d4] hover:underline">
+                            {leader.email}
+                          </a>
+                        </div>
                       </div>
-                      <div className="flex items-center justify-between text-slate-700">
-                        <span className="text-slate-400 font-bold">Email Direct:</span>
-                        <a href={`mailto:${leader.email}`} className="font-black text-[#06b6d4] hover:underline">
-                          {leader.email}
-                        </a>
-                      </div>
-                    </div>
+                    )}
                   </div>
                 </div>
 
-                <div className="p-6 md:p-8 pt-0 flex items-center justify-between gap-3 text-xs">
-                  <a
-                    href={`mailto:${leader.email}`}
-                    className="flex-1 inline-flex items-center justify-center gap-1.5 bg-[#0d1f3c] hover:bg-[#06b6d4] text-white font-extrabold py-3.5 px-4 rounded-xl transition-all shadow-sm cursor-pointer"
-                  >
-                    <span>Contact Details</span>
-                  </a>
-                  <a
-                    href={leader.whatsapp}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-flex items-center justify-center gap-1.5 bg-emerald-500 hover:bg-emerald-600 text-white font-extrabold py-3.5 px-4 rounded-xl transition-all shadow-sm cursor-pointer"
-                  >
-                    <MessageCircle className="w-3.5 h-3.5" />
-                    <span>WhatsApp</span>
-                  </a>
-                </div>
+                {!leader.isDirector && leader.phone && (
+                  <div className="p-6 md:p-8 pt-0 flex items-center justify-between gap-3 text-xs">
+                    <a
+                      href={`mailto:${leader.email}`}
+                      className="flex-1 inline-flex items-center justify-center gap-1.5 bg-[#0d1f3c] hover:bg-[#06b6d4] text-white font-extrabold py-3.5 px-4 rounded-xl transition-all shadow-sm cursor-pointer"
+                    >
+                      <span>Contact Details</span>
+                    </a>
+                    <a
+                      href={leader.whatsapp}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center justify-center gap-1.5 bg-emerald-500 hover:bg-emerald-600 text-white font-extrabold py-3.5 px-4 rounded-xl transition-all shadow-sm cursor-pointer"
+                    >
+                      <MessageCircle className="w-3.5 h-3.5" />
+                      <span>WhatsApp</span>
+                    </a>
+                  </div>
+                )}
               </div>
             ))}
           </div>
