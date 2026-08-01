@@ -7,75 +7,34 @@ import {
   Camera, 
   MapPin, 
   Calendar, 
-  Tag, 
   Maximize2, 
   X, 
   ChevronLeft, 
   ChevronRight, 
   ArrowRight,
-  ShieldCheck,
   Ship,
-  Globe2,
-  FileCheck2
+  Globe2
 } from "lucide-react";
 
 interface GalleryImage {
   id: string;
   src: string;
-  title: string;
-  caption: string;
-  orientation: "portrait" | "landscape";
-  category: "Port Inspection" | "Customs & Logistics" | "Export Quality Audit";
+  category: "JNPT Port Visit";
 }
 
 const JNPT_EVENT_IMAGES: GalleryImage[] = [
-  {
-    id: "jnpt-1",
-    src: "/images/gallery/jnpt-1.jpeg",
-    title: "JNPT Container Terminal Gate Inspection",
-    caption: "Executive board inspection of FCL container seal integrity & customs exit clearance at JNPT Port Gate.",
-    orientation: "portrait",
-    category: "Port Inspection"
-  },
-  {
-    id: "jnpt-2",
-    src: "/images/gallery/jnpt-2.jpeg",
-    title: "Reefer Temperature & Cold Chain Log Verification",
-    caption: "Auditing reefer plug-in temperatures (-1°C to +4°C) for fresh produce exports before vessel loading.",
-    orientation: "portrait",
-    category: "Export Quality Audit"
-  },
-  {
-    id: "jnpt-3",
-    src: "/images/gallery/jnpt-3.jpeg",
-    title: "Customs Clearance & Phytosanitary Protocol Review",
-    caption: "On-site review of APEDA phytosanitary certificate verification and ocean bill of lading docs at JNPT customs desk.",
-    orientation: "portrait",
-    category: "Customs & Logistics"
-  },
-  {
-    id: "jnpt-4",
-    src: "/images/gallery/jnpt-4.jpeg",
-    title: "Ocean Freight Carrier Alignment — Maersk / Hapag Hub",
-    caption: "Executive alignment meeting with port terminal authorities and ocean freight forwarders for Mundra & JNPT routes.",
-    orientation: "portrait",
-    category: "Port Inspection"
-  },
-  {
-    id: "jnpt-5",
-    src: "/images/gallery/jnpt-5.jpeg",
-    title: "JNPT Container Yard & Dockside Loading Panorama",
-    caption: "Wide panorama of JNPT container yard and vessel berth loading operations for UAE and European destination ports.",
-    orientation: "landscape",
-    category: "Port Inspection"
-  }
+  { id: "jnpt-1", src: "/images/gallery/jnpt-1.jpeg", category: "JNPT Port Visit" },
+  { id: "jnpt-2", src: "/images/gallery/jnpt-2.jpeg", category: "JNPT Port Visit" },
+  { id: "jnpt-3", src: "/images/gallery/jnpt-3.jpeg", category: "JNPT Port Visit" },
+  { id: "jnpt-4", src: "/images/gallery/jnpt-4.jpeg", category: "JNPT Port Visit" },
+  { id: "jnpt-5", src: "/images/gallery/jnpt-5.jpeg", category: "JNPT Port Visit" }
 ];
 
 export default function GalleryPage() {
   const [selectedImageIndex, setSelectedImageIndex] = useState<number | null>(null);
   const [activeCategory, setActiveCategory] = useState<string>("All");
 
-  const categories = ["All", "Port Inspection", "Customs & Logistics", "Export Quality Audit"];
+  const categories = ["All", "JNPT Port Visit"];
 
   const filteredImages = activeCategory === "All"
     ? JNPT_EVENT_IMAGES
@@ -120,18 +79,18 @@ export default function GalleryPage() {
               MAG7 Global Field Inspection & Event Gallery
             </h1>
             <p className="text-slate-300 text-sm md:text-base font-medium leading-relaxed">
-              Explore real-time visual records of our port inspection visits, customs desk audits, reefer cold chain verifications, and international trade events.
+              Real-time visual records of our official port inspection visits, customs desk audits, reefer cold chain verifications, and trade events.
             </p>
           </div>
         </div>
 
-        {/* Featured Event Card — JNPT Site Visit */}
+        {/* Event Gallery Showcase Card */}
         <div className="bg-white border border-slate-100 rounded-[28px] p-6 md:p-8 shadow-sm space-y-6">
           <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 border-b border-slate-100 pb-6">
             <div className="space-y-1">
               <div className="flex items-center gap-2 text-xs font-black uppercase text-[#06b6d4] tracking-wider">
                 <Ship className="w-4 h-4" />
-                <span>Featured Event 01</span>
+                <span>Featured Event</span>
               </div>
               <h2 className="text-2xl font-black text-[#0d1f3c]">
                 JNPT Sea Port & Customs Inspection Visit — Navi Mumbai
@@ -149,56 +108,44 @@ export default function GalleryPage() {
             </div>
           </div>
 
-          <p className="text-xs md:text-sm text-slate-600 font-medium leading-relaxed">
-            Executive field inspection led by MAG7 Global leadership at Jawaharlal Nehru Port Authority (JNPT / JNPA). Operations included container seal verification, cold chain reefer temperature logging, phytosanitary desk audits, and ocean carrier cargo slot scheduling for Middle East and European export lanes.
-          </p>
-
-          {/* Category Filters */}
+          {/* Event Category Filter Tabs: All & JNPT Port Visit */}
           <div className="flex flex-wrap gap-2 pt-2">
             {categories.map((cat) => (
               <button
                 key={cat}
                 onClick={() => setActiveCategory(cat)}
-                className={`px-4 py-2 rounded-full text-xs font-extrabold uppercase tracking-wider transition-all cursor-pointer ${
+                className={`px-5 py-2.5 rounded-full text-xs font-black uppercase tracking-wider transition-all cursor-pointer ${
                   activeCategory === cat
                     ? "bg-[#0d1f3c] text-white shadow-md"
                     : "bg-slate-100 text-slate-600 hover:bg-slate-200 border border-slate-200/60"
                 }`}
               >
-                {cat}
+                {cat === "JNPT Port Visit" ? "JNPT Visit" : cat}
               </button>
             ))}
           </div>
 
-          {/* Image Grid with True Orientation */}
+          {/* Clean Upright Photo Grid Without Text Overlays */}
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 pt-4">
             {filteredImages.map((img, idx) => (
               <div
                 key={img.id}
                 onClick={() => openLightbox(idx)}
-                className="group relative bg-slate-900 rounded-2xl overflow-hidden border border-slate-150 shadow-sm hover:shadow-xl transition-all duration-300 cursor-pointer"
+                className="group relative bg-slate-900 rounded-3xl overflow-hidden border border-slate-150 shadow-md hover:shadow-2xl transition-all duration-300 cursor-pointer"
               >
-                {/* Image Container with preserved aspect ratio */}
-                <div className={`relative w-full ${img.orientation === "portrait" ? "h-96 sm:h-[420px]" : "h-64 sm:h-72"} bg-slate-900`}>
+                <div className="relative w-full aspect-[16/10] bg-slate-900 overflow-hidden">
                   <Image
                     src={img.src}
-                    alt={img.title}
+                    alt="JNPT Event Photo"
                     fill
                     sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                     className="object-cover object-center group-hover:scale-105 transition-transform duration-500"
+                    priority={idx < 3}
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-[#0d1f3c]/90 via-[#0d1f3c]/20 to-transparent opacity-80 group-hover:opacity-95 transition-opacity" />
+                  <div className="absolute inset-0 bg-black/10 group-hover:bg-black/0 transition-colors" />
                   
-                  <div className="absolute top-4 right-4 bg-white/20 backdrop-blur-md text-white p-2 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity shadow-md">
+                  <div className="absolute top-3 right-3 bg-black/50 backdrop-blur-md text-white p-2.5 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity shadow-lg">
                     <Maximize2 className="w-4 h-4" />
-                  </div>
-
-                  <div className="absolute bottom-0 inset-x-0 p-5 space-y-1.5 text-white">
-                    <span className="inline-block bg-[#06b6d4] text-white text-[9px] font-black uppercase tracking-wider px-2.5 py-0.5 rounded-md">
-                      {img.category}
-                    </span>
-                    <h3 className="font-extrabold text-sm leading-snug drop-shadow-sm">{img.title}</h3>
-                    <p className="text-[11px] text-slate-300 font-medium line-clamp-2 leading-normal">{img.caption}</p>
                   </div>
                 </div>
               </div>
@@ -228,52 +175,39 @@ export default function GalleryPage() {
 
       </div>
 
-      {/* ── LIGHTBOX POPUP MODAL ── */}
+      {/* ── LIGHTBOX POPUP MODAL (CLEAN FULLSCREEN PHOTO VIEWER) ── */}
       {selectedImageIndex !== null && (
-        <div className="fixed inset-0 bg-black/90 backdrop-blur-md z-50 flex items-center justify-center p-4">
+        <div className="fixed inset-0 bg-black/95 backdrop-blur-xl z-50 flex items-center justify-center p-4">
           <button
             onClick={closeLightbox}
-            className="absolute top-6 right-6 w-10 h-10 rounded-full bg-white/10 hover:bg-white/20 text-white flex items-center justify-center transition-colors cursor-pointer z-50 font-bold"
+            className="absolute top-6 right-6 w-11 h-11 rounded-full bg-white/10 hover:bg-white/20 text-white flex items-center justify-center transition-colors cursor-pointer z-50 font-bold shadow-lg"
           >
             <X className="w-6 h-6" />
           </button>
 
           <button
             onClick={prevImage}
-            className="absolute left-4 top-1/2 -translate-y-1/2 w-12 h-12 rounded-full bg-white/10 hover:bg-white/20 text-white flex items-center justify-center transition-colors cursor-pointer z-50"
+            className="absolute left-4 sm:left-8 top-1/2 -translate-y-1/2 w-12 h-12 rounded-full bg-white/10 hover:bg-white/20 text-white flex items-center justify-center transition-colors cursor-pointer z-50 shadow-lg"
           >
             <ChevronLeft className="w-8 h-8" />
           </button>
 
           <button
             onClick={nextImage}
-            className="absolute right-4 top-1/2 -translate-y-1/2 w-12 h-12 rounded-full bg-white/10 hover:bg-white/20 text-white flex items-center justify-center transition-colors cursor-pointer z-50"
+            className="absolute right-4 sm:right-8 top-1/2 -translate-y-1/2 w-12 h-12 rounded-full bg-white/10 hover:bg-white/20 text-white flex items-center justify-center transition-colors cursor-pointer z-50 shadow-lg"
           >
             <ChevronRight className="w-8 h-8" />
           </button>
 
-          <div className="max-w-4xl w-full max-h-[90vh] flex flex-col items-center justify-center p-2 space-y-4">
-            <div className="relative w-full h-[65vh] sm:h-[75vh] flex items-center justify-center">
-              <Image
-                src={filteredImages[selectedImageIndex].src}
-                alt={filteredImages[selectedImageIndex].title}
-                fill
-                sizes="100vw"
-                className="object-contain"
-                priority
-              />
-            </div>
-            <div className="bg-slate-900/90 border border-slate-800 text-white p-6 rounded-2xl w-full max-w-2xl text-center space-y-2">
-              <div className="flex items-center justify-center gap-2 text-xs font-black text-[#06b6d4] uppercase tracking-wider">
-                <span>{filteredImages[selectedImageIndex].category}</span>
-                <span>•</span>
-                <span>Photo {selectedImageIndex + 1} of {filteredImages.length}</span>
-              </div>
-              <h3 className="font-extrabold text-lg text-white">{filteredImages[selectedImageIndex].title}</h3>
-              <p className="text-xs text-slate-300 font-medium leading-relaxed">
-                {filteredImages[selectedImageIndex].caption}
-              </p>
-            </div>
+          <div className="relative w-full max-w-5xl h-[85vh] flex items-center justify-center p-2">
+            <Image
+              src={filteredImages[selectedImageIndex].src}
+              alt="JNPT Event Full Photo"
+              fill
+              sizes="100vw"
+              className="object-contain"
+              priority
+            />
           </div>
         </div>
       )}
