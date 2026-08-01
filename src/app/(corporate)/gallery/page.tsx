@@ -32,7 +32,7 @@ const JNPT_EVENT_IMAGES: GalleryImage[] = [
     id: "jnpt-1",
     src: "/images/gallery/jnpt-1.jpeg",
     title: "JNPT Visit Photo 1",
-    orientation: "portrait",
+    orientation: "landscape",
     category: "JNPT Visit"
   },
   {
@@ -53,7 +53,7 @@ const JNPT_EVENT_IMAGES: GalleryImage[] = [
     id: "jnpt-4",
     src: "/images/gallery/jnpt-4.jpeg",
     title: "JNPT Visit Photo 4",
-    orientation: "portrait",
+    orientation: "landscape",
     category: "JNPT Visit"
   },
   {
