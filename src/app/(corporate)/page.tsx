@@ -480,7 +480,7 @@ export default function GroupHomePage() {
                 name: "Mrs. Somvati Rajawat",
                 role: "Director",
                 bio: "Director on the Executive Board of MAG7 Global. Oversees strategic board initiatives, regulatory compliance frameworks, and community alignment for MAG7 Global.",
-                image: "/images/founders/amrita.jpeg",
+                image: "/images/founders/somvati.jpeg",
                 isDirector: true
               },
               {

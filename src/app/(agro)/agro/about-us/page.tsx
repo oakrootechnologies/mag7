@@ -223,7 +223,7 @@ export default function AboutUsPage() {
               name: "Mrs. Somvati Rajawat",
               role: "Director",
               bio: "Director on the Executive Board of MAG7 Global. Oversees strategic board initiatives, regulatory compliance frameworks, and community alignment.",
-              image: "/images/founders/amrita.jpeg",
+              image: "/images/founders/somvati.jpeg",
               isDirector: true
             },
             {
