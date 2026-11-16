@@ -9,7 +9,8 @@ import {
   Eye, 
   ShieldCheck, 
   Phone, 
-  ArrowUpRight 
+  ArrowUpRight,
+  User 
 } from "lucide-react";
 import dynamic from "next/dynamic";
 
@@ -240,7 +241,7 @@ export default function AboutUsPage() {
               name: "Mr. Manoj Rajawat",
               role: "Market Research Manager",
               bio: "Manages global market intelligence, commodity demand forecasting, and buyer profiling. He tracks real-time international trade tickers and buyer personas.",
-              image: "/images/founders/Manoj.jpeg",
+              image: "",
               phone: "+91 91117 77045",
               whatsapp: "https://wa.me/919111777045",
               email: "manoj@mag7global.com",
@@ -254,14 +255,22 @@ export default function AboutUsPage() {
               <div>
                 {/* Executive Headshot / Portrait Photo Header (4x+ size, torso & head focused) */}
                 <div className="relative w-full h-80 sm:h-96 bg-slate-900 overflow-hidden group">
-                  <Image
-                    src={leader.image}
-                    alt={leader.name}
-                    fill
-                    sizes="(max-width: 768px) 100vw, 50vw"
-                    className="object-cover object-top transition-transform duration-500 group-hover:scale-105"
-                    priority
-                  />
+                  {leader.image ? (
+                    <Image
+                      src={leader.image}
+                      alt={leader.name}
+                      fill
+                      sizes="(max-width: 768px) 100vw, 50vw"
+                      className="object-cover object-top transition-transform duration-500 group-hover:scale-105"
+                      priority
+                    />
+                  ) : (
+                    <div className="absolute inset-0 bg-gradient-to-br from-slate-800 via-slate-850 to-[#0d1f3c] flex items-center justify-center pb-12">
+                      <div className="w-24 h-24 rounded-full bg-slate-700/50 border border-slate-600/40 flex items-center justify-center text-slate-400 shadow-inner">
+                        <User className="w-12 h-12" />
+                      </div>
+                    </div>
+                  )}
                   <div className="absolute inset-0 bg-gradient-to-t from-[#0d1f3c] via-[#0d1f3c]/25 to-transparent flex items-end p-6 md:p-8">
                     <div className="space-y-1.5">
                       <span className="inline-block bg-[#06b6d4] text-white text-[10px] font-black uppercase tracking-widest px-3.5 py-1 rounded-full shadow-sm">
